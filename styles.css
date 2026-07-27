@@ -2079,7 +2079,7 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
    the distributed space and make the edges tighter than the middle)
    gives an equal rhythm above, between and below.
    ---------------------------------------------------------------- */
-.slide--spread .slide-body {
+.slide.slide--spread .slide-body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -2087,7 +2087,7 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 }
 /* Default paragraph margins on the child blocks skew the distribution,
    so the rhythm comes out uneven. Zero them and let space-evenly do it. */
-.slide--spread .slide-body > * { margin: 0; }
+.slide.slide--spread .slide-body > * { margin: 0; }
 
 /* ----------------------------------------------------------------
    11 · JSON explained — the specimen beside a plain-English reading
@@ -2263,3 +2263,36 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   margin: 0;
 }
 .build-body strong { font-weight: 700; }
+
+/* ----------------------------------------------------------------
+   15 · Challenge — an over-to-you question, thrown to the room. Same
+   blue slab as the holding slide's definition of done, so the deck
+   has one consistent signal for "this one's yours to answer".
+   ---------------------------------------------------------------- */
+.challenge {
+  background: var(--guardian-blue);
+  color: var(--paper);
+  padding: 26px 36px 28px;
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  column-gap: 34px;
+  align-items: center;
+}
+.challenge-lead {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--guardian-yellow);
+  margin: 0;
+}
+.challenge-body {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.14;
+  color: var(--paper);
+  margin: 0;
+}
+.challenge-body em { color: var(--guardian-yellow); font-style: italic; }

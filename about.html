@@ -204,14 +204,14 @@
   <h2>What this is</h2>
 
   <div class="lede-panel">
-    <p>Thirty-two slides for a hands-on workshop, for staff across all departments, with no coding experience assumed. People arrive with a laptop and leave having built something that pulls live data off the internet and hands it to a model to reason over.</p>
+    <p>Thirty-three slides for a hands-on workshop, for staff across all departments, with no coding experience assumed. People arrive with a laptop and leave having built something that pulls live data off the internet and hands it to a model to reason over.</p>
   </div>
 
   <p>The deck is at <a href="./">peter-guillam123.github.io/vibecoding-workshop</a>. It's driven entirely by hand: arrow keys or space to advance, nothing on a timer, nothing that advances itself. Two slides are built to sit still rather than perform, which turns out to matter more than any of the animation.</p>
 
   <ul class="plain">
-    <li><strong>Slide 23</strong> is the activity brief, on screen while people get started.</li>
-    <li><strong>Slide 24</strong> is the holding slide, up for the whole 30-minute build block. It carries no animation at all, deliberately, because nothing should twitch in the corner of someone's eye for half an hour.</li>
+    <li><strong>Slide 24</strong> is the activity brief, on screen while people get started.</li>
+    <li><strong>Slide 25</strong> is the holding slide, up for the whole 30-minute build block. It carries no animation at all, deliberately, because nothing should twitch in the corner of someone's eye for half an hour.</li>
     <li><strong>Every prompt card copies on click</strong>, and so do the six suggestion cards on slide 7. The lesson plan says to keep the prompts open in a notes file so you're not retyping them live; this removes that step, because the deck is the clipboard. Slide 4 explains it, with a card that demonstrates itself.</li>
   </ul>
 
@@ -224,6 +224,17 @@
   <p>One thing worth saying plainly, because it's the point of the workshop as much as the deck: this was built by describing it in English to Claude Code and letting it do the typing.</p>
 
   <h2>Diary</h2>
+
+  <article class="entry">
+    <p class="entry-meta"><span class="tag">Change</span><span>27 July 2026</span></p>
+    <h3>The internal data question, answered honestly</h3>
+
+    <p>Somebody always asks whether they can point one of these at our own numbers rather than a public API. There's now a slide for it at the end of Part 2, and it took some checking before it could be written.</p>
+
+    <p>The Google Sheet route does work. Both of the endpoints a browser app would use return proper CORS headers, so a Canvas app really can read a sheet. And they're served with caching explicitly switched off, which settles the question of whether the data is live: paste numbers into the prompt and they're baked into the code, frozen at that moment; point the app at the sheet's address and it re-reads on every load, so you can edit a cell, refresh, and watch the app move.</p>
+
+    <p>The part that needed saying out loud is the sharing. There is no way to have the app read the sheet using the viewer's own Google login - the endpoint doesn't allow credentialed requests - so the sheet has to be readable by anyone who has the link. That means the intended safeguard, that you only share with people who already have access, can't actually be enforced by Google's permissions. The only thing protecting the data is the secrecy of two URLs, and one of them is a public Canvas link. The slide says so plainly, because a workshop that spends ten minutes on key safety and then quietly waves this through would be teaching the wrong lesson twice.</p>
+  </article>
 
   <article class="entry">
     <p class="entry-meta"><span class="tag">Change</span><span>27 July 2026</span></p>

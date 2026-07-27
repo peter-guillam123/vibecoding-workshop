@@ -2474,3 +2474,6 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 }
 .slide-body a:hover { color: var(--news-red); }
 .slide-body a:focus-visible { outline: 3px solid var(--guardian-blue); outline-offset: 3px; }
+
+/* A note that carries a warning rather than an aside. */
+.act-note.warn { border-left-color: var(--news-red); }

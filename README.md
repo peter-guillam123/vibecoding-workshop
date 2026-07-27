@@ -1,6 +1,6 @@
 # Vibecoding workshop
 
-A 33-slide deck for a 90-minute hands-on workshop on vibe coding and
+A 32-slide deck for a 90-minute hands-on workshop on vibe coding and
 advanced prototyping in Gemini Canvas. Staff across all departments, no
 coding experience assumed.
 
@@ -20,9 +20,9 @@ Arrow keys or space to advance, R to reset, G to show the grid, Cmd-P →
 Save as PDF for a one-slide-per-page export. It is driven entirely by
 hand: nothing advances itself and nothing is on a timer.
 
-Two slides are meant to sit still. Slide 24 is the activity brief, and
-slide 25 is the holding slide that stays on screen for the whole
-30-minute build block. Slide 25 carries no animation at all, on purpose,
+Two slides are meant to sit still. Slide 23 is the activity brief, and
+slide 24 is the holding slide that stays on screen for the whole
+30-minute build block. Slide 24 carries no animation at all, on purpose,
 because nothing should twitch in the corner of anyone's eye for half an
 hour.
 
@@ -32,16 +32,16 @@ pre-flight: the deck itself is the clipboard.
 
 ## Changelog
 
-### 27 July 2026 — The internal data question
+### 27 July 2026 — Internal data ruled out
 
-New slide at the end of Part 2 for the person who wants to point an app
-at our own numbers. Checked it properly first: the Google Sheets gviz and
-CSV endpoints both send CORS headers, and both are served no-cache, so a
-linked sheet is genuinely live on reload while pasted data is baked into
-the code. The catch is the sharing — the endpoint refuses credentialed
-requests, so the sheet must be readable by anyone with the link, and the
-"only share with people who have access" safeguard can't be enforced by
-Google's permissions at all. The slide says that in as many words.
+Built a slide offering the Google Sheet route for internal numbers, then
+removed it. Recording the finding so it doesn't get re-researched: the
+Sheets gviz and CSV endpoints are CORS-clean and served no-cache, so a
+linked sheet genuinely is live on reload while pasted data is baked in.
+But the endpoint refuses credentialed requests, so the sheet must be
+readable by anyone with the link — the "only people who already have
+access" safeguard can't be enforced by Google's permissions at all. Not
+a workable trade for internal data, so it's off the table.
 
 ### 27 July 2026 — The prompts are clickable, and now the deck says so
 

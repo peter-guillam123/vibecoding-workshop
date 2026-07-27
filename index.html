@@ -123,11 +123,11 @@
           </tr>
           <tr data-fx="rise" style="--d:480ms">
             <td>00:25 – 00:35</td>
-            <td>Part 3 · Modelling: find an API, build with it, add the LLM</td>
+            <td>Part 3 · Modelling: build with an API, then add the LLM</td>
           </tr>
           <tr data-fx="rise" style="--d:550ms">
             <td>00:35 – 01:05</td>
-            <td>Part 4 · Independent build (30 min, the core of the session)</td>
+            <td>Part 4 · Pick an API and build (30 min, the core of the session)</td>
           </tr>
           <tr data-fx="rise" style="--d:620ms">
             <td>01:05 – 01:20</td>
@@ -429,8 +429,8 @@
     <span class="chapter-ghost" aria-hidden="true" data-fx="ghost" style="--d:150ms">03</span>
 
     <div class="chapter-num" data-fx="rise" style="--d:100ms">Part 3 · 10 minutes</div>
-    <h1 data-split data-split-base="260" data-split-step="50">Find, build, add the <em>brain.</em></h1>
-    <p class="section-dek" data-fx="rise" style="--d:780ms">Watch the whole arc once, slowly, before you try it. Three beats: discovery, the base build, and the handoff.</p>
+    <h1 data-split data-split-base="260" data-split-step="50">Build it, then add the <em>brain.</em></h1>
+    <p class="section-dek" data-fx="rise" style="--d:780ms">Watch the whole arc once, slowly, before you try it yourself. Three beats: the base build, a second source, and the handoff.</p>
 
     <div class="slide-foot">
       <span class="wm">Vibecoding workshop · Part 3</span>
@@ -439,50 +439,12 @@
   </section>
 
   <!-- ============================================================
-       14 — Beat 1, discovery
-       ============================================================ -->
-  <section class="slide slide--prompt-solo" data-label="Beat 1 discovery">
-    <div class="rule-band"></div>
-
-    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Beat 1 · Discovery</p>
-    <h2 class="slide-title" data-split>How you find an API in the first <em>place</em>.</h2>
-    <p class="slide-subtitle" data-fx="rise" style="--d:240ms">Swap in a topic you actually care about. Both cards copy on click.</p>
-
-    <div class="slide-body">
-      <div class="prompt-box" data-copy data-fx="rise" style="--d:380ms">
-        <div class="prompt-head">
-          <p class="prompt-label">Finding one</p>
-          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
-        </div>
-        <div class="prompt-body">
-          <p class="prompt-text">Give me 3 completely free, open APIs that need NO API key, support CORS (so they work from a browser), and return data about [TOPIC]. For each, give the exact base URL endpoint and one short example of what the returned data looks like.</p>
-        </div>
-      </div>
-
-      <div class="prompt-box" data-copy data-fx="rise" style="--d:520ms">
-        <div class="prompt-head">
-          <p class="prompt-label">Sizing one up</p>
-          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
-        </div>
-        <div class="prompt-body">
-          <p class="prompt-text">Explain in plain English what data this API returns, and three realistic things I could build with it: [PASTE ENDPOINT URL]</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Vibecoding workshop · Part 3</span>
-      <span class="num">14 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
        15 — Beat 2, the base build
        ============================================================ -->
-  <section class="slide slide--prompt-solo" data-label="Beat 2 base build">
+  <section class="slide slide--prompt-solo" data-label="Beat 1 base build">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Beat 2 · The base build</p>
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Beat 1 · The base build</p>
     <h2 class="slide-title" data-split>One call, one <em>card</em>.</h2>
     <p class="slide-subtitle" data-fx="rise" style="--d:240ms">Build it in front of the room. Narrate the loading state and the error handling, because those are the bits people skip.</p>
 
@@ -511,7 +473,7 @@
   <section class="slide" data-label="Two sources">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Beat 2½ · Add a second source</p>
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Beat 2 · Add a second source</p>
     <h2 class="slide-title" data-split>Two taps into the same <em>card</em>.</h2>
 
     <div class="slide-body">
@@ -636,13 +598,30 @@
   </section>
 
   <!-- ============================================================
+       22 — Section opener: Part 4
+       ============================================================ -->
+  <section class="slide ink section-opener" data-label="Part 4 opener">
+    <div class="rule-band"></div>
+    <span class="chapter-ghost" aria-hidden="true" data-fx="ghost" style="--d:150ms">04</span>
+
+    <div class="chapter-num" data-fx="rise" style="--d:100ms">Part 4 · 30 minutes</div>
+    <h1 data-split data-split-base="260" data-split-step="50">Your <em>turn.</em></h1>
+    <p class="section-dek" data-fx="rise" style="--d:780ms">First we'll find you something to build with. Then you get half an hour and I'll be walking the room.</p>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 4</span>
+      <span class="num">22 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
        20 — The matrix, first half. Every endpoint here was click-
        tested on the morning of the workshop.
        ============================================================ -->
   <section class="slide" data-label="API matrix 1">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · The matrix · 1 of 2</p>
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 4 · Where to start · 1 of 2</p>
     <h2 class="slide-title" data-split>Live numbers and UK <em>data</em>.</h2>
     <p class="slide-subtitle" data-fx="rise" style="--d:200ms">All free, all keyless, all browser-friendly, all tested this morning.</p>
 
@@ -687,7 +666,7 @@
     </div>
 
     <div class="slide-foot">
-      <span class="wm">Vibecoding workshop · Part 3</span>
+      <span class="wm">Vibecoding workshop · Part 4</span>
       <span class="num">20 / NN</span>
     </div>
   </section>
@@ -698,7 +677,7 @@
   <section class="slide" data-label="API matrix 2">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · The matrix · 2 of 2</p>
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 4 · Where to start · 2 of 2</p>
     <h2 class="slide-title" data-split>Words, places and <em>culture</em>.</h2>
     <p class="slide-subtitle" data-fx="rise" style="--d:200ms">Spread out across these. Thirty people on one endpoint is how you trip a shared rate limit.</p>
 
@@ -743,25 +722,46 @@
     </div>
 
     <div class="slide-foot">
-      <span class="wm">Vibecoding workshop · Part 3</span>
+      <span class="wm">Vibecoding workshop · Part 4</span>
       <span class="num">21 / NN</span>
     </div>
   </section>
 
   <!-- ============================================================
-       22 — Section opener: Part 4
+       14 — Beat 1, discovery
        ============================================================ -->
-  <section class="slide ink section-opener" data-label="Part 4 opener">
+  <section class="slide slide--prompt-solo" data-label="Finding your own">
     <div class="rule-band"></div>
-    <span class="chapter-ghost" aria-hidden="true" data-fx="ghost" style="--d:150ms">04</span>
 
-    <div class="chapter-num" data-fx="rise" style="--d:100ms">Part 4 · 30 minutes</div>
-    <h1 data-split data-split-base="260" data-split-step="50">Your <em>turn.</em></h1>
-    <p class="section-dek" data-fx="rise" style="--d:780ms">Pick an API from the matrix, or one you found yourself, and build your tool. I'll be walking the room.</p>
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 4 · Or find your own</p>
+    <h2 class="slide-title" data-split>Or go and find your <em>own</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:240ms">The two lists will keep anyone busy. But if there's a subject you actually care about, these two prompts will go and find you an API for it. Both cards copy on click.</p>
+
+    <div class="slide-body">
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:380ms">
+        <div class="prompt-head">
+          <p class="prompt-label">Finding one</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text">Give me 3 completely free, open APIs that need NO API key, support CORS (so they work from a browser), and return data about [TOPIC]. For each, give the exact base URL endpoint and one short example of what the returned data looks like.</p>
+        </div>
+      </div>
+
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:520ms">
+        <div class="prompt-head">
+          <p class="prompt-label">Sizing one up</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text">Explain in plain English what data this API returns, and three realistic things I could build with it: [PASTE ENDPOINT URL]</p>
+        </div>
+      </div>
+    </div>
 
     <div class="slide-foot">
       <span class="wm">Vibecoding workshop · Part 4</span>
-      <span class="num">22 / NN</span>
+      <span class="num">14 / NN</span>
     </div>
   </section>
 

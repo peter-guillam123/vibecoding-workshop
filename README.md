@@ -32,6 +32,15 @@ pre-flight: the deck itself is the clipboard.
 
 ## Changelog
 
+### 27 July 2026 — Choosing an API moves to Part 4
+
+Part 3 was modelling the build and also teaching people how to choose an
+API, which is a different job done at a different moment. The two matrix
+slides and the discovery prompts now open Part 4: your turn, here are
+twelve that work, here's how to find your own, here's the brief. Part 3
+is three clean beats — build it, add a second source, hand it to the
+model — and the awkward "beat 2½" is gone.
+
 ### 27 July 2026 — Explaining the API bit properly
 
 Two Part 2 slides assumed knowledge the room doesn't have. The raw JSON

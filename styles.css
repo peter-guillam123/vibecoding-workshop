@@ -2296,3 +2296,46 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   margin: 0;
 }
 .challenge-body em { color: var(--guardian-yellow); font-style: italic; }
+
+/* ----------------------------------------------------------------
+   16 · Also try — a yellow-ruled block of alternative asks, for when
+   the point is that the example is only one of many things you could
+   have asked for.
+   ---------------------------------------------------------------- */
+.alsotry {
+  background: var(--paper-deep);
+  border-left: 6px solid var(--guardian-yellow);
+  padding: 20px 30px 22px;
+}
+.alsotry-lead {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--guardian-blue);
+  margin: 0 0 14px;
+}
+.alsotry-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 48px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.alsotry-list li {
+  position: relative;
+  padding-left: 26px;
+  font-family: var(--body);
+  font-size: 21px;
+  line-height: 1.36;
+  color: var(--ink);
+}
+.alsotry-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--news-red);
+  font-weight: 700;
+}

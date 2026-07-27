@@ -32,6 +32,20 @@ pre-flight: the deck itself is the clipboard.
 
 ## Changelog
 
+### 27 July 2026 — A vaguer prompt, on purpose
+
+The hook prompt was a specification, so everyone would have built the
+same app. It is now one sentence: "Create an app that calculates the cost
+of a meeting." Thirty people, thirty different apps, thirty different
+sets of assumptions to notice. Slide 5 gained a "what you'll see" row and
+an instruction to actually use the thing and judge what it decided
+without asking. Slide 6 took everything the old prompt specified and
+turned it into a menu of six moves to say next, one at a time.
+
+Also fixed on the way: the solo prompt slides were laid out with
+`display: block`, so the gap between stacked prompt cards never applied
+and the content sat top-aligned instead of centred.
+
 ### 27 July 2026 — Canvas is two clicks down, not one
 
 The pre-flight slide sent people to the + button to find Canvas. It isn't

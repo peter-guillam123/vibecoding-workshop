@@ -1929,7 +1929,11 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
    6 · Solo prompt — the typing-prompt card without the screenshot
    beside it, for the prompts that are the whole point of the slide.
    ---------------------------------------------------------------- */
-.slide--prompt-solo .slide-body { display: block; }
+.slide--prompt-solo .slide-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .slide--prompt-solo .prompt-box { max-width: none; }
 .slide--prompt-solo .prompt-text { font-size: 30px; line-height: 1.5; }
 .slide--prompt-solo .prompt-body { padding: 30px 38px 34px; }
@@ -2016,3 +2020,50 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 @media print {
   .cover-note { background-size: 100% 44% !important; animation: none !important; }
 }
+
+/* ----------------------------------------------------------------
+   9 · Tweaks grid — a menu of things to say next, for the slide
+   after a deliberately vague prompt. Six cards, three up, each an
+   eyebrow naming the kind of change and the sentence to actually
+   type. Eyebrows and top rules cycle blue / red / green.
+   ---------------------------------------------------------------- */
+.tweaks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gutter);
+}
+.tweak {
+  background: var(--paper-bright);
+  border: 1px solid var(--hairline);
+  border-top: 5px solid var(--guardian-blue);
+  box-shadow: var(--shadow-card);
+  padding: 24px 28px 27px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.tweak:nth-child(3n+2) { border-top-color: var(--news-red); }
+.tweak:nth-child(3n)   { border-top-color: var(--eco-green); }
+.tweak-kind {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--guardian-blue);
+  margin: 0;
+}
+.tweak:nth-child(3n+2) .tweak-kind { color: var(--news-red); }
+.tweak:nth-child(3n)   .tweak-kind { color: var(--eco-green); }
+.tweak-say {
+  font-family: var(--body);
+  font-size: 23px;
+  line-height: 1.42;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* A single short prompt is the hero of its slide; give it the size to
+   match, rather than leaving it rattling around in a wide card. */
+.slide--prompt-hero .prompt-body { padding: 38px 44px 42px; }
+.slide--prompt-hero .prompt-text { font-size: 44px; line-height: 1.28; }

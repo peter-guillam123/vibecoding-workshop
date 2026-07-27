@@ -14,6 +14,17 @@ Built from the [Guardian deck
 template](https://github.com/peter-guillam123/guardian-deck-template),
 second edition. The house rules live in `CLAUDE.md`.
 
+## The password
+
+The deck sits behind the same light gate as board-and-trust-training.
+`gate.js` holds a SHA-256 hash, not the password itself, and an unlock is
+remembered for the browser tab.
+
+It's a deterrent, not security: this is a static site, so the slide text
+reaches the browser whether or not the gate is answered, and anyone
+viewing source can read it. Fine for keeping a workshop deck off the open
+web; not a control you'd rely on for anything sensitive.
+
 ## Presenting it
 
 Arrow keys or space to advance, R to reset, G to show the grid, Cmd-P →

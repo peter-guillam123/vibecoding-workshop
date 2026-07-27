@@ -2067,3 +2067,24 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
    match, rather than leaving it rattling around in a wide card. */
 .slide--prompt-hero .prompt-body { padding: 38px 44px 42px; }
 .slide--prompt-hero .prompt-text { font-size: 44px; line-height: 1.28; }
+
+/* ----------------------------------------------------------------
+   10 · Spread — distribute a slide's components through the whole
+   body height instead of centring them as one clump. Without this,
+   a slide with three short blocks leaves a large void above and
+   below while the blocks themselves sit 20px apart, which reads as
+   a mistake rather than as breathing room.
+
+   space-evenly (with gap zeroed, since gap would stack on top of
+   the distributed space and make the edges tighter than the middle)
+   gives an equal rhythm above, between and below.
+   ---------------------------------------------------------------- */
+.slide--spread .slide-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 0;
+}
+/* Default paragraph margins on the child blocks skew the distribution,
+   so the rhythm comes out uneven. Zero them and let space-evenly do it. */
+.slide--spread .slide-body > * { margin: 0; }

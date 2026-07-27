@@ -324,13 +324,18 @@
 
     <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Open this on the projector</p>
     <h2 class="slide-title" data-split>One question, one <em>answer</em>.</h2>
-    <p class="slide-subtitle" data-fx="rise" style="--d:200ms">The question we're asking: <strong>is there a place called Tokyo, and if so, where exactly is it?</strong> That question is the web address. The answer comes back as text.</p>
 
     <div class="slide-body">
-      <p class="json-url" data-fx="rise" style="--d:280ms">https://geocoding-api.open-meteo.com/v1/search?name=Tokyo&amp;count=1</p>
+      <div class="qa-ask" data-fx="rise" style="--d:220ms">
+        <p class="qa-lead">The question</p>
+        <p class="qa-url">https://geocoding-api.open-meteo.com/v1/search?<mark>name=Tokyo</mark>&amp;count=1</p>
+        <p class="qa-gloss">"Is there a place called Tokyo, and if so, where exactly is it?"</p>
+      </div>
 
-      <div class="json-explain">
-        <div class="json-spec" data-fx="rise" style="--d:360ms">
+      <div class="qa-answer" data-fx="rise" style="--d:360ms">
+        <p class="qa-lead">The answer</p>
+        <div class="json-explain">
+          <div class="json-spec">
 <pre>{ <span class="k">"results"</span>: [ {
     <span class="k">"name"</span>: <span class="s">"Tokyo"</span>,
     <span class="k">"country"</span>: <span class="s">"Japan"</span>,
@@ -340,20 +345,21 @@
     <span class="k">"latitude"</span>: <span class="n">35.6895</span>,
     <span class="k">"longitude"</span>: <span class="n">139.69171</span>
 } ] }</pre>
-        </div>
+          </div>
 
-        <div data-fx="rise" style="--d:480ms">
-          <p class="json-read-lead">What you're looking at</p>
-          <ul class="json-read">
-            <li><b>"country": "Japan"</b>Words in quote marks are text. Your app can print this straight onto the page.</li>
-            <li><b>"country_code": "JP"</b>Two letters, which is all you need to fetch the right flag image.</li>
-            <li><b>"population": 9733276</b>No quote marks, so it's a number. Your app can do maths with it.</li>
-            <li><b>"latitude" / "longitude"</b>Coordinates. Hand these to a weather API and you've joined two sources together.</li>
-          </ul>
+          <div>
+            <p class="json-read-lead">What you're looking at</p>
+            <ul class="json-read">
+              <li><b>"country": "Japan"</b>Words in quote marks are text. Your app can print this straight onto the page.</li>
+              <li><b>"country_code": "JP"</b>Two letters, which is all you need to fetch the right flag image.</li>
+              <li><b>"population": 9733276</b>No quote marks, so it's a number. Your app can do maths with it.</li>
+              <li><b>"latitude" / "longitude"</b>Coordinates. Hand these to a weather API and you've joined two sources together.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <p class="act-note" data-fx="rise" style="--d:600ms"><strong>Nobody is meant to read this.</strong> It's ugly for us and trivial for an app, which is the whole point. Every project this afternoon starts by opening a web address like this one and seeing what comes back.</p>
+      <p class="act-note" data-fx="rise" style="--d:520ms"><strong>Nobody is meant to read the answer.</strong> It's ugly for us and trivial for an app, which is the whole point. Every project this afternoon starts by asking a question like this one and seeing what comes back.</p>
     </div>
 
     <div class="slide-foot">

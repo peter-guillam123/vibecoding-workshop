@@ -1,0 +1,843 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deck title — Audience</title>
+<link rel="preconnect" href="https://assets.guim.co.uk" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ================================================================
+     GUARDIAN DECK TEMPLATE — second edition.
+     One slide per pattern. Replace the placeholder words; keep the
+     structure, classes and data-fx grammar. Delete the slides you
+     don't need. Rules of the road live in CLAUDE.md.
+
+     The grammar in one breath:
+       data-fx="rise|fade|pop|spring-up|photo|bar|bar-v|ghost"
+         + style="--d:200ms"        when it arrives (stagger by hand)
+       data-split (on titles)       masked word-by-word reveal
+         + data-split-base / -step  first word's delay / per-word gap
+       data-count="41" …            JS counts the figure up on arrival
+       .typed + data-typo/data-fix  prompt types itself, one correction
+       Folios: write "01 / NN" — motion.js renumbers every slide.
+     ================================================================ -->
+
+<deck-stage width="1920" height="1080">
+
+  <!-- ============================================================
+       PATTERN 1 — Cover. Tag + kicker, masked wordmark with the red
+       full stop landing late on a spring, framing paragraph balanced
+       by a session block.
+       ============================================================ -->
+  <section class="slide cover" data-label="Cover">
+    <div class="rule-band"></div>
+
+    <div>
+      <p class="kicker" data-fx="rise" style="--d:80ms"><span class="group-tag">Series</span>A short strapline · 2026</p>
+      <h1 class="wordmark" data-split data-split-base="300" data-split-step="60">Your deck<br><em>title<span class="q-mark">.</span></em></h1>
+    </div>
+
+    <div class="cover-meta-row">
+      <p class="cover-framing" data-fx="rise" style="--d:900ms">Two or three sentences framing the session. Say what the deck is for and what the audience should leave with — the cover does the welcome so slide two can get to work.</p>
+      <div class="cover-stat-block" data-fx="rise" style="--d:1020ms">
+        <p class="stat-line">Session<strong>Your audience</strong></p>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">01 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 2 — Agenda. A 2×2 contents page; the numbered items
+       should echo the section openers later in the deck.
+       ============================================================ -->
+  <section class="slide slide--agenda" data-label="Agenda">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:80ms">The session</p>
+    <h2 class="slide-title" data-split data-split-base="160">What we'll <em>cover</em>.</h2>
+
+    <div class="slide-body">
+      <div class="agenda-item" data-fx="rise" style="--d:300ms">
+        <span class="agenda-num">01</span>
+        <h3>First section title</h3>
+        <p>A sentence or two on what this section covers and why it earns its place in the running order.</p>
+      </div>
+      <div class="agenda-item" data-fx="rise" style="--d:420ms">
+        <span class="agenda-num">02</span>
+        <h3>Second section title</h3>
+        <p>Same again. Keep these to two lines; they are signposts, not summaries.</p>
+      </div>
+      <div class="agenda-item" data-fx="rise" style="--d:540ms">
+        <span class="agenda-num">03</span>
+        <h3>Third section title</h3>
+        <p>The agenda works best with four items. Three feels thin at this size; five gets cramped.</p>
+      </div>
+      <div class="agenda-item" data-fx="rise" style="--d:660ms">
+        <span class="agenda-num">04</span>
+        <h3>Fourth section title</h3>
+        <p>Reuse these words verbatim on the matching section opener — the echo is deliberate.</p>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">02 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 3 — Section opener. Ink slide, ghost numeral, masked
+       headline, yellow underline drawn under the italic word.
+       One per section; number the ghost to match the agenda.
+       ============================================================ -->
+  <section class="slide ink section-opener" data-label="Section opener">
+    <div class="rule-band"></div>
+    <span class="chapter-ghost" aria-hidden="true" data-fx="ghost" style="--d:150ms">01</span>
+
+    <div class="chapter-num" data-fx="rise" style="--d:100ms">A chapter label</div>
+    <h1 data-split data-split-base="260" data-split-step="50">A section <em>opener.</em></h1>
+    <p class="section-dek" data-fx="rise" style="--d:780ms">One or two sentences setting up the section — often the same words as the matching agenda item, which is a feature, not a repeat.</p>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">03 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 4 — Plate-card trio. Three cards with colour-coded top
+       rules; optional image band at the foot of each (photo dissolve).
+       Use sparingly — one or two card moments per deck.
+       ============================================================ -->
+  <section class="slide" data-label="Plate-card trio">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Topic</p>
+    <h2 class="slide-title" data-split>Three things, one <em>idea</em>.</h2>
+
+    <div class="slide-body">
+      <div class="aims">
+        <div class="aim" data-fx="rise" style="--d:260ms">
+          <span class="aim-num">01</span>
+          <h3>First card</h3>
+          <p>A few sentences. Cards carry equal weight, so give them roughly equal word counts.</p>
+          <div class="aim-image" data-fx="photo" style="--d:560ms"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='235' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop an image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers."></div>
+        </div>
+        <div class="aim" data-fx="rise" style="--d:380ms">
+          <span class="aim-num">02</span>
+          <h3>Second card</h3>
+          <p>The top rules colour-code automatically: blue, red, green in order.</p>
+          <div class="aim-image" data-fx="photo" style="--d:680ms"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='235' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop an image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers."></div>
+        </div>
+        <div class="aim" data-fx="rise" style="--d:500ms">
+          <span class="aim-num">03</span>
+          <h3>Third card</h3>
+          <p>Drop the image bands entirely if the cards are text-led — they hold their shape.</p>
+          <div class="aim-image" data-fx="photo" style="--d:800ms"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='235' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop an image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers."></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">04 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 5 — Split image / text. Framed photograph (dissolve)
+       beside a kicker, title and one strong paragraph.
+       ============================================================ -->
+  <section class="slide slide--fable" data-label="Split image and text">
+    <div class="rule-band"></div>
+
+    <div class="slide-body">
+      <div class="fable-frame" data-fx="photo" style="--d:150ms">
+        <img class="fable-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='410' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop a square image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers.">
+      </div>
+      <div class="fable-text">
+        <p class="kicker" data-fx="rise" style="--d:420ms">Section · Topic</p>
+        <h2 class="slide-title" data-split data-split-base="480">A picture and a <em>point</em>.</h2>
+        <p class="fable-body" data-fx="rise" style="--d:800ms">One generous paragraph. This pattern suits a single developed thought — a piece of news, a worked argument, a case made in prose rather than bullets. Five to eight lines sits comfortably beside a square image.</p>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">05 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 6 — Step cards. Three numbered choices or stages with
+       arrows between them, plus an optional "in practice" panel.
+       ============================================================ -->
+  <section class="slide slide--choice" data-label="Step cards">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Topic</p>
+    <h2 class="slide-title" data-split>Three questions in <em>sequence</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:260ms">An optional standfirst under the title, setting up why the sequence matters.</p>
+
+    <div class="slide-body">
+      <div class="ai-choice">
+        <article class="choice-card" data-fx="rise" style="--d:320ms">
+          <span class="choice-num">01</span>
+          <h3>First question?</h3>
+          <p>A short paragraph answering or framing it.</p>
+        </article>
+        <article class="choice-card" data-fx="rise" style="--d:440ms">
+          <span class="choice-num">02</span>
+          <h3>Second question?</h3>
+          <p>The arrows between cards fade in after the cards land.</p>
+        </article>
+        <article class="choice-card" data-fx="rise" style="--d:560ms">
+          <span class="choice-num">03</span>
+          <h3>Third question?</h3>
+          <p>Three is the right number here; the arrows insist on a sequence.</p>
+        </article>
+      </div>
+
+      <aside class="ai-meta" data-fx="rise" style="--d:820ms">
+        <p class="ai-meta-eyebrow">In practice</p>
+        <p class="ai-meta-body"><em>An italic red lead-in</em> followed by a concrete, grounding example. Delete this panel if the cards stand on their own.</p>
+      </aside>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">06 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 7 — Line chart, staged. Two context lines draw first,
+       a beat, then the headline line draws alone and its endpoint
+       counts up. The pause is the editorial moment.
+       ============================================================ -->
+  <section class="slide slide--appendix slide--ax-speed" data-label="Staged line chart">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Data</p>
+    <h2 class="slide-title" data-split>The headline series, drawn <em>last</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:240ms">A one-line description of what is being compared, over what window.</p>
+
+    <div class="slide-body">
+      <div class="ax-chart-big">
+        <div class="ax-chart-legend">
+          <span class="ax-chart-legend-item is-internet" data-fx="rise" style="--d:260ms">First context series</span>
+          <span class="ax-chart-legend-item is-phone" data-fx="rise" style="--d:340ms">Second context series</span>
+          <span class="ax-chart-legend-item is-ai" data-fx="rise" style="--d:420ms">The headline series</span>
+        </div>
+
+        <svg viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Describe the chart for screen readers.">
+          <g class="ax-frame" data-fx="fade" style="--d:150ms">
+            <line class="ax-grid" x1="100" y1="60"  x2="1500" y2="60"/>
+            <line class="ax-grid" x1="100" y1="180" x2="1500" y2="180"/>
+            <line class="ax-grid" x1="100" y1="300" x2="1500" y2="300"/>
+            <line class="ax-grid" x1="100" y1="420" x2="1500" y2="420"/>
+            <line class="ax-axis-base" x1="100" y1="540" x2="1500" y2="540"/>
+
+            <text class="ax-axis ax-axis-y" x="86" y="64">50%</text>
+            <text class="ax-axis ax-axis-y" x="86" y="184">40%</text>
+            <text class="ax-axis ax-axis-y" x="86" y="304">30%</text>
+            <text class="ax-axis ax-axis-y" x="86" y="424">20%</text>
+            <text class="ax-axis ax-axis-y" x="86" y="544">10%</text>
+
+            <text class="ax-axis" x="100"  y="572" text-anchor="middle">Start</text>
+            <text class="ax-axis" x="566"  y="572" text-anchor="middle">+1</text>
+            <text class="ax-axis" x="1033" y="572" text-anchor="middle">+2</text>
+            <text class="ax-axis" x="1500" y="572" text-anchor="middle">+3</text>
+          </g>
+
+          <g class="ax-track ax-track--internet">
+            <polyline class="ax-line ax-line--internet" points="100,540 566,480 1033,396 1500,300"/>
+            <circle class="ax-dot ax-dot--internet" cx="100"  cy="540" r="7"/>
+            <circle class="ax-dot ax-dot--internet" cx="566"  cy="480" r="7"/>
+            <circle class="ax-dot ax-dot--internet" cx="1033" cy="396" r="7"/>
+            <circle class="ax-dot ax-dot--internet" cx="1500" cy="300" r="7"/>
+          </g>
+
+          <g class="ax-track ax-track--phone">
+            <polyline class="ax-line ax-line--phone" points="100,540 566,480 1033,360 1500,240"/>
+            <circle class="ax-dot ax-dot--phone" cx="100"  cy="540" r="7"/>
+            <circle class="ax-dot ax-dot--phone" cx="566"  cy="480" r="7"/>
+            <circle class="ax-dot ax-dot--phone" cx="1033" cy="360" r="7"/>
+            <circle class="ax-dot ax-dot--phone" cx="1500" cy="240" r="7"/>
+          </g>
+
+          <g class="ax-track ax-track--ai">
+            <polyline class="ax-line ax-line--ai" points="100,540 566,276 1033,168 1500,48"/>
+            <circle class="ax-dot ax-dot--ai" cx="100"  cy="540" r="9"/>
+            <circle class="ax-dot ax-dot--ai" cx="566"  cy="276" r="9"/>
+            <circle class="ax-dot ax-dot--ai" cx="1033" cy="168" r="9"/>
+            <circle class="ax-dot ax-dot--ai" cx="1500" cy="48"  r="11"/>
+          </g>
+
+          <text class="ax-endpoint" x="1490" y="296" text-anchor="end" dy="-8" data-fx="fade" style="--d:2350ms" data-count="20" data-count-suffix="%" data-count-delay="2350" data-count-dur="700">20%</text>
+          <text class="ax-endpoint" x="1490" y="236" text-anchor="end" dy="-8" data-fx="fade" style="--d:2450ms" data-count="25" data-count-suffix="%" data-count-delay="2450" data-count-dur="700">25%</text>
+          <text class="ax-endpoint ax-endpoint--big" x="1490" y="44" text-anchor="end" dy="-10" data-fx="fade" style="--d:4300ms" data-count="41" data-count-suffix="%" data-count-delay="4300" data-count-dur="1000">41%</text>
+        </svg>
+      </div>
+
+      <p class="ax-source" data-fx="fade" style="--d:1100ms">A source line in italic: where the numbers come from, any caveat about the axes, and the one-sentence reading of the chart.</p>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">07 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 8 — Stat pair + ledger. Two count-up figures, then a
+       hairlined list of reasons beneath.
+       ============================================================ -->
+  <section class="slide slide--appendix" data-label="Stat pair and ledger">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Data</p>
+    <h2 class="slide-title" data-split>Two numbers, one <em>gap</em>.</h2>
+
+    <div class="slide-body">
+      <div class="ax-pair">
+        <article class="ax-card" data-fx="rise" style="--d:200ms">
+          <p class="ax-card-eyebrow">What the first figure measures</p>
+          <p class="ax-card-figure" data-count="18" data-count-suffix="%" data-count-delay="500" data-count-dur="900">18%</p>
+          <p class="ax-card-body">One line of context for the figure, with its source in brackets.</p>
+        </article>
+        <article class="ax-card" data-fx="rise" style="--d:320ms">
+          <p class="ax-card-eyebrow">What the second figure measures</p>
+          <p class="ax-card-figure" data-count="41" data-count-suffix="%" data-count-delay="620" data-count-dur="900">41%</p>
+          <p class="ax-card-body">The pairing should make an argument on its own — the list below explains it.</p>
+        </article>
+      </div>
+
+      <h3 class="ax-frictions-head" data-fx="rise" style="--d:480ms">Why the gap is <em>interesting</em>.</h3>
+
+      <ul class="ax-frictions">
+        <li data-fx="rise" style="--d:600ms">
+          <div>
+            <strong>First reason</strong>
+            <span>A sentence of explanation. The red squares are set automatically.</span>
+          </div>
+        </li>
+        <li data-fx="rise" style="--d:700ms">
+          <div>
+            <strong>Second reason</strong>
+            <span>Three to five items is the comfortable range for this list.</span>
+          </div>
+        </li>
+        <li data-fx="rise" style="--d:800ms">
+          <div>
+            <strong>Third reason</strong>
+            <span>Keep each to a single line and a half at most.</span>
+          </div>
+        </li>
+      </ul>
+
+      <p class="ax-source" data-fx="fade" style="--d:950ms">Sources and caveats, set small and italic.</p>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">08 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 9 — Rulebook ledger. Full-width rows under hairlines;
+       reads like a code of practice. Good for dense, formal text.
+       ============================================================ -->
+  <section class="slide slide--rules" data-label="Rulebook ledger">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Non-negotiables</p>
+    <h2 class="slide-title" data-split>Four key <em>rules</em>.</h2>
+
+    <div class="slide-body">
+      <ul class="rules-list">
+        <li class="rule-row" data-fx="rise" style="--d:200ms">
+          <span class="rule-tag">Rule 01</span>
+          <div>
+            <h3>A short imperative heading</h3>
+            <p>The body can run long here — this pattern absorbs formal, careful text better than cards do. Two to four lines per rule.</p>
+          </div>
+        </li>
+        <li class="rule-row" data-fx="rise" style="--d:320ms">
+          <span class="rule-tag">Rule 02</span>
+          <div>
+            <h3>Another heading</h3>
+            <p>Rows are separated by hairlines, with a heavier rule at the top of the ledger.</p>
+          </div>
+        </li>
+        <li class="rule-row" data-fx="rise" style="--d:440ms">
+          <span class="rule-tag">Rule 03</span>
+          <div>
+            <h3>A third heading</h3>
+            <p>Four rows fit comfortably; five if the bodies stay short.</p>
+          </div>
+        </li>
+        <li class="rule-row" data-fx="rise" style="--d:560ms">
+          <span class="rule-tag">Rule 04</span>
+          <div>
+            <h3>A heading that can even run quite long without breaking the shape</h3>
+            <p>If you're quoting policy, quote it verbatim and resist the urge to edit.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">09 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 10 — Image + open text blocks. A framed image beside
+       numbered, hairline-ruled points. The de-boxed sibling of the
+       card trio.
+       ============================================================ -->
+  <section class="slide slide--ql" data-label="Image and text blocks">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Topic</p>
+    <h2 class="slide-title" data-split>A picture and two <em>points</em>.</h2>
+
+    <div class="slide-body">
+      <div class="ql-frame" data-fx="photo" style="--d:200ms">
+        <img class="ql-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='560'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='290' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop an image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers.">
+      </div>
+      <div class="ql-points">
+        <div class="ql-point" data-fx="rise" style="--d:480ms">
+          <span class="point-num">01</span>
+          <h3>First point</h3>
+          <p>Two or three sentences. The numerals colour-code blue then red.</p>
+        </div>
+        <div class="ql-point" data-fx="rise" style="--d:620ms">
+          <span class="point-num">02</span>
+          <h3>Second point</h3>
+          <p>Two points is the sweet spot; three works if each stays short.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">10 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 11 — Conversation rail. Each concept on the left is
+       answered across the row by an example in a speech bubble.
+       Good for frameworks with worked examples.
+       ============================================================ -->
+  <section class="slide slide--framework" data-label="Conversation rail">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Framework</p>
+    <h2 class="slide-title" data-split>Concepts, <em>answered</em>.</h2>
+
+    <div class="slide-body">
+      <div class="framework">
+        <div class="fw-row" data-fx="rise" style="--d:200ms">
+          <div class="fw-what">
+            <h3><span class="fw-num">01</span>First concept</h3>
+            <p>One or two sentences defining it.</p>
+          </div>
+          <div class="example-bubble" data-fx="spring-up" style="--d:500ms"><p>"The example that answers it — what you'd actually say, type or do."</p></div>
+        </div>
+        <div class="fw-row" data-fx="rise" style="--d:330ms">
+          <div class="fw-what">
+            <h3><span class="fw-num">02</span>Second concept</h3>
+            <p>The bubbles spring in a beat after their rows.</p>
+          </div>
+          <div class="example-bubble" data-fx="spring-up" style="--d:630ms"><p>"Keep the examples in quotation marks and italic — they are speech, not prose."</p></div>
+        </div>
+        <div class="fw-row" data-fx="rise" style="--d:460ms">
+          <div class="fw-what">
+            <h3><span class="fw-num">03</span>Third concept</h3>
+            <p>Numerals run blue, red, green, ink.</p>
+          </div>
+          <div class="example-bubble" data-fx="spring-up" style="--d:760ms"><p>"Three or four rows fit; the bubbles can run a little longer than the concepts."</p></div>
+        </div>
+        <div class="fw-row" data-fx="rise" style="--d:590ms">
+          <div class="fw-what">
+            <h3><span class="fw-num">04</span>Fourth concept</h3>
+            <p>The closing row can carry the most weight.</p>
+          </div>
+          <div class="example-bubble" data-fx="spring-up" style="--d:890ms"><p>"End on the example you most want remembered."</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">11 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 12 — Picture triptych. Three framed photographs over
+       numbered, hairline-ruled captions.
+       ============================================================ -->
+  <section class="slide" data-label="Picture triptych">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Topic</p>
+    <h2 class="slide-title" data-split>Three pictures, one <em>habit</em>.</h2>
+
+    <div class="slide-body">
+      <div class="magpie">
+        <div class="magpie-col">
+          <div class="magpie-photo" data-fx="photo" style="--d:180ms"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='235' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop an image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers."></div>
+          <div class="magpie-text" data-fx="rise" style="--d:340ms">
+            <span class="point-num">01</span>
+            <h3>First stage</h3>
+            <p>A caption of two or three lines beneath each photograph.</p>
+          </div>
+        </div>
+        <div class="magpie-col">
+          <div class="magpie-photo" data-fx="photo" style="--d:320ms"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='235' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop an image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers."></div>
+          <div class="magpie-text" data-fx="rise" style="--d:480ms">
+            <span class="point-num">02</span>
+            <h3>Second stage</h3>
+            <p>The dissolves stagger left to right; the captions follow.</p>
+          </div>
+        </div>
+        <div class="magpie-col">
+          <div class="magpie-photo" data-fx="photo" style="--d:460ms"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='235' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop an image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers."></div>
+          <div class="magpie-text" data-fx="rise" style="--d:620ms">
+            <span class="point-num">03</span>
+            <h3>Third stage</h3>
+            <p>This pattern is strongest when the three images tell a sequence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">12 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 13 — Diptych. Two ideas split by a hairline that draws
+       down the centre. The calmest two-up in the kit.
+       ============================================================ -->
+  <section class="slide" data-label="Diptych">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Topic</p>
+    <h2 class="slide-title" data-split>One idea & its <em>counterpart</em>.</h2>
+
+    <div class="slide-body">
+      <div class="duo">
+        <div class="duo-side" data-fx="rise" style="--d:240ms">
+          <p class="duo-tag">First label</p>
+          <h3>A big serif heading</h3>
+          <p class="duo-body">A paragraph of three to five lines. The diptych suits paired ideas of equal weight — before and after, micro and macro, the mentor and the manager.</p>
+        </div>
+        <div class="duo-divider" data-fx="bar-v" style="--d:160ms"></div>
+        <div class="duo-side" data-fx="rise" style="--d:400ms">
+          <p class="duo-tag">Second label</p>
+          <h3>Its counterpart</h3>
+          <p class="duo-body">The second side arrives a beat after the first. Tags colour blue then red.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">13 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 14 — Curve timeline. Four nodes ride a descending
+       line that draws in; labels rise beneath.
+       ============================================================ -->
+  <section class="slide" data-label="Curve timeline">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Process</p>
+    <h2 class="slide-title" data-split>Four waypoints, one <em>descent</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:240ms">The falling line carries a "start wide, then narrow down" metaphor — use it for processes that converge.</p>
+
+    <div class="slide-body">
+      <div class="flow">
+        <div class="flow-track">
+          <svg class="flow-curve" viewBox="0 0 1680 240" preserveAspectRatio="none" aria-hidden="true">
+            <path class="fill" d="M 0,42 C 120,45 160,47 210,50 C 360,57 500,77 630,90 C 770,103 920,124 1050,135 C 1190,146 1340,165 1470,170 C 1550,172 1620,175 1680,178 L 1680,240 L 0,240 Z"></path>
+            <path class="line" d="M 0,42 C 120,45 160,47 210,50 C 360,57 500,77 630,90 C 770,103 920,124 1050,135 C 1190,146 1340,165 1470,170 C 1550,172 1620,175 1680,178"></path>
+          </svg>
+          <div class="flow-node n1" data-fx="pop" style="--d:340ms">01</div>
+          <div class="flow-node n2" data-fx="pop" style="--d:480ms">02</div>
+          <div class="flow-node n3" data-fx="pop" style="--d:620ms">03</div>
+          <div class="flow-node n4" data-fx="pop" style="--d:760ms">04</div>
+        </div>
+        <div class="flow-labels">
+          <div class="flow-label" data-fx="rise" style="--d:420ms">
+            <h3>First step</h3>
+            <p>A sentence under each waypoint.</p>
+          </div>
+          <div class="flow-label" data-fx="rise" style="--d:560ms">
+            <h3>Second step</h3>
+            <p>Keep these short and parallel.</p>
+          </div>
+          <div class="flow-label" data-fx="rise" style="--d:700ms">
+            <h3>Third step</h3>
+            <p>The nodes pop on a spring as the line passes.</p>
+          </div>
+          <div class="flow-label" data-fx="rise" style="--d:840ms">
+            <h3>Fourth step</h3>
+            <p>End where the process lands.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">14 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 15 — Pull quote (ink). An oversized masked quote with
+       a yellow italic phrase; good as a section's centrepiece.
+       ============================================================ -->
+  <section class="slide ink slide--research" data-label="Pull quote">
+    <div class="rule-band"></div>
+
+    <p class="research-eyebrow" data-fx="rise" style="--d:80ms">A small mono eyebrow</p>
+    <p class="research-quote" data-split data-split-base="220" data-split-step="26"><span class="research-mark no-split" data-fx="fade" style="--d:120ms">“</span>A question or claim big enough to fill the room, with <em>the phrase that matters</em> set in yellow italic?</p>
+    <p class="research-sub" data-fx="rise" style="--d:1300ms">A quiet instruction or follow-on line beneath, in small caps.</p>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">15 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 16 — Typing prompt. A framed screenshot beside a
+       console card whose text types itself, with one self-correction
+       (data-typo is typed first, deleted, replaced by data-fix).
+       ============================================================ -->
+  <section class="slide slide--prompt" data-label="Typing prompt">
+    <div class="rule-band"></div>
+
+    <div class="slide-body">
+      <div class="isw-frame" data-fx="photo" style="--d:180ms">
+        <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        <img class="isw-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='560'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='290' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop a screenshot here%3C/text%3E%3C/svg%3E" alt="Describe the screenshot for screen readers.">
+      </div>
+
+      <div class="prompt-col">
+        <p class="kicker" data-fx="rise" style="--d:80ms">Worked example</p>
+        <h2 class="slide-title" data-split data-split-base="160">What was actually <em>typed</em>.</h2>
+        <div class="prompt-box" data-fx="rise" style="--d:460ms">
+          <div class="prompt-head">
+            <p class="prompt-label">The opening prompt</p>
+            <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+          <div class="prompt-body">
+            <p class="prompt-text"><span class="typed" data-typo="rough" data-fix="real" data-type-delay="1100">Put the real prompt here, verbatim. It types itself when the slide arrives; the word set in data-fix is first typed as data-typo, paused over, deleted and corrected — a small human moment that earns its keep.</span><span class="caret"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">16 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 17 — Case ledger. A lede plus a two-column "in → out"
+       table whose rows cascade.
+       ============================================================ -->
+  <section class="slide case" data-label="Case ledger">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Worked example · Detail</p>
+    <h2 class="slide-title" data-split>What went in, what came <em>out</em>.</h2>
+
+    <div class="slide-body">
+      <p class="case-lede" data-fx="rise" style="--d:220ms"><strong>A bold lede stating the single thing this table proves.</strong></p>
+
+      <table class="feed-table">
+        <thead data-fx="fade" style="--d:280ms">
+          <tr>
+            <th>What went in</th>
+            <th>What it triggered</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-fx="rise" style="--d:340ms">
+            <td>A thing that happened or was provided</td>
+            <td>What it led to</td>
+          </tr>
+          <tr data-fx="rise" style="--d:430ms">
+            <td>Another input</td>
+            <td>Another consequence — the red arrows are automatic</td>
+          </tr>
+          <tr data-fx="rise" style="--d:520ms">
+            <td>A third input</td>
+            <td>Four to six rows is the comfortable range</td>
+          </tr>
+          <tr data-fx="rise" style="--d:610ms">
+            <td>A fourth input</td>
+            <td>Keep cells to a line or two each</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">17 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 18 — Exchanges. Asked-and-answered pairs; the answer
+       materialises a beat after the question.
+       ============================================================ -->
+  <section class="slide case" data-label="Exchanges">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Worked example · Dialogue</p>
+    <h2 class="slide-title" data-split>Question, then <em>answer</em>.</h2>
+
+    <div class="slide-body">
+      <p class="case-lede" data-fx="rise" style="--d:260ms">A short lede framing the exchanges below:</p>
+
+      <div class="exchanges">
+        <div class="exchange" data-fx="rise" style="--d:340ms">
+          <div class="ask">
+            <p class="speaker">Who asked</p>
+            <p class="line">"The question or request, quoted verbatim."</p>
+          </div>
+          <div class="suggest" data-fx="rise" style="--d:620ms">
+            <p class="speaker">Who answered</p>
+            <p class="line">"The reply — it arrives a beat later, like the conversation it was."</p>
+          </div>
+        </div>
+        <div class="exchange" data-fx="rise" style="--d:760ms">
+          <div class="ask">
+            <p class="speaker">Who asked</p>
+            <p class="line">"A second exchange."</p>
+          </div>
+          <div class="suggest" data-fx="rise" style="--d:1040ms">
+            <p class="speaker">Who answered</p>
+            <p class="line">"Three exchanges fit comfortably; two read fine."</p>
+          </div>
+        </div>
+        <div class="exchange" data-fx="rise" style="--d:1180ms">
+          <div class="ask">
+            <p class="speaker">Who asked</p>
+            <p class="line">"A third exchange."</p>
+          </div>
+          <div class="suggest" data-fx="rise" style="--d:1460ms">
+            <p class="speaker">Who answered</p>
+            <p class="line">"End on the answer that best makes the slide's point."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">18 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 19 — Chat stream. Messages land one at a time, each
+       optionally a link to the thing it produced.
+       ============================================================ -->
+  <section class="slide" data-label="Chat stream">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Section · And more</p>
+    <h2 class="slide-title" data-split>But that's not <em>all</em>…</h2>
+
+    <div class="slide-body">
+      <div class="chat-stream">
+        <a class="chat-bubble" data-fx="spring-up" style="--d:300ms" href="#" target="_blank" rel="noopener noreferrer">A real message, landing first?</a>
+        <a class="chat-bubble" data-fx="spring-up" style="--d:1500ms" href="#" target="_blank" rel="noopener noreferrer">A second, about a second apart — pace them like a conversation, not a list?</a>
+        <a class="chat-bubble" data-fx="spring-up" style="--d:2700ms" href="#" target="_blank" rel="noopener noreferrer">A third?</a>
+        <a class="chat-bubble" data-fx="spring-up" style="--d:3900ms" href="#" target="_blank" rel="noopener noreferrer">Each bubble can link to the thing it became — they invert to blue on hover?</a>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">19 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATTERN 20 — Numbered ways. A typographic numbered list with
+       a rationale column and a quoted example column. A calm closer.
+       ============================================================ -->
+  <section class="slide slide--ways" data-label="Numbered ways">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Closing · Three ways in</p>
+    <h2 class="slide-title" data-split>Pick a way <em>in</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:220ms">An optional standfirst introducing the list.</p>
+
+    <div class="slide-body">
+      <ol class="ways-list">
+        <li class="way" data-fx="rise" style="--d:320ms">
+          <span class="way-num">01</span>
+          <div class="way-main">
+            <h3>First way</h3>
+            <p class="way-why">Why this route works, in a line or two.</p>
+          </div>
+          <p class="way-ask">"A first-person example in quotes — what someone actually did or said."</p>
+        </li>
+        <li class="way" data-fx="rise" style="--d:480ms">
+          <span class="way-num">02</span>
+          <div class="way-main">
+            <h3>Second way</h3>
+            <p class="way-why">The numerals colour blue, red, green down the list.</p>
+          </div>
+          <p class="way-ask">"The quote column can run a little longer than the rationale."</p>
+        </li>
+        <li class="way" data-fx="rise" style="--d:640ms">
+          <span class="way-num">03</span>
+          <div class="way-main">
+            <h3>Third way</h3>
+            <p class="way-why">Three rows close a deck gracefully.</p>
+          </div>
+          <p class="way-ask">"End on the example you want people to leave repeating."</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Deck template</span>
+      <span class="num">20 / NN</span>
+    </div>
+  </section>
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+<script src="motion.js"></script>
+<script src="grid-overlay.js"></script>
+
+</body></html>

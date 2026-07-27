@@ -2412,3 +2412,16 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 /* A build step carrying a warning rather than a stage. */
 .build-step.warn { border-left-color: var(--news-red); }
 .build-step.warn .build-lead { color: var(--news-red); }
+
+/* ----------------------------------------------------------------
+   17 · Thanks — the closing slide. The research-quote component is
+   sized for a sentence; a single word needs to be much larger or it
+   looks stranded on an empty slide.
+   ---------------------------------------------------------------- */
+.slide--thanks .research-quote {
+  font-size: 190px;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
+}
+.slide--thanks .research-eyebrow { margin-bottom: 28px; }

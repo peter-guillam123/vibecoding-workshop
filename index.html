@@ -173,7 +173,7 @@
         </svg>
       </div>
 
-      <p class="act-note" data-fx="rise" style="--d:520ms"><strong>The slides live <a href="https://peter-guillam123.github.io/vibecoding-workshop/" target="_blank" rel="noopener">here</a>.</strong> Open them now and keep the tab handy. Everything you'll need to paste today is in here, including an appendix of every prompt at the end.</p>
+      <p class="act-note" data-fx="rise" style="--d:520ms"><strong>The slides live <a href="https://peter-guillam123.github.io/vibecoding-workshop/" target="_blank" rel="noopener">here</a>.</strong> Open them now and keep the tab handy, and you're keeping the deck afterwards. Every prompt you'll need today is on these slides.</p>
     </div>
 
     <div class="slide-foot">
@@ -1016,111 +1016,16 @@
   <!-- ============================================================
        30 — Close
        ============================================================ -->
-  <section class="slide ink slide--research" data-label="Close">
+  <section class="slide ink slide--research slide--thanks" data-label="Close">
     <div class="rule-band"></div>
 
     <p class="research-eyebrow" data-fx="rise" style="--d:80ms">That's the session</p>
-    <p class="research-quote" data-split data-split-base="220" data-split-step="26">You came in able to describe what you wanted. You're leaving able to <em>build it</em>.</p>
-    <p class="research-sub" data-fx="rise" style="--d:1300ms">Every prompt is on the next two slides. The deck, and the story of how it was built, live at peter-guillam123.github.io/vibecoding-workshop</p>
+    <p class="research-quote" data-split data-split-base="220" data-split-step="26"><em>Thanks.</em></p>
+    <p class="research-sub" data-fx="rise" style="--d:900ms">You're keeping this deck, so every prompt from today comes with you. Click any of them.</p>
 
     <div class="slide-foot">
       <span class="wm">Vibecoding workshop</span>
-      <span class="num">30 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       31 — Appendix: the prompts, first half. Click any card to
-       copy. These replace the notes file in the pre-flight.
-       ============================================================ -->
-  <section class="slide slide--prompt-solo slide--appendix-prompts" data-label="Appendix: prompts 1">
-    <div class="rule-band"></div>
-
-    <p class="kicker" data-fx="rise" style="--d:60ms">Appendix · Every prompt · 1 of 2</p>
-    <h2 class="slide-title" data-split>Click any card to <em>copy</em>.</h2>
-
-    <div class="slide-body">
-      <div class="prompt-box" data-copy data-fx="rise" style="--d:300ms">
-        <div class="prompt-head">
-          <p class="prompt-label">Hook · Meeting Cost Calculator</p>
-          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
-        </div>
-        <div class="prompt-body">
-          <p class="prompt-text">Create an app that calculates the cost of a meeting.</p>
-        </div>
-      </div>
-
-      <div class="prompt-box" data-copy data-fx="rise" style="--d:400ms">
-        <div class="prompt-head">
-          <p class="prompt-label">Discovery · Finding an API (in a new chat)</p>
-          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
-        </div>
-        <div class="prompt-body">
-          <p class="prompt-text">Give me three completely free, open APIs that need NO API key, work from a browser, and return data about [TOPIC]. Explain in plain English what data this API returns, and three realistic things I could build with it.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Vibecoding workshop · Appendix</span>
-      <span class="num">31 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       32 — Appendix: the prompts, second half
-       ============================================================ -->
-  <section class="slide slide--prompt-solo slide--appendix-prompts" data-label="Appendix: prompts 2">
-    <div class="rule-band"></div>
-
-    <p class="kicker" data-fx="rise" style="--d:60ms">Appendix · Every prompt · 2 of 2</p>
-    <h2 class="slide-title" data-split>The build, the handoff, the <em>panic</em>.</h2>
-
-    <div class="slide-body">
-      <div class="prompt-box" data-copy data-fx="rise" style="--d:300ms">
-        <div class="prompt-head">
-          <p class="prompt-label">Base build · Open-Meteo geocoding</p>
-          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
-        </div>
-        <div class="prompt-body">
-          <p class="prompt-text">I want to use the Open-Meteo geocoding API to build an app where I type a place name and it shows the country, population, timezone and coordinates along with the country's flag. Tell the user when the app is loading and if there's an error.</p>
-        </div>
-      </div>
-
-      <div class="prompt-box" data-copy data-fx="rise" style="--d:400ms">
-        <div class="prompt-head">
-          <p class="prompt-label">Second source · Wikipedia</p>
-          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
-        </div>
-        <div class="prompt-body">
-          <p class="prompt-text">Now let's add more detail. After the place loads, use the Wikipedia API to get the photo and the first paragraph about the place and show it underneath the card.</p>
-        </div>
-      </div>
-
-      <div class="prompt-box" data-copy data-fx="rise" style="--d:500ms">
-        <div class="prompt-head">
-          <p class="prompt-label">The handoff · The key move</p>
-          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
-        </div>
-        <div class="prompt-body">
-          <p class="prompt-text">Add a button labelled "Briefing". When clicked, send the place's name and key facts to Gemini and ask it to write a friendly 3-bullet briefing for a colleague travelling there for work. Show the response under the card.</p>
-        </div>
-      </div>
-
-      <div class="prompt-box" data-copy data-fx="rise" style="--d:600ms">
-        <div class="prompt-head">
-          <p class="prompt-label">Panic button · When something breaks</p>
-          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
-        </div>
-        <div class="prompt-body">
-          <p class="prompt-text">This isn't working and I see this error: [PASTE THE RED CONSOLE TEXT]. Explain what's wrong in plain English, and give me the complete corrected file - no snippets.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Vibecoding workshop · Appendix</span>
-      <span class="num">32 / NN</span>
+      <span class="num">29 / NN</span>
     </div>
   </section>
 

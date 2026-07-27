@@ -1,6 +1,6 @@
 # Vibecoding workshop
 
-A 31-slide deck for a 90-minute hands-on workshop on vibe coding and
+A 29-slide deck for a 90-minute hands-on workshop on vibe coding and
 advanced prototyping in Gemini Canvas. Staff across all departments, no
 coding experience assumed.
 
@@ -23,7 +23,7 @@ hand: nothing advances itself and nothing is on a timer.
 One slide is meant to sit still: slide 23, the activity brief, which
 stays on screen while people work.
 
-**Every prompt card copies on click**, and so do the six suggestion cards on slide 7. That replaces the
+**Every prompt card copies on click**, and so do the suggestion cards on slides 7 and 8. That replaces the
 "have the prompts open in a notes file" step in the lesson plan's
 pre-flight: the deck itself is the clipboard.
 

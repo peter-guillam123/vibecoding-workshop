@@ -2228,3 +2228,38 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   padding-top: 12px;
   margin-bottom: 14px;
 }
+
+/* ----------------------------------------------------------------
+   14 · Build steps — a vertical "here's where we are / here's how we
+   make it better" stack. Label on the left, prose on the right, so
+   two stages read as a progression down the slide rather than as a
+   comparison across it.
+   ---------------------------------------------------------------- */
+.build-step {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  column-gap: 40px;
+  align-items: center;
+  background: var(--paper-deep);
+  border-left: 6px solid var(--guardian-blue);
+  padding: 22px 32px;
+}
+.build-step.richer { border-left-color: var(--eco-green); }
+.build-lead {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--guardian-blue);
+  margin: 0;
+}
+.build-step.richer .build-lead { color: var(--eco-green); }
+.build-body {
+  font-family: var(--body);
+  font-size: 22px;
+  line-height: 1.42;
+  color: var(--ink);
+  margin: 0;
+}
+.build-body strong { font-weight: 700; }

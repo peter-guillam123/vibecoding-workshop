@@ -32,6 +32,15 @@ pre-flight: the deck itself is the clipboard.
 
 ## Changelog
 
+### 27 July 2026 — Canvas is two clicks down, not one
+
+The pre-flight slide sent people to the + button to find Canvas. It isn't
+there: the path is +, then More tools, then Canvas, and a Canvas chip
+appears next to the prompt box once it's on. Fixed on slide 2 and on the
+Part 1 opener, which had inherited "click the Canvas icon" from the
+lesson plan. The chip is the bit worth naming, because it's a
+confirmation signal thirty people can check at a glance.
+
 ### 27 July 2026 — First build, and an API matrix that needed rescuing
 
 Thirty-two slides following the lesson plan's six parts, with a

@@ -7,6 +7,9 @@ coding experience assumed.
 Live at
 [peter-guillam123.github.io/vibecoding-workshop](https://peter-guillam123.github.io/vibecoding-workshop).
 
+There's an [About page](https://peter-guillam123.github.io/vibecoding-workshop/about.html)
+carrying the same story in longer form, plus a diary of what changed and why.
+
 Built from the [Guardian deck
 template](https://github.com/peter-guillam123/guardian-deck-template),
 second edition. The house rules live in `CLAUDE.md`.

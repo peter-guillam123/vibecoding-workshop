@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="en-GB"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Vibecoding workshop</title>
+<meta name="description" content="What the Vibecoding workshop deck is, how it was made, and a diary of what changed and why.">
+<link rel="preconnect" href="https://assets.guim.co.uk" crossorigin>
+<style>
+  /* The deck's stylesheet is built around a fixed 1920×1080 stage, so
+     this page carries its own layout. The fonts, the palette and the
+     editorial register are deliberately the same. */
+
+  @font-face {
+    font-family: 'GH Guardian Headline';
+    src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Medium.woff2') format('woff2');
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'GH Guardian Headline';
+    src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Bold.woff2') format('woff2');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'GuardianTextEgyptian';
+    src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-textegyptian/noalts-not-hinted/GuardianTextEgyptian-Reg.woff2') format('woff2');
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'GuardianTextEgyptian';
+    src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-textegyptian/noalts-not-hinted/GuardianTextEgyptian-Bold.woff2') format('woff2');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'GuardianTextSans';
+    src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-textsans/noalts-not-hinted/GuardianTextSans-Bold.woff2') format('woff2');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+
+  :root {
+    --paper: #F4EFE6;
+    --paper-deep: #E8DFD0;
+    --paper-rule: #D0C4AE;
+    --ink: #121212;
+    --ink-soft: #3d3a35;
+    --ink-mute: #6f6b63;
+    --guardian-blue: #052962;
+    --guardian-yellow: #FFE500;
+    --news-red: #C70000;
+    --eco-green: #22874d;
+    --display: 'GH Guardian Headline', Georgia, 'Times New Roman', serif;
+    --body: 'GuardianTextEgyptian', Georgia, 'Times New Roman', serif;
+    --ui: 'GuardianTextSans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --mono: 'Menlo', 'SF Mono', 'Courier New', monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 19px;
+    line-height: 1.62;
+  }
+
+  .band { height: 8px; display: flex; }
+  .band i { flex: 1; }
+  .band i:first-child { background: var(--guardian-blue); flex: 3; }
+  .band i:last-child { background: var(--guardian-yellow); }
+
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 0 24px 96px; }
+
+  header.masthead { padding: 56px 0 34px; border-bottom: 2px solid var(--ink); margin-bottom: 40px; }
+  .eyebrow {
+    font-family: var(--ui);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--news-red);
+    margin: 0 0 14px;
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(38px, 7vw, 60px);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    margin: 0 0 18px;
+  }
+  h1 em { color: var(--news-red); font-style: italic; }
+  .standfirst {
+    font-size: clamp(19px, 2.4vw, 22px);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 34rem;
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(26px, 4vw, 33px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 48px 0 14px;
+  }
+  h3 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(21px, 3vw, 25px);
+    line-height: 1.15;
+    margin: 32px 0 10px;
+  }
+  p { margin: 0 0 18px; }
+  a { color: var(--guardian-blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--news-red); }
+  a:focus-visible { outline: 3px solid var(--news-red); outline-offset: 3px; }
+  strong { font-weight: 700; }
+  code {
+    font-family: var(--mono);
+    font-size: 0.88em;
+    background: var(--paper-deep);
+    padding: 2px 6px;
+    border-radius: 3px;
+    word-break: break-word;
+  }
+
+  .lede-panel {
+    background: var(--paper-deep);
+    border-left: 5px solid var(--guardian-blue);
+    padding: 22px 26px 6px;
+    margin: 0 0 20px;
+  }
+
+  ul.plain { list-style: none; margin: 0 0 20px; padding: 0; }
+  ul.plain li {
+    padding: 11px 0 11px 26px;
+    border-top: 1px solid var(--paper-rule);
+    position: relative;
+  }
+  ul.plain li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 21px;
+    width: 9px; height: 9px;
+    background: var(--news-red);
+  }
+
+  /* The diary */
+  .entry { padding-top: 34px; margin-top: 34px; border-top: 1px solid var(--paper-rule); }
+  .entry:first-of-type { border-top: 2px solid var(--ink); }
+  .entry-meta {
+    font-family: var(--ui);
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin: 0 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+  .tag {
+    color: var(--paper);
+    background: var(--eco-green);
+    padding: 3px 9px;
+    letter-spacing: 0.1em;
+  }
+  .tag.milestone { background: var(--news-red); }
+  .entry h3 { margin-top: 0; }
+
+  footer.foot {
+    margin-top: 64px;
+    padding-top: 22px;
+    border-top: 2px solid var(--ink);
+    font-family: var(--ui);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--ink-mute);
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 17px; }
+    .wrap { padding-bottom: 64px; }
+    header.masthead { padding-top: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="band" aria-hidden="true"><i></i><i></i></div>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">About this deck</p>
+    <h1>Vibecoding <em>workshop.</em></h1>
+    <p class="standfirst">A 90-minute session that takes people from prompting to building working, data-driven tools in Gemini Canvas. This page is the deck's working memory: what it is, how it's made, and what changed and why.</p>
+  </header>
+
+  <h2>What this is</h2>
+
+  <div class="lede-panel">
+    <p>Thirty-two slides for a hands-on workshop, for staff across all departments, with no coding experience assumed. People arrive with a laptop and leave having built something that pulls live data off the internet and hands it to a model to reason over.</p>
+  </div>
+
+  <p>The deck is at <a href="./">peter-guillam123.github.io/vibecoding-workshop</a>. It's driven entirely by hand: arrow keys or space to advance, nothing on a timer, nothing that advances itself. Two slides are built to sit still rather than perform, which turns out to matter more than any of the animation.</p>
+
+  <ul class="plain">
+    <li><strong>Slide 23</strong> is the activity brief, on screen while people get started.</li>
+    <li><strong>Slide 24</strong> is the holding slide, up for the whole 30-minute build block. It carries no animation at all, deliberately, because nothing should twitch in the corner of someone's eye for half an hour.</li>
+    <li><strong>Every prompt card copies on click.</strong> Fifteen of them. The lesson plan says to keep the prompts open in a notes file so you're not retyping them live; this removes that step, because the deck is the clipboard.</li>
+  </ul>
+
+  <h2>How it's made</h2>
+
+  <p>Plain HTML and CSS, no build step and no framework. It's built from the <a href="https://github.com/peter-guillam123/guardian-deck-template">Guardian deck template</a>, which supplies a <code>&lt;deck-stage&gt;</code> web component for navigation and scaling, a design system carrying the real Guardian font cuts, and a choreography engine that handles the reveals. Slides are markup; new components get appended to the stylesheet rather than forked into the page.</p>
+
+  <p>It deploys to GitHub Pages on every push. The fonts load from Guardian servers, which means the deck wants a network connection to look right, though it degrades to Georgia rather than breaking.</p>
+
+  <p>One thing worth saying plainly, because it's the point of the workshop as much as the deck: this was built by describing it in English to Claude Code and letting it do the typing.</p>
+
+  <h2>Diary</h2>
+
+  <article class="entry">
+    <p class="entry-meta"><span class="tag milestone">Milestone</span><span>27 July 2026</span></p>
+    <h3>First build, and an API matrix that needed rescuing</h3>
+
+    <p>The lesson plan's facilitator checklist opens with an instruction to click-test every API in the matrix on the morning of the session, on the grounds that free APIs die without warning. So I did that before writing a single slide. Two of the twelve were broken, and one of them was load-bearing.</p>
+
+    <p><strong>REST Countries was dead.</strong> It returned a deprecation notice instead of data, and the v5 that replaces it answers <code>Authorization key required.</code> That's worse than a broken link, because REST Countries was the API modelled live in Part 3 and the basis of both the base-build and the LLM-handoff prompts in the appendix. Its replacement also breaks the workshop's own first safety rule, which is never to paste a key into Canvas.</p>
+
+    <p>The fix turned out better than the thing it replaced. Instead of one substitute, the deck now models two sources: Open-Meteo's geocoding endpoint for the structured half, meaning country, population, timezone, coordinates and the two-letter code that fetches a flag, and Wikipedia's summary endpoint for the human half, a photograph and a paragraph of prose. Both keyless, both browser-friendly.</p>
+
+    <p>Modelling them one after the other adds a beat the plan didn't have, which is watching a second source arrive off the back of a single sentence. It also sharpens the line the whole session is built around, because you can now point at each half on screen while saying that the API gives you the facts and the model gives you judgement.</p>
+
+    <p>It came with a gift. Type <strong>Newcastle</strong> and it breaks, every time: Open-Meteo confidently returns Australia while Wikipedia hands back a disambiguation page with no photograph. That's a reliable, unfrightening bug to demonstrate the panic-button prompt against, rather than waiting to be ambushed by a random wobble in front of thirty people. And two sources quietly disagreeing is a properly journalistic point to be able to make. It has its own slide.</p>
+
+    <p><strong>Frankfurter would have failed in the browser.</strong> The endpoint in the plan redirects to a new domain, and the redirect response carries no <code>Access-Control-Allow-Origin</code> header, so a browser blocks it before it ever reaches the working endpoint. The kind of thing that looks fine when you paste it into a browser bar and fails the moment an app tries it. The matrix now carries the destination URL.</p>
+
+    <p>Two smaller gaps closed on the way. The safety briefing promised three points and listed two, so the missing third, that a public link is public, is restored as rule 03 and now bookends properly with the sharing slide at the end. And the plan never answered the question someone always asks: why say never paste a key, then ask everyone to call Gemini from inside their app? That gets its own slide immediately after the rules, rather than a raised hand halfway through Part 3.</p>
+
+    <p>The one thing added without being asked is a participant pre-flight at slide 2. Three checks, two minutes, at the very top of the session. The plan's pre-flight was facilitator-only, and the likeliest way to lose a workshop is finding out at the halfway mark that four people can't open Canvas at all.</p>
+
+    <p>Checked at 1920×1080 across all thirty-two slides: no overflow, no console errors. The appendix stacks and the second matrix slide needed a tighter setting to fit, which sits in the stylesheet as a measured correction rather than a guess.</p>
+  </article>
+
+  <footer class="foot">
+    <p>Chris Moran · Guardian · <a href="https://github.com/peter-guillam123/vibecoding-workshop">Source on GitHub</a> · <a href="./">Open the deck</a></p>
+  </footer>
+
+</div>
+
+</body></html>

@@ -1,104 +1,96 @@
-# Guardian deck template
+# Vibecoding workshop
 
-Skeleton for HTML slide decks in the Guardian editorial style — second
-edition. Spin a new repo from this template, replace the placeholder words
-in `index.html`, drop images in `images/`, push to `main`, and GitHub Pages
-serves the result. The reference implementation (and the deck this system
-was built for) is
-[board-and-trust-training](https://github.com/peter-guillam123/board-and-trust-training);
-its first edition is archived there at
-[/first-edition/](https://peter-guillam123.github.io/board-and-trust-training/first-edition/)
-if you want to see how far the second edition moved things on.
+A 32-slide deck for a 90-minute hands-on workshop on vibe coding and
+advanced prototyping in Gemini Canvas. Staff across all departments, no
+coding experience assumed.
 
-## Starting a new deck
+Live at
+[peter-guillam123.github.io/vibecoding-workshop](https://peter-guillam123.github.io/vibecoding-workshop).
 
-In Claude Code, in an empty folder, say:
+Built from the [Guardian deck
+template](https://github.com/peter-guillam123/guardian-deck-template),
+second edition. The house rules live in `CLAUDE.md`.
 
-> "Set up a new deck from my template, call it `xyz`."
+## Presenting it
 
-Claude will clone the template into the folder via `gh repo create
---template`, push the first commit, and hand back the live URL once Pages
-has built. Then describe the slides — the words you want, in your words —
-and let Claude fit them to the patterns. The rules Claude follows live in
-`CLAUDE.md` in this repo, so you don't have to repeat them.
+Arrow keys or space to advance, R to reset, G to show the grid, Cmd-P →
+Save as PDF for a one-slide-per-page export. It is driven entirely by
+hand: nothing advances itself and nothing is on a timer.
 
-## What's in here
+Two slides are meant to sit still. Slide 23 is the activity brief, and
+slide 24 is the holding slide that stays on screen for the whole
+30-minute build block. Slide 24 carries no animation at all, on purpose,
+because nothing should twitch in the corner of anyone's eye for half an
+hour.
 
-- `index.html` — twenty reference slides, one per pattern: cover, agenda,
-  section opener (ghost numeral + drawn underline), plate-card trio, split
-  image/text, step cards, staged line chart with count-ups, stat pair +
-  ledger, rulebook ledger, image + open text blocks, conversation rail,
-  picture triptych, diptych, curve timeline, ink pull quote, self-typing
-  prompt, case ledger, exchanges, chat stream, numbered ways. Replace the
-  placeholder copy; delete what you don't need.
-- `styles.css` — the full design system: the real Guardian font cuts
-  (including the drawn italics and Black, from `assets.guim.co.uk`),
-  design tokens, paper-fibre grain and press vignette, slide chrome,
-  every component, and the motion keyframes (including a CSS `linear()`
-  spring).
-- `motion.js` — the choreography engine: folio numbering, the progress
-  seam, masked word reveals, `data-fx` replays on every slide visit,
-  count-up figures, live-typing prompts and the staged chart draw. Three
-  safety nets: no JavaScript hides nothing, `prefers-reduced-motion` gets
-  a static deck, print forces final states.
-- `deck-stage.js` — the `<deck-stage>` web component. Keyboard navigation
-  (←/→, PageUp/PageDown, Space, Home/End, R, number keys), auto-scaling,
-  tap zones on mobile, and print rules that lay one slide per page at
-  1920×1080 for Cmd-P → Save as PDF.
-- `grid-overlay.js` — a Müller-Brockmann grid instrument. Press **G** while
-  previewing to draw the 12-column + baseline grid the deck is built against.
-  Off by default; it reads the `--grid-*` tokens in `styles.css` and changes
-  nothing — it just lets you check alignment.
-- `CLAUDE.md` — the build rules and the motion grammar, written for the
-  Claude session doing the work.
-- `.github/workflows/pages.yml` — deploys to Pages on every push to
-  `main`, with concurrency control.
-
-## Working in the deck
-
-Open `index.html` in a browser to preview. Arrow keys / space to navigate,
-R to reset, Cmd-P → Save as PDF for a one-slide-per-page export. Slide
-numbers auto-fill — write `01 / NN` and motion.js does the rest.
-Animations replay on every slide arrival, backwards included.
-
-## Notes
-
-- **Fonts** load from `assets.guim.co.uk`, so the deck only renders
-  correctly online. The CSS falls back to Georgia / Helvetica if the CDN
-  is unreachable, but the visual is noticeably different. Presenting
-  somewhere with patchy wifi? Self-hosting the `.woff2` files is a
-  10-minute job.
-- **One italic word per title** — red on paper, yellow on ink — is the
-  deck's punctuation. Keep it to one.
-- **Images dissolve** (`data-fx="photo"`); the kit deliberately has no
-  directional wipes.
+**Every prompt card copies on click.** Fifteen of them. That replaces the
+"have the prompts open in a notes file" step in the lesson plan's
+pre-flight: the deck itself is the clipboard.
 
 ## Changelog
 
-### 11 June 2026 — Müller-Brockmann grid baked in
+### 27 July 2026 — First build, and an API matrix that needed rescuing
 
-`styles.css` now carries a `--grid-*` source of truth (12 columns, 120px
-margins, 12px baseline, 24px gutter) that the chrome, the card gutters and a
-new toggle-able overlay (`grid-overlay.js`, press **G**) all read — so any deck
-built from this kit starts grid-true and verifiable. The three-up patterns sit
-on an exact 4 + 4 + 4 column rhythm. `CLAUDE.md` gains a grid section, including
-the one rule we *don't* take from the source skill: its white-paper / sans-serif
-house style, which would undo the Guardian look this kit exists to produce.
+Thirty-two slides following the lesson plan's six parts, with a
+participant pre-flight added at the front and an appendix of every
+prompt at the back.
 
-### 11 June 2026 — Second edition
+The interesting part was the pre-flight the plan asks for. I click-tested
+all twelve APIs in the matrix before writing a single slide, and two of
+them were broken.
 
-The template catches up with everything the Board and Trust rework
-taught us. In: the real Guardian italic and Black cuts, masked word-by-
-word title reveals, paper grain and press vignette, plate cards, ghost
-numerals on section openers, the photographic image dissolve, count-up
-figures, self-typing prompts, the staged chart draw, a progress seam,
-and `motion.js` to run it all — with no-JS, reduced-motion and print
-fallbacks. The six first-edition skeleton slides became twenty, one per
-pattern, with instructive placeholder copy that explains each shape as
-you replace it. New `CLAUDE.md` carries the build rules so future
-sessions start already knowing the house style.
+**REST Countries was dead.** It returned a deprecation notice rather than
+data, and the v5 that replaces it answers `Authorization key required.`
+That is a problem well beyond a broken link, because REST Countries was
+the API the plan modelled live in Part 3, and it supplied both the
+base-build prompt and the LLM-handoff prompt in the appendix. Its
+replacement also breaks the workshop's own first safety rule, which is
+never to paste a key into Canvas.
 
-### Earlier — Initial template
+The fix is a pairing rather than a swap. Open-Meteo's geocoding endpoint
+gives the structured half - country, population, timezone, coordinates,
+and the two-letter code that fetches a flag from flagcdn - and Wikipedia's
+summary endpoint gives the human half, a photograph and a paragraph of
+prose. Both keyless, both CORS-clean. Modelling them one after the other
+adds a beat the plan didn't have: watch me add a second source with one
+sentence. It also sharpens the closing line, because you can now point at
+each half on screen while saying that the API gives you the facts and the
+model gives you judgement.
 
-Framework, six skeleton slides and a README, extracted from the first
-generation of decks.
+It came with a gift. Type "Newcastle" and it breaks every time:
+Open-Meteo confidently returns Australia while Wikipedia hands back a
+disambiguation page with no photo. That is a reliable, unfrightening bug
+to run the panic-button prompt against, instead of waiting to be
+ambushed by a random wobble, and it makes a properly journalistic point
+about two sources quietly disagreeing. It has its own slide.
+
+**Frankfurter would have failed in the browser.** `api.frankfurter.app`
+301s to `api.frankfurter.dev/v1/`, and the redirect response carries no
+`Access-Control-Allow-Origin`, so a browser blocks it before it ever
+reaches the working endpoint. The matrix now carries the destination URL.
+
+Two smaller gaps in the plan got closed on the way. The safety briefing
+promised three points and listed two, so the missing third - a public
+link is public - is restored as rule 03, and it now bookends properly
+with the sharing slide in Part 6. And the plan never answered the
+question someone always asks, which is why we say never paste a key and
+then ask everyone to call Gemini from inside their app. That has its own
+slide now, immediately after the rules, rather than a raised hand
+halfway through Part 3.
+
+The optional extra I added without being asked: a participant pre-flight
+at slide 2. Three checks, two minutes, at 00:00. The plan's pre-flight
+was facilitator-only, and the likeliest way to lose a workshop is
+finding out at the halfway mark that four people can't open Canvas at
+all.
+
+New components in `styles.css`, appended at the bottom per the template
+rules: the activity brief lifted from the Board and Trust deck's slide
+25, a compact two-column options ledger, the three-column API ledger, a
+JSON specimen panel, and the holding slide. One new file,
+`prompt-copy.js`, for the click-to-copy prompts.
+
+Checked at 1920×1080 across all 32 slides: no body overflow, no
+horizontal overflow, no console errors. The appendix stacks and the
+second matrix slide needed a tighter setting to fit, which is in the
+stylesheet as a measured correction rather than a guess.

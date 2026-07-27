@@ -1,842 +1,1131 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Deck title — Audience</title>
+<title>Vibecoding workshop - Gemini Canvas</title>
 <link rel="preconnect" href="https://assets.guim.co.uk" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <!-- ================================================================
-     GUARDIAN DECK TEMPLATE — second edition.
-     One slide per pattern. Replace the placeholder words; keep the
-     structure, classes and data-fx grammar. Delete the slides you
-     don't need. Rules of the road live in CLAUDE.md.
+     VIBECODING WORKSHOP — Gemini Canvas, 90 minutes.
+     Built from the Guardian deck template, second edition.
 
-     The grammar in one breath:
-       data-fx="rise|fade|pop|spring-up|photo|bar|bar-v|ghost"
-         + style="--d:200ms"        when it arrives (stagger by hand)
-       data-split (on titles)       masked word-by-word reveal
-         + data-split-base / -step  first word's delay / per-word gap
-       data-count="41" …            JS counts the figure up on arrival
-       .typed + data-typo/data-fix  prompt types itself, one correction
-       Folios: write "01 / NN" — motion.js renumbers every slide.
+     This deck is driven by hand. Nothing advances itself, nothing is
+     on a timer. The running order follows the lesson plan's six
+     parts; the folio and the footer tell you where you are.
+
+     Two slides earn their keep by sitting still:
+       · slide 23, the activity brief
+       · slide 24, the holding slide that stays up for the whole
+         30-minute build block
+     Slide 24 carries no data-fx at all, on purpose. Don't add any.
+
+     Every prompt card is click-to-copy (prompt-copy.js), so the
+     prompts you paste live come off the slide itself rather than
+     out of a separate notes file.
      ================================================================ -->
 
 <deck-stage width="1920" height="1080">
 
   <!-- ============================================================
-       PATTERN 1 — Cover. Tag + kicker, masked wordmark with the red
-       full stop landing late on a spring, framing paragraph balanced
-       by a session block.
+       01 — Cover
        ============================================================ -->
   <section class="slide cover" data-label="Cover">
     <div class="rule-band"></div>
 
     <div>
-      <p class="kicker" data-fx="rise" style="--d:80ms"><span class="group-tag">Series</span>A short strapline · 2026</p>
-      <h1 class="wordmark" data-split data-split-base="300" data-split-step="60">Your deck<br><em>title<span class="q-mark">.</span></em></h1>
+      <p class="kicker" data-fx="rise" style="--d:80ms"><span class="group-tag">Workshop</span>Gemini Canvas · 90 minutes · 27 July 2026</p>
+      <h1 class="wordmark" data-split data-split-base="300" data-split-step="60">Vibecoding<br><em>workshop<span class="q-mark">.</span></em></h1>
     </div>
 
     <div class="cover-meta-row">
-      <p class="cover-framing" data-fx="rise" style="--d:900ms">Two or three sentences framing the session. Say what the deck is for and what the audience should leave with — the cover does the welcome so slide two can get to work.</p>
+      <p class="cover-framing" data-fx="rise" style="--d:900ms">Today we're not writing text, we're building software. You'll leave having built a working app that pulls live data off the internet, and having seen the real trick: handing that data to a model and asking it to think about it.</p>
       <div class="cover-stat-block" data-fx="rise" style="--d:1020ms">
-        <p class="stat-line">Session<strong>Your audience</strong></p>
+        <p class="stat-line">Session<strong>All departments. No coding experience assumed.</strong></p>
       </div>
     </div>
 
     <div class="slide-foot">
-      <span class="wm">Deck template</span>
+      <span class="wm">Vibecoding workshop</span>
       <span class="num">01 / NN</span>
     </div>
   </section>
 
   <!-- ============================================================
-       PATTERN 2 — Agenda. A 2×2 contents page; the numbered items
-       should echo the section openers later in the deck.
+       02 — Participant pre-flight. Two minutes, at 00:00, so the
+       person whose account can't open Canvas finds out now and not
+       at 00:37 when everyone else is building.
        ============================================================ -->
-  <section class="slide slide--agenda" data-label="Agenda">
+  <section class="slide slide--choice" data-label="Pre-flight">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:80ms">The session</p>
-    <h2 class="slide-title" data-split data-split-base="160">What we'll <em>cover</em>.</h2>
-
-    <div class="slide-body">
-      <div class="agenda-item" data-fx="rise" style="--d:300ms">
-        <span class="agenda-num">01</span>
-        <h3>First section title</h3>
-        <p>A sentence or two on what this section covers and why it earns its place in the running order.</p>
-      </div>
-      <div class="agenda-item" data-fx="rise" style="--d:420ms">
-        <span class="agenda-num">02</span>
-        <h3>Second section title</h3>
-        <p>Same again. Keep these to two lines; they are signposts, not summaries.</p>
-      </div>
-      <div class="agenda-item" data-fx="rise" style="--d:540ms">
-        <span class="agenda-num">03</span>
-        <h3>Third section title</h3>
-        <p>The agenda works best with four items. Three feels thin at this size; five gets cramped.</p>
-      </div>
-      <div class="agenda-item" data-fx="rise" style="--d:660ms">
-        <span class="agenda-num">04</span>
-        <h3>Fourth section title</h3>
-        <p>Reuse these words verbatim on the matching section opener — the echo is deliberate.</p>
-      </div>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">02 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PATTERN 3 — Section opener. Ink slide, ghost numeral, masked
-       headline, yellow underline drawn under the italic word.
-       One per section; number the ghost to match the agenda.
-       ============================================================ -->
-  <section class="slide ink section-opener" data-label="Section opener">
-    <div class="rule-band"></div>
-    <span class="chapter-ghost" aria-hidden="true" data-fx="ghost" style="--d:150ms">01</span>
-
-    <div class="chapter-num" data-fx="rise" style="--d:100ms">A chapter label</div>
-    <h1 data-split data-split-base="260" data-split-step="50">A section <em>opener.</em></h1>
-    <p class="section-dek" data-fx="rise" style="--d:780ms">One or two sentences setting up the section — often the same words as the matching agenda item, which is a feature, not a repeat.</p>
-
-    <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">03 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PATTERN 4 — Plate-card trio. Three cards with colour-coded top
-       rules; optional image band at the foot of each (photo dissolve).
-       Use sparingly — one or two card moments per deck.
-       ============================================================ -->
-  <section class="slide" data-label="Plate-card trio">
-    <div class="rule-band"></div>
-
-    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Topic</p>
-    <h2 class="slide-title" data-split>Three things, one <em>idea</em>.</h2>
-
-    <div class="slide-body">
-      <div class="aims">
-        <div class="aim" data-fx="rise" style="--d:260ms">
-          <span class="aim-num">01</span>
-          <h3>First card</h3>
-          <p>A few sentences. Cards carry equal weight, so give them roughly equal word counts.</p>
-          <div class="aim-image" data-fx="photo" style="--d:560ms"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='235' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop an image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers."></div>
-        </div>
-        <div class="aim" data-fx="rise" style="--d:380ms">
-          <span class="aim-num">02</span>
-          <h3>Second card</h3>
-          <p>The top rules colour-code automatically: blue, red, green in order.</p>
-          <div class="aim-image" data-fx="photo" style="--d:680ms"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='235' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop an image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers."></div>
-        </div>
-        <div class="aim" data-fx="rise" style="--d:500ms">
-          <span class="aim-num">03</span>
-          <h3>Third card</h3>
-          <p>Drop the image bands entirely if the cards are text-led — they hold their shape.</p>
-          <div class="aim-image" data-fx="photo" style="--d:800ms"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='235' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop an image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers."></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">04 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PATTERN 5 — Split image / text. Framed photograph (dissolve)
-       beside a kicker, title and one strong paragraph.
-       ============================================================ -->
-  <section class="slide slide--fable" data-label="Split image and text">
-    <div class="rule-band"></div>
-
-    <div class="slide-body">
-      <div class="fable-frame" data-fx="photo" style="--d:150ms">
-        <img class="fable-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='410' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop a square image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers.">
-      </div>
-      <div class="fable-text">
-        <p class="kicker" data-fx="rise" style="--d:420ms">Section · Topic</p>
-        <h2 class="slide-title" data-split data-split-base="480">A picture and a <em>point</em>.</h2>
-        <p class="fable-body" data-fx="rise" style="--d:800ms">One generous paragraph. This pattern suits a single developed thought — a piece of news, a worked argument, a case made in prose rather than bullets. Five to eight lines sits comfortably beside a square image.</p>
-      </div>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">05 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PATTERN 6 — Step cards. Three numbered choices or stages with
-       arrows between them, plus an optional "in practice" panel.
-       ============================================================ -->
-  <section class="slide slide--choice" data-label="Step cards">
-    <div class="rule-band"></div>
-
-    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Topic</p>
-    <h2 class="slide-title" data-split>Three questions in <em>sequence</em>.</h2>
-    <p class="slide-subtitle" data-fx="rise" style="--d:260ms">An optional standfirst under the title, setting up why the sequence matters.</p>
+    <p class="kicker" data-fx="rise" style="--d:60ms">Before we start · Two minutes</p>
+    <h2 class="slide-title" data-split>Three things, right <em>now</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:260ms">Do these before I say another word. If any of them fails, put your hand up and we'll sort it while I'm talking.</p>
 
     <div class="slide-body">
       <div class="ai-choice">
         <article class="choice-card" data-fx="rise" style="--d:320ms">
           <span class="choice-num">01</span>
-          <h3>First question?</h3>
-          <p>A short paragraph answering or framing it.</p>
+          <h3>Open Gemini</h3>
+          <p>On the laptop you've brought, signed in on the account you actually use for work.</p>
         </article>
         <article class="choice-card" data-fx="rise" style="--d:440ms">
           <span class="choice-num">02</span>
-          <h3>Second question?</h3>
-          <p>The arrows between cards fade in after the cards land.</p>
+          <h3>Find Canvas</h3>
+          <p>The + button under the prompt box. If there's no Canvas option there, say so now.</p>
         </article>
         <article class="choice-card" data-fx="rise" style="--d:560ms">
           <span class="choice-num">03</span>
-          <h3>Third question?</h3>
-          <p>Three is the right number here; the arrows insist on a sequence.</p>
+          <h3>Type anything</h3>
+          <p>"Make me a button that says hello." If something appears, you're set for the next 90 minutes.</p>
         </article>
       </div>
-
       <aside class="ai-meta" data-fx="rise" style="--d:820ms">
-        <p class="ai-meta-eyebrow">In practice</p>
-        <p class="ai-meta-body"><em>An italic red lead-in</em> followed by a concrete, grounding example. Delete this panel if the cards stand on their own.</p>
+        <p class="ai-meta-eyebrow">Why we're doing this first</p>
+        <p class="ai-meta-body"><em>Everything today depends on Canvas.</em> The one failure that ruins a workshop is discovering at the halfway mark that four people can't open the thing we've been building in.</p>
       </aside>
     </div>
 
     <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">06 / NN</span>
+      <span class="wm">Vibecoding workshop</span>
+      <span class="num">02 / NN</span>
     </div>
   </section>
 
   <!-- ============================================================
-       PATTERN 7 — Line chart, staged. Two context lines draw first,
-       a beat, then the headline line draws alone and its endpoint
-       counts up. The pause is the editorial moment.
+       03 — Schedule at a glance
        ============================================================ -->
-  <section class="slide slide--appendix slide--ax-speed" data-label="Staged line chart">
+  <section class="slide case" data-label="Schedule">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Data</p>
-    <h2 class="slide-title" data-split>The headline series, drawn <em>last</em>.</h2>
-    <p class="slide-subtitle" data-fx="rise" style="--d:240ms">A one-line description of what is being compared, over what window.</p>
+    <p class="kicker" data-fx="rise" style="--d:60ms">The session</p>
+    <h2 class="slide-title" data-split>Ninety minutes, six <em>parts</em>.</h2>
 
     <div class="slide-body">
-      <div class="ax-chart-big">
-        <div class="ax-chart-legend">
-          <span class="ax-chart-legend-item is-internet" data-fx="rise" style="--d:260ms">First context series</span>
-          <span class="ax-chart-legend-item is-phone" data-fx="rise" style="--d:340ms">Second context series</span>
-          <span class="ax-chart-legend-item is-ai" data-fx="rise" style="--d:420ms">The headline series</span>
-        </div>
-
-        <svg viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Describe the chart for screen readers.">
-          <g class="ax-frame" data-fx="fade" style="--d:150ms">
-            <line class="ax-grid" x1="100" y1="60"  x2="1500" y2="60"/>
-            <line class="ax-grid" x1="100" y1="180" x2="1500" y2="180"/>
-            <line class="ax-grid" x1="100" y1="300" x2="1500" y2="300"/>
-            <line class="ax-grid" x1="100" y1="420" x2="1500" y2="420"/>
-            <line class="ax-axis-base" x1="100" y1="540" x2="1500" y2="540"/>
-
-            <text class="ax-axis ax-axis-y" x="86" y="64">50%</text>
-            <text class="ax-axis ax-axis-y" x="86" y="184">40%</text>
-            <text class="ax-axis ax-axis-y" x="86" y="304">30%</text>
-            <text class="ax-axis ax-axis-y" x="86" y="424">20%</text>
-            <text class="ax-axis ax-axis-y" x="86" y="544">10%</text>
-
-            <text class="ax-axis" x="100"  y="572" text-anchor="middle">Start</text>
-            <text class="ax-axis" x="566"  y="572" text-anchor="middle">+1</text>
-            <text class="ax-axis" x="1033" y="572" text-anchor="middle">+2</text>
-            <text class="ax-axis" x="1500" y="572" text-anchor="middle">+3</text>
-          </g>
-
-          <g class="ax-track ax-track--internet">
-            <polyline class="ax-line ax-line--internet" points="100,540 566,480 1033,396 1500,300"/>
-            <circle class="ax-dot ax-dot--internet" cx="100"  cy="540" r="7"/>
-            <circle class="ax-dot ax-dot--internet" cx="566"  cy="480" r="7"/>
-            <circle class="ax-dot ax-dot--internet" cx="1033" cy="396" r="7"/>
-            <circle class="ax-dot ax-dot--internet" cx="1500" cy="300" r="7"/>
-          </g>
-
-          <g class="ax-track ax-track--phone">
-            <polyline class="ax-line ax-line--phone" points="100,540 566,480 1033,360 1500,240"/>
-            <circle class="ax-dot ax-dot--phone" cx="100"  cy="540" r="7"/>
-            <circle class="ax-dot ax-dot--phone" cx="566"  cy="480" r="7"/>
-            <circle class="ax-dot ax-dot--phone" cx="1033" cy="360" r="7"/>
-            <circle class="ax-dot ax-dot--phone" cx="1500" cy="240" r="7"/>
-          </g>
-
-          <g class="ax-track ax-track--ai">
-            <polyline class="ax-line ax-line--ai" points="100,540 566,276 1033,168 1500,48"/>
-            <circle class="ax-dot ax-dot--ai" cx="100"  cy="540" r="9"/>
-            <circle class="ax-dot ax-dot--ai" cx="566"  cy="276" r="9"/>
-            <circle class="ax-dot ax-dot--ai" cx="1033" cy="168" r="9"/>
-            <circle class="ax-dot ax-dot--ai" cx="1500" cy="48"  r="11"/>
-          </g>
-
-          <text class="ax-endpoint" x="1490" y="296" text-anchor="end" dy="-8" data-fx="fade" style="--d:2350ms" data-count="20" data-count-suffix="%" data-count-delay="2350" data-count-dur="700">20%</text>
-          <text class="ax-endpoint" x="1490" y="236" text-anchor="end" dy="-8" data-fx="fade" style="--d:2450ms" data-count="25" data-count-suffix="%" data-count-delay="2450" data-count-dur="700">25%</text>
-          <text class="ax-endpoint ax-endpoint--big" x="1490" y="44" text-anchor="end" dy="-10" data-fx="fade" style="--d:4300ms" data-count="41" data-count-suffix="%" data-count-delay="4300" data-count-dur="1000">41%</text>
-        </svg>
-      </div>
-
-      <p class="ax-source" data-fx="fade" style="--d:1100ms">A source line in italic: where the numbers come from, any caveat about the axes, and the one-sentence reading of the chart.</p>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">07 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PATTERN 8 — Stat pair + ledger. Two count-up figures, then a
-       hairlined list of reasons beneath.
-       ============================================================ -->
-  <section class="slide slide--appendix" data-label="Stat pair and ledger">
-    <div class="rule-band"></div>
-
-    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Data</p>
-    <h2 class="slide-title" data-split>Two numbers, one <em>gap</em>.</h2>
-
-    <div class="slide-body">
-      <div class="ax-pair">
-        <article class="ax-card" data-fx="rise" style="--d:200ms">
-          <p class="ax-card-eyebrow">What the first figure measures</p>
-          <p class="ax-card-figure" data-count="18" data-count-suffix="%" data-count-delay="500" data-count-dur="900">18%</p>
-          <p class="ax-card-body">One line of context for the figure, with its source in brackets.</p>
-        </article>
-        <article class="ax-card" data-fx="rise" style="--d:320ms">
-          <p class="ax-card-eyebrow">What the second figure measures</p>
-          <p class="ax-card-figure" data-count="41" data-count-suffix="%" data-count-delay="620" data-count-dur="900">41%</p>
-          <p class="ax-card-body">The pairing should make an argument on its own — the list below explains it.</p>
-        </article>
-      </div>
-
-      <h3 class="ax-frictions-head" data-fx="rise" style="--d:480ms">Why the gap is <em>interesting</em>.</h3>
-
-      <ul class="ax-frictions">
-        <li data-fx="rise" style="--d:600ms">
-          <div>
-            <strong>First reason</strong>
-            <span>A sentence of explanation. The red squares are set automatically.</span>
-          </div>
-        </li>
-        <li data-fx="rise" style="--d:700ms">
-          <div>
-            <strong>Second reason</strong>
-            <span>Three to five items is the comfortable range for this list.</span>
-          </div>
-        </li>
-        <li data-fx="rise" style="--d:800ms">
-          <div>
-            <strong>Third reason</strong>
-            <span>Keep each to a single line and a half at most.</span>
-          </div>
-        </li>
-      </ul>
-
-      <p class="ax-source" data-fx="fade" style="--d:950ms">Sources and caveats, set small and italic.</p>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">08 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PATTERN 9 — Rulebook ledger. Full-width rows under hairlines;
-       reads like a code of practice. Good for dense, formal text.
-       ============================================================ -->
-  <section class="slide slide--rules" data-label="Rulebook ledger">
-    <div class="rule-band"></div>
-
-    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Non-negotiables</p>
-    <h2 class="slide-title" data-split>Four key <em>rules</em>.</h2>
-
-    <div class="slide-body">
-      <ul class="rules-list">
-        <li class="rule-row" data-fx="rise" style="--d:200ms">
-          <span class="rule-tag">Rule 01</span>
-          <div>
-            <h3>A short imperative heading</h3>
-            <p>The body can run long here — this pattern absorbs formal, careful text better than cards do. Two to four lines per rule.</p>
-          </div>
-        </li>
-        <li class="rule-row" data-fx="rise" style="--d:320ms">
-          <span class="rule-tag">Rule 02</span>
-          <div>
-            <h3>Another heading</h3>
-            <p>Rows are separated by hairlines, with a heavier rule at the top of the ledger.</p>
-          </div>
-        </li>
-        <li class="rule-row" data-fx="rise" style="--d:440ms">
-          <span class="rule-tag">Rule 03</span>
-          <div>
-            <h3>A third heading</h3>
-            <p>Four rows fit comfortably; five if the bodies stay short.</p>
-          </div>
-        </li>
-        <li class="rule-row" data-fx="rise" style="--d:560ms">
-          <span class="rule-tag">Rule 04</span>
-          <div>
-            <h3>A heading that can even run quite long without breaking the shape</h3>
-            <p>If you're quoting policy, quote it verbatim and resist the urge to edit.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">09 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PATTERN 10 — Image + open text blocks. A framed image beside
-       numbered, hairline-ruled points. The de-boxed sibling of the
-       card trio.
-       ============================================================ -->
-  <section class="slide slide--ql" data-label="Image and text blocks">
-    <div class="rule-band"></div>
-
-    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Topic</p>
-    <h2 class="slide-title" data-split>A picture and two <em>points</em>.</h2>
-
-    <div class="slide-body">
-      <div class="ql-frame" data-fx="photo" style="--d:200ms">
-        <img class="ql-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='560'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='290' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop an image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers.">
-      </div>
-      <div class="ql-points">
-        <div class="ql-point" data-fx="rise" style="--d:480ms">
-          <span class="point-num">01</span>
-          <h3>First point</h3>
-          <p>Two or three sentences. The numerals colour-code blue then red.</p>
-        </div>
-        <div class="ql-point" data-fx="rise" style="--d:620ms">
-          <span class="point-num">02</span>
-          <h3>Second point</h3>
-          <p>Two points is the sweet spot; three works if each stays short.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">10 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PATTERN 11 — Conversation rail. Each concept on the left is
-       answered across the row by an example in a speech bubble.
-       Good for frameworks with worked examples.
-       ============================================================ -->
-  <section class="slide slide--framework" data-label="Conversation rail">
-    <div class="rule-band"></div>
-
-    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Framework</p>
-    <h2 class="slide-title" data-split>Concepts, <em>answered</em>.</h2>
-
-    <div class="slide-body">
-      <div class="framework">
-        <div class="fw-row" data-fx="rise" style="--d:200ms">
-          <div class="fw-what">
-            <h3><span class="fw-num">01</span>First concept</h3>
-            <p>One or two sentences defining it.</p>
-          </div>
-          <div class="example-bubble" data-fx="spring-up" style="--d:500ms"><p>"The example that answers it — what you'd actually say, type or do."</p></div>
-        </div>
-        <div class="fw-row" data-fx="rise" style="--d:330ms">
-          <div class="fw-what">
-            <h3><span class="fw-num">02</span>Second concept</h3>
-            <p>The bubbles spring in a beat after their rows.</p>
-          </div>
-          <div class="example-bubble" data-fx="spring-up" style="--d:630ms"><p>"Keep the examples in quotation marks and italic — they are speech, not prose."</p></div>
-        </div>
-        <div class="fw-row" data-fx="rise" style="--d:460ms">
-          <div class="fw-what">
-            <h3><span class="fw-num">03</span>Third concept</h3>
-            <p>Numerals run blue, red, green, ink.</p>
-          </div>
-          <div class="example-bubble" data-fx="spring-up" style="--d:760ms"><p>"Three or four rows fit; the bubbles can run a little longer than the concepts."</p></div>
-        </div>
-        <div class="fw-row" data-fx="rise" style="--d:590ms">
-          <div class="fw-what">
-            <h3><span class="fw-num">04</span>Fourth concept</h3>
-            <p>The closing row can carry the most weight.</p>
-          </div>
-          <div class="example-bubble" data-fx="spring-up" style="--d:890ms"><p>"End on the example you most want remembered."</p></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">11 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PATTERN 12 — Picture triptych. Three framed photographs over
-       numbered, hairline-ruled captions.
-       ============================================================ -->
-  <section class="slide" data-label="Picture triptych">
-    <div class="rule-band"></div>
-
-    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Topic</p>
-    <h2 class="slide-title" data-split>Three pictures, one <em>habit</em>.</h2>
-
-    <div class="slide-body">
-      <div class="magpie">
-        <div class="magpie-col">
-          <div class="magpie-photo" data-fx="photo" style="--d:180ms"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='235' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop an image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers."></div>
-          <div class="magpie-text" data-fx="rise" style="--d:340ms">
-            <span class="point-num">01</span>
-            <h3>First stage</h3>
-            <p>A caption of two or three lines beneath each photograph.</p>
-          </div>
-        </div>
-        <div class="magpie-col">
-          <div class="magpie-photo" data-fx="photo" style="--d:320ms"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='235' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop an image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers."></div>
-          <div class="magpie-text" data-fx="rise" style="--d:480ms">
-            <span class="point-num">02</span>
-            <h3>Second stage</h3>
-            <p>The dissolves stagger left to right; the captions follow.</p>
-          </div>
-        </div>
-        <div class="magpie-col">
-          <div class="magpie-photo" data-fx="photo" style="--d:460ms"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='235' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop an image here%3C/text%3E%3C/svg%3E" alt="Describe the image for screen readers."></div>
-          <div class="magpie-text" data-fx="rise" style="--d:620ms">
-            <span class="point-num">03</span>
-            <h3>Third stage</h3>
-            <p>This pattern is strongest when the three images tell a sequence.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">12 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PATTERN 13 — Diptych. Two ideas split by a hairline that draws
-       down the centre. The calmest two-up in the kit.
-       ============================================================ -->
-  <section class="slide" data-label="Diptych">
-    <div class="rule-band"></div>
-
-    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Topic</p>
-    <h2 class="slide-title" data-split>One idea & its <em>counterpart</em>.</h2>
-
-    <div class="slide-body">
-      <div class="duo">
-        <div class="duo-side" data-fx="rise" style="--d:240ms">
-          <p class="duo-tag">First label</p>
-          <h3>A big serif heading</h3>
-          <p class="duo-body">A paragraph of three to five lines. The diptych suits paired ideas of equal weight — before and after, micro and macro, the mentor and the manager.</p>
-        </div>
-        <div class="duo-divider" data-fx="bar-v" style="--d:160ms"></div>
-        <div class="duo-side" data-fx="rise" style="--d:400ms">
-          <p class="duo-tag">Second label</p>
-          <h3>Its counterpart</h3>
-          <p class="duo-body">The second side arrives a beat after the first. Tags colour blue then red.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">13 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PATTERN 14 — Curve timeline. Four nodes ride a descending
-       line that draws in; labels rise beneath.
-       ============================================================ -->
-  <section class="slide" data-label="Curve timeline">
-    <div class="rule-band"></div>
-
-    <p class="kicker" data-fx="rise" style="--d:60ms">Section · Process</p>
-    <h2 class="slide-title" data-split>Four waypoints, one <em>descent</em>.</h2>
-    <p class="slide-subtitle" data-fx="rise" style="--d:240ms">The falling line carries a "start wide, then narrow down" metaphor — use it for processes that converge.</p>
-
-    <div class="slide-body">
-      <div class="flow">
-        <div class="flow-track">
-          <svg class="flow-curve" viewBox="0 0 1680 240" preserveAspectRatio="none" aria-hidden="true">
-            <path class="fill" d="M 0,42 C 120,45 160,47 210,50 C 360,57 500,77 630,90 C 770,103 920,124 1050,135 C 1190,146 1340,165 1470,170 C 1550,172 1620,175 1680,178 L 1680,240 L 0,240 Z"></path>
-            <path class="line" d="M 0,42 C 120,45 160,47 210,50 C 360,57 500,77 630,90 C 770,103 920,124 1050,135 C 1190,146 1340,165 1470,170 C 1550,172 1620,175 1680,178"></path>
-          </svg>
-          <div class="flow-node n1" data-fx="pop" style="--d:340ms">01</div>
-          <div class="flow-node n2" data-fx="pop" style="--d:480ms">02</div>
-          <div class="flow-node n3" data-fx="pop" style="--d:620ms">03</div>
-          <div class="flow-node n4" data-fx="pop" style="--d:760ms">04</div>
-        </div>
-        <div class="flow-labels">
-          <div class="flow-label" data-fx="rise" style="--d:420ms">
-            <h3>First step</h3>
-            <p>A sentence under each waypoint.</p>
-          </div>
-          <div class="flow-label" data-fx="rise" style="--d:560ms">
-            <h3>Second step</h3>
-            <p>Keep these short and parallel.</p>
-          </div>
-          <div class="flow-label" data-fx="rise" style="--d:700ms">
-            <h3>Third step</h3>
-            <p>The nodes pop on a spring as the line passes.</p>
-          </div>
-          <div class="flow-label" data-fx="rise" style="--d:840ms">
-            <h3>Fourth step</h3>
-            <p>End where the process lands.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">14 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PATTERN 15 — Pull quote (ink). An oversized masked quote with
-       a yellow italic phrase; good as a section's centrepiece.
-       ============================================================ -->
-  <section class="slide ink slide--research" data-label="Pull quote">
-    <div class="rule-band"></div>
-
-    <p class="research-eyebrow" data-fx="rise" style="--d:80ms">A small mono eyebrow</p>
-    <p class="research-quote" data-split data-split-base="220" data-split-step="26"><span class="research-mark no-split" data-fx="fade" style="--d:120ms">“</span>A question or claim big enough to fill the room, with <em>the phrase that matters</em> set in yellow italic?</p>
-    <p class="research-sub" data-fx="rise" style="--d:1300ms">A quiet instruction or follow-on line beneath, in small caps.</p>
-
-    <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">15 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PATTERN 16 — Typing prompt. A framed screenshot beside a
-       console card whose text types itself, with one self-correction
-       (data-typo is typed first, deleted, replaced by data-fix).
-       ============================================================ -->
-  <section class="slide slide--prompt" data-label="Typing prompt">
-    <div class="rule-band"></div>
-
-    <div class="slide-body">
-      <div class="isw-frame" data-fx="photo" style="--d:180ms">
-        <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
-        <img class="isw-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='560'%3E%3Crect width='100%25' height='100%25' fill='%23DCD2BF'/%3E%3Ctext x='400' y='290' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='30' fill='%237a766e'%3EDrop a screenshot here%3C/text%3E%3C/svg%3E" alt="Describe the screenshot for screen readers.">
-      </div>
-
-      <div class="prompt-col">
-        <p class="kicker" data-fx="rise" style="--d:80ms">Worked example</p>
-        <h2 class="slide-title" data-split data-split-base="160">What was actually <em>typed</em>.</h2>
-        <div class="prompt-box" data-fx="rise" style="--d:460ms">
-          <div class="prompt-head">
-            <p class="prompt-label">The opening prompt</p>
-            <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
-          </div>
-          <div class="prompt-body">
-            <p class="prompt-text"><span class="typed" data-typo="rough" data-fix="real" data-type-delay="1100">Put the real prompt here, verbatim. It types itself when the slide arrives; the word set in data-fix is first typed as data-typo, paused over, deleted and corrected — a small human moment that earns its keep.</span><span class="caret"></span></p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">16 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PATTERN 17 — Case ledger. A lede plus a two-column "in → out"
-       table whose rows cascade.
-       ============================================================ -->
-  <section class="slide case" data-label="Case ledger">
-    <div class="rule-band"></div>
-
-    <p class="kicker" data-fx="rise" style="--d:60ms">Worked example · Detail</p>
-    <h2 class="slide-title" data-split>What went in, what came <em>out</em>.</h2>
-
-    <div class="slide-body">
-      <p class="case-lede" data-fx="rise" style="--d:220ms"><strong>A bold lede stating the single thing this table proves.</strong></p>
-
+      <p class="case-lede" data-fx="rise" style="--d:220ms"><strong>The middle block is the point. Everything before it exists to get you ready to build for half an hour.</strong></p>
       <table class="feed-table">
         <thead data-fx="fade" style="--d:280ms">
           <tr>
-            <th>What went in</th>
-            <th>What it triggered</th>
+            <th>Time</th>
+            <th>Segment</th>
           </tr>
         </thead>
         <tbody>
           <tr data-fx="rise" style="--d:340ms">
-            <td>A thing that happened or was provided</td>
-            <td>What it led to</td>
+            <td>00:00 – 00:15</td>
+            <td>Part 1 · The hook: build an API-less interactive, live</td>
           </tr>
-          <tr data-fx="rise" style="--d:430ms">
-            <td>Another input</td>
-            <td>Another consequence — the red arrows are automatic</td>
+          <tr data-fx="rise" style="--d:410ms">
+            <td>00:15 – 00:25</td>
+            <td>Part 2 · What is an API? Plus the safety briefing</td>
           </tr>
-          <tr data-fx="rise" style="--d:520ms">
-            <td>A third input</td>
-            <td>Four to six rows is the comfortable range</td>
+          <tr data-fx="rise" style="--d:480ms">
+            <td>00:25 – 00:35</td>
+            <td>Part 3 · Modelling: find an API, build with it, add the LLM</td>
           </tr>
-          <tr data-fx="rise" style="--d:610ms">
-            <td>A fourth input</td>
-            <td>Keep cells to a line or two each</td>
+          <tr data-fx="rise" style="--d:550ms">
+            <td>00:35 – 01:05</td>
+            <td>Part 4 · Independent build (30 min, the core of the session)</td>
+          </tr>
+          <tr data-fx="rise" style="--d:620ms">
+            <td>01:05 – 01:20</td>
+            <td>Part 5 · Stretch goals</td>
+          </tr>
+          <tr data-fx="rise" style="--d:690ms">
+            <td>01:20 – 01:30</td>
+            <td>Part 6 · Show and tell, and wrap-up</td>
           </tr>
         </tbody>
       </table>
     </div>
 
     <div class="slide-foot">
-      <span class="wm">Deck template</span>
+      <span class="wm">Vibecoding workshop</span>
+      <span class="num">03 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       04 — Section opener: Part 1
+       ============================================================ -->
+  <section class="slide ink section-opener" data-label="Part 1 opener">
+    <div class="rule-band"></div>
+    <span class="chapter-ghost" aria-hidden="true" data-fx="ghost" style="--d:150ms">01</span>
+
+    <div class="chapter-num" data-fx="rise" style="--d:100ms">Part 1 · 15 minutes</div>
+    <h1 data-split data-split-base="260" data-split-step="50">The <em>hook.</em></h1>
+    <p class="section-dek" data-fx="rise" style="--d:780ms">Open Gemini, click the Canvas icon, and let's build a working tool right now. No external data, no setup. The code does all the work itself.</p>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 1</span>
+      <span class="num">04 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       05 — The hook prompt. Types itself; this is the "you described
+       it in English and software appeared" moment. Click to copy.
+       ============================================================ -->
+  <section class="slide slide--prompt-solo" data-label="Hook prompt">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 1 · Building live</p>
+    <h2 class="slide-title" data-split>What a meeting actually <em>costs</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:240ms">Useful, slightly cheeky, and universally relatable. Click the card to copy it.</p>
+
+    <div class="slide-body">
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:420ms">
+        <div class="prompt-head">
+          <p class="prompt-label">Paste this into Canvas</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text"><span class="typed" data-type-delay="900">Build a self-contained single-page web app called "Meeting Cost Calculator". It has three inputs: number of attendees, average annual salary (£), and meeting length in minutes. When I press Start, show a running total in £ of what the meeting is costing, ticking up live, with Pause and Reset buttons. Assume an 1,800-hour working year. Make it clean and readable with a large headline number and a dark-mode dashboard look. Give me the complete code.</span><span class="caret"></span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 1</span>
+      <span class="num">05 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       06 — Iteration by conversation
+       ============================================================ -->
+  <section class="slide case" data-label="Change one thing">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 1 · Iteration</p>
+    <h2 class="slide-title" data-split>Now change one <em>thing</em>.</h2>
+
+    <div class="slide-body">
+      <p class="case-lede" data-fx="rise" style="--d:260ms">You don't edit the code. You say what you want instead:</p>
+      <div class="exchanges">
+        <div class="exchange" data-fx="rise" style="--d:340ms">
+          <div class="ask">
+            <p class="speaker">You say</p>
+            <p class="line">"Make it dark mode."</p>
+          </div>
+          <div class="suggest" data-fx="rise" style="--d:620ms">
+            <p class="speaker">What happens</p>
+            <p class="line">The whole thing restyles. You didn't touch a colour value.</p>
+          </div>
+        </div>
+        <div class="exchange" data-fx="rise" style="--d:760ms">
+          <div class="ask">
+            <p class="speaker">You say</p>
+            <p class="line">"Make the number bigger."</p>
+          </div>
+          <div class="suggest" data-fx="rise" style="--d:1040ms">
+            <p class="speaker">What happens</p>
+            <p class="line">It gets bigger. Ask again if it isn't big enough. That's the whole loop.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 1</span>
+      <span class="num">06 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       07 — The menu of self-contained tools
+       ============================================================ -->
+  <section class="slide" data-label="Ten tools">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 1 · No data needed</p>
+    <h2 class="slide-title" data-split>Ten things you could build before <em>lunch</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:220ms">The test for each one: would someone in HR, finance, ad ops, legal, comms or facilities immediately get why it's useful?</p>
+
+    <div class="slide-body">
+      <ol class="opts">
+        <li class="opt-row" data-fx="rise" style="--d:300ms"><span class="opt-n">01</span><div class="opt-main"><strong>Meeting Cost Calculator</strong><span>Headcount, salary band and duration, then a live £ figure ticking up</span></div></li>
+        <li class="opt-row" data-fx="rise" style="--d:340ms"><span class="opt-n">02</span><div class="opt-main"><strong>Working-Days Countdown</strong><span>Working days remaining, excluding weekends</span></div></li>
+        <li class="opt-row" data-fx="rise" style="--d:380ms"><span class="opt-n">03</span><div class="opt-main"><strong>Timezone Meeting Planner</strong><span>What's 3pm London in New York, Mumbai, Sydney?</span></div></li>
+        <li class="opt-row" data-fx="rise" style="--d:420ms"><span class="opt-n">04</span><div class="opt-main"><strong>Compound-Interest Visualiser</strong><span>Save £X a month at Y% for Z years, drawn as a chart</span></div></li>
+        <li class="opt-row" data-fx="rise" style="--d:460ms"><span class="opt-n">05</span><div class="opt-main"><strong>Readability Scorer</strong><span>Paste text, get a reading age and your longest sentences flagged</span></div></li>
+        <li class="opt-row" data-fx="rise" style="--d:500ms"><span class="opt-n">06</span><div class="opt-main"><strong>WCAG Colour Contrast Checker</strong><span>Two hex codes in, pass or fail out</span></div></li>
+        <li class="opt-row" data-fx="rise" style="--d:540ms"><span class="opt-n">07</span><div class="opt-main"><strong>Team-Lunch Decision Spinner</strong><span>Enter the options, spin, accept your fate</span></div></li>
+        <li class="opt-row" data-fx="rise" style="--d:580ms"><span class="opt-n">08</span><div class="opt-main"><strong>Passphrase Generator</strong><span>Generate one, then score how strong it actually is</span></div></li>
+        <li class="opt-row" data-fx="rise" style="--d:620ms"><span class="opt-n">09</span><div class="opt-main"><strong>Inflation Calculator</strong><span>What that sum was worth then, against now</span></div></li>
+        <li class="opt-row" data-fx="rise" style="--d:660ms"><span class="opt-n">10</span><div class="opt-main"><strong>VAT / Expense Splitter</strong><span>A total in, net and VAT out, or split N ways</span></div></li>
+      </ol>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 1</span>
+      <span class="num">07 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       08 — Section opener: Part 2
+       ============================================================ -->
+  <section class="slide ink section-opener" data-label="Part 2 opener">
+    <div class="rule-band"></div>
+    <span class="chapter-ghost" aria-hidden="true" data-fx="ghost" style="--d:150ms">02</span>
+
+    <div class="chapter-num" data-fx="rise" style="--d:100ms">Part 2 · 10 minutes</div>
+    <h1 data-split data-split-base="260" data-split-step="50">Plumbing in the <em>data.</em></h1>
+    <p class="section-dek" data-fx="rise" style="--d:780ms">The tools we just built work perfectly, but they live in a bubble. They only know what we coded in, or what the user types.</p>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 2</span>
+      <span class="num">08 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       09 — The metaphor
+       ============================================================ -->
+  <section class="slide ink slide--research" data-label="The tap">
+    <div class="rule-band"></div>
+
+    <p class="research-eyebrow" data-fx="rise" style="--d:80ms">What an API is</p>
+    <p class="research-quote" data-split data-split-base="220" data-split-step="26"><span class="research-mark no-split" data-fx="fade" style="--d:120ms">“</span>A tap you can plumb directly into your app. You send a request, and <em>structured data comes back</em>.</p>
+    <p class="research-sub" data-fx="rise" style="--d:1300ms">Application Programming Interface. Nobody has ever needed the full name.</p>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 2</span>
+      <span class="num">09 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       10 — Show it live. The JSON is a real response, captured from
+       the endpoint printed above it.
+       ============================================================ -->
+  <section class="slide" data-label="Raw JSON">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Open this on the projector</p>
+    <h2 class="slide-title" data-split>Not a webpage. Just <em>data</em>.</h2>
+
+    <div class="slide-body">
+      <p class="json-url" data-fx="rise" style="--d:220ms">https://geocoding-api.open-meteo.com/v1/search?name=Tokyo&amp;count=1</p>
+      <div class="json-spec" data-fx="rise" style="--d:340ms">
+<pre>{ <span class="k">"results"</span>: [ {
+    <span class="k">"name"</span>: <span class="s">"Tokyo"</span>,
+    <span class="k">"country"</span>: <span class="s">"Japan"</span>,
+    <span class="k">"country_code"</span>: <span class="s">"JP"</span>,
+    <span class="k">"population"</span>: <span class="n">9733276</span>,
+    <span class="k">"timezone"</span>: <span class="s">"Asia/Tokyo"</span>,
+    <span class="k">"latitude"</span>: <span class="n">35.6895</span>,
+    <span class="k">"longitude"</span>: <span class="n">139.69171</span>
+} ] }</pre>
+      </div>
+      <p class="act-note" data-fx="rise" style="--d:560ms"><strong>That's the whole idea.</strong> Ugly to look at, trivial for an app to read. Every project this afternoon starts by pointing at a URL like this one and asking what comes back.</p>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 2</span>
+      <span class="num">10 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       11 — Safety briefing. Three rules. This is a learning
+       objective in its own right, not a disclaimer.
+       ============================================================ -->
+  <section class="slide slide--rules" data-label="Safety briefing">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Non-negotiables</p>
+    <h2 class="slide-title" data-split>Three things that are actually <em>true</em>.</h2>
+
+    <div class="slide-body">
+      <ul class="rules-list">
+        <li class="rule-row" data-fx="rise" style="--d:220ms">
+          <span class="rule-tag">Rule 01</span>
+          <div>
+            <h3>Keys are passwords</h3>
+            <p>Never paste one into Canvas. Your preview link is effectively public, and anyone with the link could read a key you put inside it. Today we use only free, open, keyless APIs. If an API demands a key, that's your signal to stop and move the project somewhere secure later, never to paste the key in here.</p>
+          </div>
+        </li>
+        <li class="rule-row" data-fx="rise" style="--d:360ms">
+          <span class="rule-tag">Rule 02</span>
+          <div>
+            <h3>Rate limits and CORS are real</h3>
+            <p>Free endpoints cap how many requests they'll answer. Thirty people hammering the same one can trip a shared limit, so spreading out across different APIs isn't just for variety, it keeps everyone's apps working. Some APIs don't talk to browsers at all and simply won't be available.</p>
+          </div>
+        </li>
+        <li class="rule-row" data-fx="rise" style="--d:500ms">
+          <span class="rule-tag">Rule 03</span>
+          <div>
+            <h3>A public link is public</h3>
+            <p>The share link you'll generate at the end is readable by anyone who has it. Perfect for a weather app. Never for anything carrying internal or sensitive data. We'll come back to this before you share.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 2</span>
+      <span class="num">11 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       12 — The question someone always asks. Answer it before the
+       hand goes up, otherwise rule 01 looks like it contradicts the
+       whole of Part 3.
+       ============================================================ -->
+  <section class="slide case" data-label="The Gemini key question">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · The obvious objection</p>
+    <h2 class="slide-title" data-split>"Hang on, doesn't Gemini need a <em>key</em>?"</h2>
+
+    <div class="slide-body">
+      <p class="case-lede" data-fx="rise" style="--d:260ms">Worth answering now rather than in twenty minutes:</p>
+      <div class="exchanges">
+        <div class="exchange" data-fx="rise" style="--d:340ms">
+          <div class="ask">
+            <p class="speaker">The worry</p>
+            <p class="line">"You just told us never to paste a key. In Part 3 you're going to ask us to call Gemini from inside our app."</p>
+          </div>
+          <div class="suggest" data-fx="rise" style="--d:620ms">
+            <p class="speaker">The answer</p>
+            <p class="line">Canvas wires that connection up for you. You never see a key, never paste one, and there's nothing sitting in your code for a stranger to read.</p>
+          </div>
+        </div>
+        <div class="exchange" data-fx="rise" style="--d:760ms">
+          <div class="ask">
+            <p class="speaker">So when does rule 01 bite?</p>
+            <p class="line">"How do I know when I've hit the line?"</p>
+          </div>
+          <div class="suggest" data-fx="rise" style="--d:1040ms">
+            <p class="speaker">The answer</p>
+            <p class="line">The moment any other service asks you to register for a key. That's the signal to stop and move the project to a secure environment, not to paste and hope.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 2</span>
+      <span class="num">12 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       13 — Section opener: Part 3
+       ============================================================ -->
+  <section class="slide ink section-opener" data-label="Part 3 opener">
+    <div class="rule-band"></div>
+    <span class="chapter-ghost" aria-hidden="true" data-fx="ghost" style="--d:150ms">03</span>
+
+    <div class="chapter-num" data-fx="rise" style="--d:100ms">Part 3 · 10 minutes</div>
+    <h1 data-split data-split-base="260" data-split-step="50">Find, build, add the <em>brain.</em></h1>
+    <p class="section-dek" data-fx="rise" style="--d:780ms">Watch the whole arc once, slowly, before you try it. Three beats: discovery, the base build, and the handoff.</p>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 3</span>
+      <span class="num">13 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       14 — Beat 1, discovery
+       ============================================================ -->
+  <section class="slide slide--prompt-solo" data-label="Beat 1 discovery">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Beat 1 · Discovery</p>
+    <h2 class="slide-title" data-split>How you find an API in the first <em>place</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:240ms">Swap in a topic you actually care about. Both cards copy on click.</p>
+
+    <div class="slide-body">
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:380ms">
+        <div class="prompt-head">
+          <p class="prompt-label">Finding one</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text">Give me 3 completely free, open APIs that need NO API key, support CORS (so they work from a browser), and return data about [TOPIC]. For each, give the exact base URL endpoint and one short example of what the returned data looks like.</p>
+        </div>
+      </div>
+
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:520ms">
+        <div class="prompt-head">
+          <p class="prompt-label">Sizing one up</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text">Explain in plain English what data this API returns, and three realistic things I could build with it: [PASTE ENDPOINT URL]</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 3</span>
+      <span class="num">14 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       15 — Beat 2, the base build
+       ============================================================ -->
+  <section class="slide slide--prompt-solo" data-label="Beat 2 base build">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Beat 2 · The base build</p>
+    <h2 class="slide-title" data-split>One call, one <em>card</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:240ms">Build it in front of the room. Narrate the loading state and the error handling, because those are the bits people skip.</p>
+
+    <div class="slide-body">
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:400ms">
+        <div class="prompt-head">
+          <p class="prompt-label">The base build</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text">I want to use the Open-Meteo geocoding API (https://geocoding-api.open-meteo.com/v1/search?name={place}&amp;count=1). Build a single-page app where I type a place name and it shows the country, population, timezone and coordinates in a clean card, with the country's flag loaded from https://flagcdn.com/w320/{country_code}.png using the lowercased country code. Add a loading state, and an error message if the place isn't found or the network fails. Give me the complete file.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 3</span>
+      <span class="num">15 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       16 — The increment. Adding a second source is a sentence, not
+       a project. This is the beat the lesson plan didn't have.
+       ============================================================ -->
+  <section class="slide" data-label="Two sources">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Beat 2½ · Add a second source</p>
+    <h2 class="slide-title" data-split>Two taps into the same <em>card</em>.</h2>
+
+    <div class="slide-body">
+      <div class="duo">
+        <div class="duo-side" data-fx="rise" style="--d:240ms">
+          <p class="duo-tag">Open-Meteo gives you</p>
+          <h3>The facts</h3>
+          <p class="duo-body">Country, population, timezone, coordinates, and the two-letter code that fetches the flag. Clean, structured, boring in the best way. This is the half a computer is good at.</p>
+        </div>
+        <div class="duo-divider" data-fx="bar-v" style="--d:160ms"></div>
+        <div class="duo-side" data-fx="rise" style="--d:400ms">
+          <p class="duo-tag">Wikipedia gives you</p>
+          <h3>The human half</h3>
+          <p class="duo-body">A photograph and a paragraph of prose about the place. Nothing you could compute. Ask for it in one sentence and it lands in the same card.</p>
+        </div>
+      </div>
+
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:600ms">
+        <div class="prompt-head">
+          <p class="prompt-label">Say exactly this</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text">Now add a second source. After the place loads, also fetch https://en.wikipedia.org/api/rest_v1/page/summary/{place} and show the photo and the first paragraph underneath the card. Give me the complete file.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 3</span>
+      <span class="num">16 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       17 — The reliable bug. Type "Newcastle" and it breaks, every
+       time, in a way nobody finds frightening. Use it to model the
+       panic-button prompt rather than waiting to be ambushed.
+       ============================================================ -->
+  <section class="slide case" data-label="Type Newcastle">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Debugging, on purpose</p>
+    <h2 class="slide-title" data-split>Now type <em>Newcastle</em>.</h2>
+
+    <div class="slide-body">
+      <p class="case-lede" data-fx="rise" style="--d:220ms"><strong>It breaks. Reliably. Which makes it the most useful thing on this slide.</strong></p>
+      <table class="feed-table">
+        <thead data-fx="fade" style="--d:280ms">
+          <tr>
+            <th>What you type</th>
+            <th>What comes back</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-fx="rise" style="--d:340ms">
+            <td>Tokyo</td>
+            <td>Japan, 9.7 million, a flag and a photograph. Perfect.</td>
+          </tr>
+          <tr data-fx="rise" style="--d:430ms">
+            <td>Reykjavík</td>
+            <td>Iceland. The accent survives the round trip.</td>
+          </tr>
+          <tr data-fx="rise" style="--d:520ms">
+            <td>Newcastle</td>
+            <td>Open-Meteo confidently says Australia. Wikipedia hands back a disambiguation page with no photo and a useless paragraph.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="act-note" data-fx="rise" style="--d:640ms"><strong>Two sources, quietly disagreeing.</strong> Fix it live by asking for the region to be added to the Wikipedia lookup. Then say the useful thing out loud: your app is only ever as careful as the questions you ask of it.</p>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 3</span>
       <span class="num">17 / NN</span>
     </div>
   </section>
 
   <!-- ============================================================
-       PATTERN 18 — Exchanges. Asked-and-answered pairs; the answer
-       materialises a beat after the question.
+       18 — Beat 3, the handoff. Types itself. This is the moment
+       people lean in; give it the animation budget.
        ============================================================ -->
-  <section class="slide case" data-label="Exchanges">
+  <section class="slide slide--prompt-solo" data-label="Beat 3 the handoff">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Worked example · Dialogue</p>
-    <h2 class="slide-title" data-split>Question, then <em>answer</em>.</h2>
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Beat 3 · The handoff</p>
+    <h2 class="slide-title" data-split>Now hand it to the <em>model</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:240ms">One button. One sentence. This is the whole workshop in a single move.</p>
 
     <div class="slide-body">
-      <p class="case-lede" data-fx="rise" style="--d:260ms">A short lede framing the exchanges below:</p>
-
-      <div class="exchanges">
-        <div class="exchange" data-fx="rise" style="--d:340ms">
-          <div class="ask">
-            <p class="speaker">Who asked</p>
-            <p class="line">"The question or request, quoted verbatim."</p>
-          </div>
-          <div class="suggest" data-fx="rise" style="--d:620ms">
-            <p class="speaker">Who answered</p>
-            <p class="line">"The reply — it arrives a beat later, like the conversation it was."</p>
-          </div>
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:420ms">
+        <div class="prompt-head">
+          <p class="prompt-label">The key move</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
         </div>
-        <div class="exchange" data-fx="rise" style="--d:760ms">
-          <div class="ask">
-            <p class="speaker">Who asked</p>
-            <p class="line">"A second exchange."</p>
-          </div>
-          <div class="suggest" data-fx="rise" style="--d:1040ms">
-            <p class="speaker">Who answered</p>
-            <p class="line">"Three exchanges fit comfortably; two read fine."</p>
-          </div>
-        </div>
-        <div class="exchange" data-fx="rise" style="--d:1180ms">
-          <div class="ask">
-            <p class="speaker">Who asked</p>
-            <p class="line">"A third exchange."</p>
-          </div>
-          <div class="suggest" data-fx="rise" style="--d:1460ms">
-            <p class="speaker">Who answered</p>
-            <p class="line">"End on the answer that best makes the slide's point."</p>
-          </div>
+        <div class="prompt-body">
+          <p class="prompt-text"><span class="typed" data-type-delay="800">Add a button labelled "Briefing". When clicked, send the place's name and key facts to Gemini and ask it to write a friendly 3-bullet briefing for a colleague travelling there for work. Show the response under the card.</span><span class="caret"></span></p>
         </div>
       </div>
     </div>
 
     <div class="slide-foot">
-      <span class="wm">Deck template</span>
+      <span class="wm">Vibecoding workshop · Part 3</span>
       <span class="num">18 / NN</span>
     </div>
   </section>
 
   <!-- ============================================================
-       PATTERN 19 — Chat stream. Messages land one at a time, each
-       optionally a link to the thing it produced.
+       19 — Say this out loud
        ============================================================ -->
-  <section class="slide" data-label="Chat stream">
+  <section class="slide ink slide--research" data-label="Facts and judgement">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Section · And more</p>
-    <h2 class="slide-title" data-split>But that's not <em>all</em>…</h2>
-
-    <div class="slide-body">
-      <div class="chat-stream">
-        <a class="chat-bubble" data-fx="spring-up" style="--d:300ms" href="#" target="_blank" rel="noopener noreferrer">A real message, landing first?</a>
-        <a class="chat-bubble" data-fx="spring-up" style="--d:1500ms" href="#" target="_blank" rel="noopener noreferrer">A second, about a second apart — pace them like a conversation, not a list?</a>
-        <a class="chat-bubble" data-fx="spring-up" style="--d:2700ms" href="#" target="_blank" rel="noopener noreferrer">A third?</a>
-        <a class="chat-bubble" data-fx="spring-up" style="--d:3900ms" href="#" target="_blank" rel="noopener noreferrer">Each bubble can link to the thing it became — they invert to blue on hover?</a>
-      </div>
-    </div>
+    <p class="research-eyebrow" data-fx="rise" style="--d:80ms">The point of the whole session</p>
+    <p class="research-quote" data-split data-split-base="220" data-split-step="26"><span class="research-mark no-split" data-fx="fade" style="--d:120ms">“</span>The API gives you the facts. The LLM gives you judgement and language. The magic is in <em>the handoff</em>.</p>
+    <p class="research-sub" data-fx="rise" style="--d:1300ms">And you can wire those two things together with a sentence.</p>
 
     <div class="slide-foot">
-      <span class="wm">Deck template</span>
+      <span class="wm">Vibecoding workshop · Part 3</span>
       <span class="num">19 / NN</span>
     </div>
   </section>
 
   <!-- ============================================================
-       PATTERN 20 — Numbered ways. A typographic numbered list with
-       a rationale column and a quoted example column. A calm closer.
+       20 — The matrix, first half. Every endpoint here was click-
+       tested on the morning of the workshop.
        ============================================================ -->
-  <section class="slide slide--ways" data-label="Numbered ways">
+  <section class="slide" data-label="API matrix 1">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Closing · Three ways in</p>
-    <h2 class="slide-title" data-split>Pick a way <em>in</em>.</h2>
-    <p class="slide-subtitle" data-fx="rise" style="--d:220ms">An optional standfirst introducing the list.</p>
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · The matrix · 1 of 2</p>
+    <h2 class="slide-title" data-split>Live numbers and UK <em>data</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:200ms">All free, all keyless, all browser-friendly, all tested this morning.</p>
+
+    <div class="slide-body">
+      <table class="api-ledger">
+        <thead data-fx="fade" style="--d:260ms">
+          <tr><th>API</th><th>What it returns</th><th>The move once it works</th></tr>
+        </thead>
+        <tbody>
+          <tr data-fx="rise" style="--d:320ms">
+            <td><span class="api-name">Open-Meteo</span><span class="api-url">api.open-meteo.com/v1/forecast</span></td>
+            <td>Live global weather for any coordinates</td>
+            <td class="api-ask">"Should I cycle to work? Answer in one line."</td>
+          </tr>
+          <tr data-fx="rise" style="--d:390ms">
+            <td><span class="api-name">UK Carbon Intensity</span><span class="api-url">api.carbonintensity.org.uk/intensity</span></td>
+            <td>Live grid CO₂, from very low to very high</td>
+            <td class="api-ask">"Explain in a sentence whether now is a green time to use power."</td>
+          </tr>
+          <tr data-fx="rise" style="--d:460ms">
+            <td><span class="api-name">Postcodes.io</span><span class="api-url">api.postcodes.io/postcodes/{postcode}</span></td>
+            <td>Region, council and constituency for any UK postcode</td>
+            <td class="api-ask">"Summarise what this area is known for."</td>
+          </tr>
+          <tr data-fx="rise" style="--d:530ms">
+            <td><span class="api-name">UK Bank Holidays</span><span class="api-url">gov.uk/bank-holidays.json</span></td>
+            <td>Official England, Scotland and Wales holidays</td>
+            <td class="api-ask">"Suggest a long-weekend trip around the next one."</td>
+          </tr>
+          <tr data-fx="rise" style="--d:600ms">
+            <td><span class="api-name">Frankfurter</span><span class="api-url">api.frankfurter.dev/v1/latest?from=GBP</span></td>
+            <td>European Central Bank exchange rates</td>
+            <td class="api-ask">"Explain what moved this rate this month."</td>
+          </tr>
+          <tr data-fx="rise" style="--d:670ms">
+            <td><span class="api-name">USGS Earthquakes</span><span class="api-url">earthquake.usgs.gov/fdsnws/event/1/query?format=geojson</span></td>
+            <td>Live global quake feed</td>
+            <td class="api-ask">"Summarise the last 24 hours of activity."</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 3</span>
+      <span class="num">20 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       21 — The matrix, second half
+       ============================================================ -->
+  <section class="slide" data-label="API matrix 2">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · The matrix · 2 of 2</p>
+    <h2 class="slide-title" data-split>Words, places and <em>culture</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:200ms">Spread out across these. Thirty people on one endpoint is how you trip a shared rate limit.</p>
+
+    <div class="slide-body">
+      <table class="api-ledger">
+        <thead data-fx="fade" style="--d:260ms">
+          <tr><th>API</th><th>What it returns</th><th>The move once it works</th></tr>
+        </thead>
+        <tbody>
+          <tr data-fx="rise" style="--d:320ms">
+            <td><span class="api-name">Open-Meteo Geocoding</span><span class="api-url">geocoding-api.open-meteo.com/v1/search?name={place}</span></td>
+            <td>Country, population, timezone and coordinates for any place</td>
+            <td class="api-ask">"Write a 3-bullet primer for a colleague travelling there."</td>
+          </tr>
+          <tr data-fx="rise" style="--d:390ms">
+            <td><span class="api-name">Wikipedia REST</span><span class="api-url">en.wikipedia.org/api/rest_v1/page/summary/{title}</span></td>
+            <td>Plain-text article summaries and a photograph</td>
+            <td class="api-ask">"Rewrite this so a 12-year-old understands it."</td>
+          </tr>
+          <tr data-fx="rise" style="--d:460ms">
+            <td><span class="api-name">Art Institute of Chicago</span><span class="api-url">api.artic.edu/api/v1/artworks</span></td>
+            <td>High-resolution art images and metadata</td>
+            <td class="api-ask">"Tell me one surprising thing about this piece."</td>
+          </tr>
+          <tr data-fx="rise" style="--d:530ms">
+            <td><span class="api-name">Free Dictionary</span><span class="api-url">api.dictionaryapi.dev/api/v2/entries/en/{word}</span></td>
+            <td>Definitions, phonetics and audio</td>
+            <td class="api-ask">"Use this word in three sentences in different tones."</td>
+          </tr>
+          <tr data-fx="rise" style="--d:600ms">
+            <td><span class="api-name">Datamuse</span><span class="api-url">api.datamuse.com/words?ml={idea}</span></td>
+            <td>Synonyms, rhymes and tip-of-the-tongue words</td>
+            <td class="api-ask">"Pick the best fit for a formal email and explain why."</td>
+          </tr>
+          <tr data-fx="rise" style="--d:670ms">
+            <td><span class="api-name">Open Food Facts</span><span class="api-url">world.openfoodfacts.org/api/v2/product/{barcode}.json</span></td>
+            <td>Nutrition and eco-score by barcode</td>
+            <td class="api-ask">"Flag anything worth knowing about this product."</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 3</span>
+      <span class="num">21 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       22 — Section opener: Part 4
+       ============================================================ -->
+  <section class="slide ink section-opener" data-label="Part 4 opener">
+    <div class="rule-band"></div>
+    <span class="chapter-ghost" aria-hidden="true" data-fx="ghost" style="--d:150ms">04</span>
+
+    <div class="chapter-num" data-fx="rise" style="--d:100ms">Part 4 · 30 minutes</div>
+    <h1 data-split data-split-base="260" data-split-step="50">Your <em>turn.</em></h1>
+    <p class="section-dek" data-fx="rise" style="--d:780ms">Pick an API from the matrix, or one you found yourself, and build your tool. I'll be walking the room.</p>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 4</span>
+      <span class="num">22 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       23 — THE ACTIVITY BRIEF. Setup steps, two activities, the
+       shared loop underneath. Sits on screen while people start.
+       ============================================================ -->
+  <section class="slide slide--activity" data-label="Your turn: the brief">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Your turn</p>
+    <h2 class="slide-title" data-split>Build something that knows what's <em>happening</em>.</h2>
+
+    <div class="slide-body">
+      <div class="act-setup" data-fx="rise" style="--d:220ms">
+        <span class="act-setup-lead">To start</span>
+        <ol class="act-steps">
+          <li><span class="act-step-n">1</span>Pick an API from the matrix</li>
+          <li><span class="act-step-n">2</span>Open it in a browser tab and look at what comes back</li>
+          <li><span class="act-step-n">3</span>Use the starter prompt below</li>
+        </ol>
+      </div>
+
+      <div class="act-panels">
+        <div class="act-panel a1" data-fx="rise" style="--d:360ms">
+          <p class="act-eyebrow">Activity 1</p>
+          <h3>Get live data on screen</h3>
+          <div class="prompt-box" data-copy>
+            <div class="prompt-head">
+              <p class="prompt-label">Your starter prompt</p>
+              <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="prompt-body">
+              <p class="prompt-text">I want to use [PASTE ENDPOINT URL]. Build a single-page app that fetches it and shows the results in a clean card. Add a loading state and an error message if it fails. Give me the complete file.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="act-panel a2" data-fx="rise" style="--d:480ms">
+          <p class="act-eyebrow">Activity 2 <span class="act-optional">if time allows</span></p>
+          <h3>Add the brain</h3>
+          <div class="prompt-box" data-copy>
+            <div class="prompt-head">
+              <p class="prompt-label">Your starter prompt</p>
+              <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="prompt-body">
+              <p class="prompt-text">Add a button that sends this data to Gemini and asks it to summarise what it means in three bullets. Show the answer under the card.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="act-do" data-fx="rise" style="--d:600ms">
+        <span class="act-do-lead">Then</span>
+        <ol class="act-do-steps">
+          <li><span class="act-do-n">1</span>Add your own context and ideas to the prompt</li>
+          <li><span class="act-do-n">2</span>Build it!</li>
+          <li><span class="act-do-n">3</span>Improve it by prompting</li>
+        </ol>
+      </div>
+
+      <p class="act-note" data-fx="rise" style="--d:720ms"><strong>Always ask for the complete file back, never a snippet.</strong> Otherwise you'll get fragments you can't slot in anywhere.</p>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 4</span>
+      <span class="num">23 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       24 — THE HOLDING SLIDE. Leave this up for the full 30
+       minutes. No data-fx anywhere on it, on purpose: nothing
+       should twitch in the corner of anyone's eye for half an hour.
+       ============================================================ -->
+  <section class="slide slide--hold" data-label="Holding slide - leave up">
+    <div class="rule-band"></div>
+
+    <p class="kicker">Part 4 · Leave this up</p>
+
+    <div class="slide-body">
+      <div class="hold-done">
+        <p class="hold-label">Definition of done</p>
+        <p class="hold-body">You have a page that pulls <em>live data</em> from the internet and shows it on screen. Everything beyond that is bonus.</p>
+      </div>
+
+      <div class="hold-two">
+        <div class="hold-panel">
+          <p class="hold-label">When it breaks, paste this</p>
+          <p class="prompt-text">This isn't working and I see this error: [PASTE THE RED CONSOLE TEXT]. Explain what's wrong in plain English, and give me the complete corrected file - no snippets.</p>
+        </div>
+        <div class="hold-panel stuck">
+          <p class="hold-label">Where the red text lives</p>
+          <ol>
+            <li><strong>F12</strong>, then click Console</li>
+            <li>Or right-click the page, then Inspect, then Console</li>
+            <li>Read the <strong>first red line</strong>. It's usually a typo in the URL, or CORS</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 4</span>
+      <span class="num">24 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       25 — Section opener: Part 5
+       ============================================================ -->
+  <section class="slide ink section-opener" data-label="Part 5 opener">
+    <div class="rule-band"></div>
+    <span class="chapter-ghost" aria-hidden="true" data-fx="ghost" style="--d:150ms">05</span>
+
+    <div class="chapter-num" data-fx="rise" style="--d:100ms">Part 5 · 15 minutes</div>
+    <h1 data-split data-split-base="260" data-split-step="50">Up the <em>ladder.</em></h1>
+    <p class="section-dek" data-fx="rise" style="--d:780ms">As you finish the base build, pick a rung. Nobody is expected to get to the top one.</p>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 5</span>
+      <span class="num">25 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       26 — The three progressions
+       ============================================================ -->
+  <section class="slide slide--ways" data-label="Three progressions">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 5 · Three ways up</p>
+    <h2 class="slide-title" data-split>Pick a <em>rung</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:220ms">In order of ambition. The first one is the one that matters.</p>
 
     <div class="slide-body">
       <ol class="ways-list">
         <li class="way" data-fx="rise" style="--d:320ms">
           <span class="way-num">01</span>
           <div class="way-main">
-            <h3>First way</h3>
-            <p class="way-why">Why this route works, in a line or two.</p>
+            <h3>Add the brain</h3>
+            <p class="way-why">If you haven't already, this is the big one. Send your data to Gemini and ask it to summarise, rewrite, classify or advise.</p>
           </div>
-          <p class="way-ask">"A first-person example in quotes — what someone actually did or said."</p>
+          <p class="way-ask">"Send this to Gemini and ask it to explain what it means in three bullets, in plain English."</p>
         </li>
         <li class="way" data-fx="rise" style="--d:480ms">
           <span class="way-num">02</span>
           <div class="way-main">
-            <h3>Second way</h3>
-            <p class="way-why">The numerals colour blue, red, green down the list.</p>
+            <h3>Refine by conversation</h3>
+            <p class="way-why">Iterate on look and feel. You are allowed to be fussy. It costs you a sentence.</p>
           </div>
-          <p class="way-ask">"The quote column can run a little longer than the rationale."</p>
+          <p class="way-ask">"Make this a dark-mode dashboard." · "Move the result box to the top." · "Can it show three cities at once instead of one?"</p>
         </li>
         <li class="way" data-fx="rise" style="--d:640ms">
           <span class="way-num">03</span>
           <div class="way-main">
-            <h3>Third way</h3>
-            <p class="way-why">Three rows close a deck gracefully.</p>
+            <h3>Chain a third source, or find your own</h3>
+            <p class="way-why">For the confident. Run the discovery prompts and wire in something genuinely new, or feed one API's output into another.</p>
           </div>
-          <p class="way-ask">"End on the example you want people to leave repeating."</p>
+          <p class="way-ask">"Take the coordinates from this response and feed them into Open-Meteo to show the weather there too."</p>
         </li>
       </ol>
     </div>
 
     <div class="slide-foot">
-      <span class="wm">Deck template</span>
-      <span class="num">20 / NN</span>
+      <span class="wm">Vibecoding workshop · Part 5</span>
+      <span class="num">26 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       27 — Section opener: Part 6
+       ============================================================ -->
+  <section class="slide ink section-opener" data-label="Part 6 opener">
+    <div class="rule-band"></div>
+    <span class="chapter-ghost" aria-hidden="true" data-fx="ghost" style="--d:150ms">06</span>
+
+    <div class="chapter-num" data-fx="rise" style="--d:100ms">Part 6 · 10 minutes</div>
+    <h1 data-split data-split-base="260" data-split-step="50">Show and <em>tell.</em></h1>
+    <p class="section-dek" data-fx="rise" style="--d:780ms">Two or three of you on the main screen. Volunteers, or I'll pick.</p>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 6</span>
+      <span class="num">27 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       28 — Sharing, and the bookend to rule 03
+       ============================================================ -->
+  <section class="slide" data-label="Share it">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 6 · Before you send anyone a link</p>
+    <h2 class="slide-title" data-split>Share it. But read this <em>first</em>.</h2>
+
+    <div class="slide-body">
+      <div class="duo">
+        <div class="duo-side" data-fx="rise" style="--d:240ms">
+          <p class="duo-tag">How</p>
+          <h3>Public Share Link</h3>
+          <p class="duo-body">Generate one from Canvas and put it on the main screen. It works on anyone's phone, with no install and no account. That's genuinely useful, and it's why people will ask you for it.</p>
+        </div>
+        <div class="duo-divider" data-fx="bar-v" style="--d:160ms"></div>
+        <div class="duo-side" data-fx="rise" style="--d:400ms">
+          <p class="duo-tag">The catch</p>
+          <h3>Public means public</h3>
+          <p class="duo-body">Anyone with the link can read it. Perfect for a weather app. Never for anything containing internal or sensitive data. This is rule 03 from the start of the session, arriving exactly when it matters.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 6</span>
+      <span class="num">28 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       29 — Takeaways
+       ============================================================ -->
+  <section class="slide" data-label="Takeaways">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 6 · What to take away</p>
+    <h2 class="slide-title" data-split>Six things worth <em>keeping</em>.</h2>
+
+    <div class="slide-body">
+      <ol class="opts wide">
+        <li class="opt-row" data-fx="rise" style="--d:280ms"><span class="opt-n">01</span><div class="opt-main"><strong>Live data is the step that turns a toy into something useful</strong><span>Everything before that is a nice demo</span></div></li>
+        <li class="opt-row" data-fx="rise" style="--d:340ms"><span class="opt-n">02</span><div class="opt-main"><strong>Finding good APIs is easy. Keys, CORS and rate limits are the hard part</strong><span>And they're the part nobody warns you about</span></div></li>
+        <li class="opt-row" data-fx="rise" style="--d:400ms"><span class="opt-n">03</span><div class="opt-main"><strong>You no longer need to know syntax to build data-driven tools</strong><span>You need to know what you want</span></div></li>
+        <li class="opt-row" data-fx="rise" style="--d:460ms"><span class="opt-n">04</span><div class="opt-main"><strong>How data moves now matters more than where the semicolons go</strong><span>JSON, arrays, objects. That's the literacy</span></div></li>
+        <li class="opt-row" data-fx="rise" style="--d:520ms"><span class="opt-n">05</span><div class="opt-main"><strong>The real leap is the handoff</strong><span>Structured data from an API, plus a model's reasoning. That pattern generalises to almost any task in any department</span></div></li>
+        <li class="opt-row" data-fx="rise" style="--d:580ms"><span class="opt-n">06</span><div class="opt-main"><strong>Prototypes built here export cleanly</strong><span>When something's worth scaling, it moves to a secure environment with proper keys</span></div></li>
+      </ol>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 6</span>
+      <span class="num">29 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       30 — Close
+       ============================================================ -->
+  <section class="slide ink slide--research" data-label="Close">
+    <div class="rule-band"></div>
+
+    <p class="research-eyebrow" data-fx="rise" style="--d:80ms">That's the session</p>
+    <p class="research-quote" data-split data-split-base="220" data-split-step="26">You came in able to describe what you wanted. You're leaving able to <em>build it</em>.</p>
+    <p class="research-sub" data-fx="rise" style="--d:1300ms">Every prompt is on the next two slides, and the deck lives at peter-guillam123.github.io/vibecoding-workshop</p>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop</span>
+      <span class="num">30 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       31 — Appendix: the prompts, first half. Click any card to
+       copy. These replace the notes file in the pre-flight.
+       ============================================================ -->
+  <section class="slide slide--prompt-solo slide--appendix-prompts" data-label="Appendix: prompts 1">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Appendix · Every prompt · 1 of 2</p>
+    <h2 class="slide-title" data-split>Click any card to <em>copy</em>.</h2>
+
+    <div class="slide-body">
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:300ms">
+        <div class="prompt-head">
+          <p class="prompt-label">Hook · Meeting Cost Calculator</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text">Build a self-contained single-page web app called "Meeting Cost Calculator". It has three inputs: number of attendees, average annual salary (£), and meeting length in minutes. When I press Start, show a running total in £ of what the meeting is costing, ticking up live, with Pause and Reset buttons. Assume an 1,800-hour working year. Make it clean and readable with a large headline number and a dark-mode dashboard look. Give me the complete code.</p>
+        </div>
+      </div>
+
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:400ms">
+        <div class="prompt-head">
+          <p class="prompt-label">Discovery · Finding an API</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text">Give me 3 completely free, open APIs that need NO API key, support CORS (so they work from a browser), and return data about [TOPIC]. For each, give the exact base URL endpoint and one short example of what the returned data looks like.</p>
+        </div>
+      </div>
+
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:500ms">
+        <div class="prompt-head">
+          <p class="prompt-label">Discovery · Sizing one up</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text">Explain in plain English what data this API returns, and three realistic things I could build with it: [PASTE ENDPOINT URL]</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Appendix</span>
+      <span class="num">31 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       32 — Appendix: the prompts, second half
+       ============================================================ -->
+  <section class="slide slide--prompt-solo slide--appendix-prompts" data-label="Appendix: prompts 2">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Appendix · Every prompt · 2 of 2</p>
+    <h2 class="slide-title" data-split>The build, the handoff, the <em>panic</em>.</h2>
+
+    <div class="slide-body">
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:300ms">
+        <div class="prompt-head">
+          <p class="prompt-label">Base build · Open-Meteo geocoding</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text">I want to use the Open-Meteo geocoding API (https://geocoding-api.open-meteo.com/v1/search?name={place}&amp;count=1). Build a single-page app where I type a place name and it shows the country, population, timezone and coordinates in a clean card, with the country's flag loaded from https://flagcdn.com/w320/{country_code}.png using the lowercased country code. Add a loading state, and an error message if the place isn't found or the network fails. Give me the complete file.</p>
+        </div>
+      </div>
+
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:400ms">
+        <div class="prompt-head">
+          <p class="prompt-label">Second source · Wikipedia</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text">Now add a second source. After the place loads, also fetch https://en.wikipedia.org/api/rest_v1/page/summary/{place} and show the photo and the first paragraph underneath the card. Give me the complete file.</p>
+        </div>
+      </div>
+
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:500ms">
+        <div class="prompt-head">
+          <p class="prompt-label">The handoff · The key move</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text">Add a button labelled "Briefing". When clicked, send the place's name and key facts to Gemini and ask it to write a friendly 3-bullet briefing for a colleague travelling there for work. Show the response under the card.</p>
+        </div>
+      </div>
+
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:600ms">
+        <div class="prompt-head">
+          <p class="prompt-label">Panic button · When something breaks</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text">This isn't working and I see this error: [PASTE THE RED CONSOLE TEXT]. Explain what's wrong in plain English, and give me the complete corrected file - no snippets.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Appendix</span>
+      <span class="num">32 / NN</span>
     </div>
   </section>
 
 </deck-stage>
 
 <script src="deck-stage.js"></script>
+<script src="prompt-copy.js"></script>
 <script src="motion.js"></script>
 <script src="grid-overlay.js"></script>
 

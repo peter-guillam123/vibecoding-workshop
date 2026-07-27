@@ -1979,3 +1979,40 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .slide--appendix-prompts .prompt-text { font-size: 21px; line-height: 1.42; }
 
 .api-ledger tbody td { padding-top: 12px; padding-bottom: 12px; }
+
+/* ----------------------------------------------------------------
+   8 · Cover note — the one-line audience promise, marked with a
+   Guardian-yellow highlighter that draws in behind the words after
+   the cover has settled. The text is never hidden: only the mark
+   animates, so no-JS and reduced-motion both read fine.
+   ---------------------------------------------------------------- */
+.cover-note-wrap { margin: 0; }
+.cover-note {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 31px;
+  line-height: 1.24;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  padding: 0 4px;
+  background-image: linear-gradient(var(--guardian-yellow), var(--guardian-yellow));
+  background-repeat: no-repeat;
+  background-position: 0 84%;
+  background-size: 0% 44%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+/* Re-applied each time the cover becomes active, so the mark redraws
+   on a return visit without needing to be a [data-fx] element. */
+[data-deck-active] .cover-note {
+  animation: coverNoteMark 780ms var(--ease-out) 1500ms both;
+}
+@keyframes coverNoteMark { to { background-size: 100% 44%; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .cover-note,
+  [data-deck-active] .cover-note { background-size: 100% 44%; animation: none !important; }
+}
+@media print {
+  .cover-note { background-size: 100% 44% !important; animation: none !important; }
+}

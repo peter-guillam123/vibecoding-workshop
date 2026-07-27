@@ -2463,3 +2463,14 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   .copydemo-cursor, .copydemo-ring { display: none !important; }
   .copydemo .copy-badge { opacity: 1 !important; animation: none !important; }
 }
+
+/* Links inside a slide. Rare, but they need to look clickable and take
+   a visible focus ring, since the deck is read as well as presented. */
+.slide-body a {
+  color: var(--guardian-blue);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.slide-body a:hover { color: var(--news-red); }
+.slide-body a:focus-visible { outline: 3px solid var(--guardian-blue); outline-offset: 3px; }

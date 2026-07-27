@@ -2339,3 +2339,49 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   color: var(--news-red);
   font-weight: 700;
 }
+
+/* ----------------------------------------------------------------
+   17 · Run sheet — the session at a glance. An ordered list rather
+   than a table, because that's what it is: part, how long, what
+   happens. No headers; the columns explain themselves.
+   ---------------------------------------------------------------- */
+.runsheet { list-style: none; margin: 0; padding: 0; }
+.runsheet li {
+  display: grid;
+  grid-template-columns: 220px 190px 1fr;
+  column-gap: 44px;
+  align-items: baseline;
+  padding: 34px 0;
+  border-top: 1px solid var(--hairline);
+}
+.runsheet li:first-child { border-top: 2px solid var(--ink); }
+.rs-part {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--guardian-blue);
+}
+.rs-time {
+  font-family: var(--mono);
+  font-size: 22px;
+  color: var(--ink-mute);
+  font-variant-numeric: tabular-nums;
+}
+.rs-time mark {
+  background: var(--guardian-yellow);
+  color: var(--ink);
+  font-weight: 700;
+  padding: 1px 5px;
+}
+.rs-what {
+  font-family: var(--body);
+  font-size: 26px;
+  line-height: 1.34;
+  color: var(--ink);
+}
+
+/* The run sheet is the only thing on its slide, so let it sit centred
+   rather than hard against the top with a third of the slide empty. */
+.slide.case:has(.runsheet) .slide-body { justify-content: center; }

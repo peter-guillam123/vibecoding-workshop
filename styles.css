@@ -2474,3 +2474,7 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 }
 .slide-body a:hover { color: var(--news-red); }
 .slide-body a:focus-visible { outline: 3px solid var(--guardian-blue); outline-offset: 3px; }
+
+/* A build step carrying a warning rather than a stage. */
+.build-step.warn { border-left-color: var(--news-red); }
+.build-step.warn .build-lead { color: var(--news-red); }

@@ -1,6 +1,6 @@
 # Vibecoding workshop
 
-A 32-slide deck for a 90-minute hands-on workshop on vibe coding and
+A 31-slide deck for a 90-minute hands-on workshop on vibe coding and
 advanced prototyping in Gemini Canvas. Staff across all departments, no
 coding experience assumed.
 
@@ -20,11 +20,8 @@ Arrow keys or space to advance, R to reset, G to show the grid, Cmd-P →
 Save as PDF for a one-slide-per-page export. It is driven entirely by
 hand: nothing advances itself and nothing is on a timer.
 
-Two slides are meant to sit still. Slide 23 is the activity brief, and
-slide 24 is the holding slide that stays on screen for the whole
-30-minute build block. Slide 24 carries no animation at all, on purpose,
-because nothing should twitch in the corner of anyone's eye for half an
-hour.
+One slide is meant to sit still: slide 23, the activity brief, which
+stays on screen while people work.
 
 **Every prompt card copies on click**, and so do the six suggestion cards on slide 7. That replaces the
 "have the prompts open in a notes file" step in the lesson plan's

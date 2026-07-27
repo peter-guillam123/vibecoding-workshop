@@ -1,6 +1,6 @@
 # Vibecoding workshop
 
-A 32-slide deck for a 90-minute hands-on workshop on vibe coding and
+A 31-slide deck for a 90-minute hands-on workshop on vibe coding and
 advanced prototyping in Gemini Canvas. Staff across all departments, no
 coding experience assumed.
 
@@ -20,9 +20,9 @@ Arrow keys or space to advance, R to reset, G to show the grid, Cmd-P →
 Save as PDF for a one-slide-per-page export. It is driven entirely by
 hand: nothing advances itself and nothing is on a timer.
 
-Two slides are meant to sit still. Slide 23 is the activity brief, and
-slide 24 is the holding slide that stays on screen for the whole
-30-minute build block. Slide 24 carries no animation at all, on purpose,
+Two slides are meant to sit still. Slide 22 is the activity brief, and
+slide 23 is the holding slide that stays on screen for the whole
+30-minute build block. Slide 23 carries no animation at all, on purpose,
 because nothing should twitch in the corner of anyone's eye for half an
 hour.
 
@@ -31,6 +31,20 @@ hour.
 pre-flight: the deck itself is the clipboard.
 
 ## Changelog
+
+### 27 July 2026 — Explaining the API bit properly
+
+Two Part 2 slides assumed knowledge the room doesn't have. The raw JSON
+slide now states the question in English before showing the answer, and
+sets a plain reading of the response beside it: quote marks mean text,
+no quote marks means a number you can calculate with, two letters fetch a
+flag, coordinates can be handed to a weather API. The safety briefing
+drops its unhelpful title, opens by naming what "keyless" has meant all
+along, and gives rule 01 the room it deserves — what a key is, why they
+exist, and a never/instead couplet on not letting one end up in the code.
+Rule 02 gains the line that you can ask Gemini to explain an API's limits
+before you build. The standalone "doesn't Gemini need a key?" slide is
+gone; its useful half is inside rule 01. Deck is 31 slides.
 
 ### 27 July 2026 — A vaguer prompt, on purpose
 

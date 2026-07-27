@@ -16,10 +16,10 @@
      parts; the folio and the footer tell you where you are.
 
      Two slides earn their keep by sitting still:
-       · slide 23, the activity brief
-       · slide 24, the holding slide that stays up for the whole
+       · slide 22, the activity brief
+       · slide 23, the holding slide that stays up for the whole
          30-minute build block
-     Slide 24 carries no data-fx at all, on purpose. Don't add any.
+     Slide 23 carries no data-fx at all, on purpose. Don't add any.
 
      Every prompt card is click-to-copy (prompt-copy.js), so the
      prompts you paste live come off the slide itself rather than
@@ -319,15 +319,18 @@
        10 — Show it live. The JSON is a real response, captured from
        the endpoint printed above it.
        ============================================================ -->
-  <section class="slide" data-label="Raw JSON">
+  <section class="slide slide--spread" data-label="Raw JSON">
     <div class="rule-band"></div>
 
     <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Open this on the projector</p>
-    <h2 class="slide-title" data-split>Not a webpage. Just <em>data</em>.</h2>
+    <h2 class="slide-title" data-split>One question, one <em>answer</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:200ms">The question we're asking: <strong>is there a place called Tokyo, and if so, where exactly is it?</strong> That question is the web address. The answer comes back as text.</p>
 
     <div class="slide-body">
-      <p class="json-url" data-fx="rise" style="--d:220ms">https://geocoding-api.open-meteo.com/v1/search?name=Tokyo&amp;count=1</p>
-      <div class="json-spec" data-fx="rise" style="--d:340ms">
+      <p class="json-url" data-fx="rise" style="--d:280ms">https://geocoding-api.open-meteo.com/v1/search?name=Tokyo&amp;count=1</p>
+
+      <div class="json-explain">
+        <div class="json-spec" data-fx="rise" style="--d:360ms">
 <pre>{ <span class="k">"results"</span>: [ {
     <span class="k">"name"</span>: <span class="s">"Tokyo"</span>,
     <span class="k">"country"</span>: <span class="s">"Japan"</span>,
@@ -337,8 +340,20 @@
     <span class="k">"latitude"</span>: <span class="n">35.6895</span>,
     <span class="k">"longitude"</span>: <span class="n">139.69171</span>
 } ] }</pre>
+        </div>
+
+        <div data-fx="rise" style="--d:480ms">
+          <p class="json-read-lead">What you're looking at</p>
+          <ul class="json-read">
+            <li><b>"country": "Japan"</b>Words in quote marks are text. Your app can print this straight onto the page.</li>
+            <li><b>"country_code": "JP"</b>Two letters, which is all you need to fetch the right flag image.</li>
+            <li><b>"population": 9733276</b>No quote marks, so it's a number. Your app can do maths with it.</li>
+            <li><b>"latitude" / "longitude"</b>Coordinates. Hand these to a weather API and you've joined two sources together.</li>
+          </ul>
+        </div>
       </div>
-      <p class="act-note" data-fx="rise" style="--d:560ms"><strong>That's the whole idea.</strong> Ugly to look at, trivial for an app to read. Every project this afternoon starts by pointing at a URL like this one and asking what comes back.</p>
+
+      <p class="act-note" data-fx="rise" style="--d:600ms"><strong>Nobody is meant to read this.</strong> It's ugly for us and trivial for an app, which is the whole point. Every project this afternoon starts by opening a web address like this one and seeing what comes back.</p>
     </div>
 
     <div class="slide-foot">
@@ -351,30 +366,41 @@
        11 — Safety briefing. Three rules. This is a learning
        objective in its own right, not a disclaimer.
        ============================================================ -->
-  <section class="slide slide--rules" data-label="Safety briefing">
+  <section class="slide slide--rules slide--rules-dense" data-label="Safety briefing">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Non-negotiables</p>
-    <h2 class="slide-title" data-split>Three things that are actually <em>true</em>.</h2>
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Before you plug anything in</p>
+    <h2 class="slide-title" data-split>The easy ones, and the <em>others</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:200ms">Everything in today's list is free and <strong>keyless</strong>: no sign-up, no password, safe to use straight away. Out in the wild, some APIs ask for more. Three things to know.</p>
 
     <div class="slide-body">
       <ul class="rules-list">
-        <li class="rule-row" data-fx="rise" style="--d:220ms">
-          <span class="rule-tag">Rule 01</span>
+        <li class="rule-row" data-fx="rise" style="--d:260ms">
+          <span class="rule-tag">01</span>
           <div>
-            <h3>Keys are passwords</h3>
-            <p>Never paste one into Canvas. Your preview link is effectively public, and anyone with the link could read a key you put inside it. Today we use only free, open, keyless APIs. If an API demands a key, that's your signal to stop and move the project somewhere secure later, never to paste the key in here.</p>
+            <h3>Some APIs need a key, and a key is yours alone</h3>
+            <p>A key is a password an API gives you when you register with it. They exist mostly so nobody can abuse or overload the service, and so usage can be traced back to whoever signed up. That person is you. Share it and someone else can run up your bill, or get you cut off.</p>
+            <div class="rule-pair">
+              <div>
+                <p class="rule-pair-lead">Never</p>
+                <p>Give your key to Gemini, or let it write the key into the code. Anyone who opens the app can pull it back out.</p>
+              </div>
+              <div class="do">
+                <p class="rule-pair-lead">Instead</p>
+                <p>Ask Gemini to have the app request the key from whoever is using it, so it's typed in fresh and never stored.</p>
+              </div>
+            </div>
           </div>
         </li>
-        <li class="rule-row" data-fx="rise" style="--d:360ms">
-          <span class="rule-tag">Rule 02</span>
+        <li class="rule-row" data-fx="rise" style="--d:420ms">
+          <span class="rule-tag">02</span>
           <div>
-            <h3>Rate limits and CORS are real</h3>
-            <p>Free endpoints cap how many requests they'll answer. Thirty people hammering the same one can trip a shared limit, so spreading out across different APIs isn't just for variety, it keeps everyone's apps working. Some APIs don't talk to browsers at all and simply won't be available.</p>
+            <h3>Rate limits and CORS</h3>
+            <p>Free endpoints cap how many requests they'll answer, so thirty people hammering the same one can trip a shared limit. Spreading out across different APIs keeps everyone's apps working. Some APIs won't talk to a browser at all. If you're not sure what one will and won't do, <strong>ask Gemini to explain the API's limits and what you can build with it</strong> before you start.</p>
           </div>
         </li>
-        <li class="rule-row" data-fx="rise" style="--d:500ms">
-          <span class="rule-tag">Rule 03</span>
+        <li class="rule-row" data-fx="rise" style="--d:560ms">
+          <span class="rule-tag">03</span>
           <div>
             <h3>A public link is public</h3>
             <p>The share link you'll generate at the end is readable by anyone who has it. Perfect for a weather app. Never for anything carrying internal or sensitive data. We'll come back to this before you share.</p>
@@ -386,49 +412,6 @@
     <div class="slide-foot">
       <span class="wm">Vibecoding workshop · Part 2</span>
       <span class="num">11 / NN</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       12 — The question someone always asks. Answer it before the
-       hand goes up, otherwise rule 01 looks like it contradicts the
-       whole of Part 3.
-       ============================================================ -->
-  <section class="slide case" data-label="The Gemini key question">
-    <div class="rule-band"></div>
-
-    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · The obvious objection</p>
-    <h2 class="slide-title" data-split>"Hang on, doesn't Gemini need a <em>key</em>?"</h2>
-
-    <div class="slide-body">
-      <p class="case-lede" data-fx="rise" style="--d:260ms">Worth answering now rather than in twenty minutes:</p>
-      <div class="exchanges">
-        <div class="exchange" data-fx="rise" style="--d:340ms">
-          <div class="ask">
-            <p class="speaker">The worry</p>
-            <p class="line">"You just told us never to paste a key. In Part 3 you're going to ask us to call Gemini from inside our app."</p>
-          </div>
-          <div class="suggest" data-fx="rise" style="--d:620ms">
-            <p class="speaker">The answer</p>
-            <p class="line">Canvas wires that connection up for you. You never see a key, never paste one, and there's nothing sitting in your code for a stranger to read.</p>
-          </div>
-        </div>
-        <div class="exchange" data-fx="rise" style="--d:760ms">
-          <div class="ask">
-            <p class="speaker">So when does rule 01 bite?</p>
-            <p class="line">"How do I know when I've hit the line?"</p>
-          </div>
-          <div class="suggest" data-fx="rise" style="--d:1040ms">
-            <p class="speaker">The answer</p>
-            <p class="line">The moment any other service asks you to register for a key. That's the signal to stop and move the project to a secure environment, not to paste and hope.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide-foot">
-      <span class="wm">Vibecoding workshop · Part 2</span>
-      <span class="num">12 / NN</span>
     </div>
   </section>
 

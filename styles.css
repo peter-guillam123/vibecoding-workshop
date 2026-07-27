@@ -2088,3 +2088,90 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 /* Default paragraph margins on the child blocks skew the distribution,
    so the rhythm comes out uneven. Zero them and let space-evenly do it. */
 .slide--spread .slide-body > * { margin: 0; }
+
+/* ----------------------------------------------------------------
+   11 · JSON explained — the specimen beside a plain-English reading
+   of it. The raw response on its own proves the point that APIs
+   return data, but it doesn't teach anyone what the data is for.
+   ---------------------------------------------------------------- */
+.json-explain {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 44px;
+  align-items: start;
+}
+.json-explain .json-spec { padding: 24px 28px; }
+.json-explain .json-spec pre { font-size: 19px; line-height: 1.62; }
+
+.json-read-lead {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--news-red);
+  margin: 0 0 14px;
+}
+.json-read { list-style: none; margin: 0; padding: 0; }
+.json-read li {
+  padding: 12px 0;
+  border-top: 1px solid var(--hairline);
+  font-family: var(--body);
+  font-size: 20px;
+  line-height: 1.36;
+  color: var(--ink-soft);
+}
+.json-read li:first-child { border-top: 2px solid var(--ink); }
+.json-read b {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--guardian-blue);
+  display: block;
+  margin-bottom: 3px;
+}
+
+/* ----------------------------------------------------------------
+   12 · Rule pair — the "never do this / do this instead" couplet
+   that sits inside a rules-list row when a rule needs an action
+   rather than just an explanation.
+   ---------------------------------------------------------------- */
+.rule-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 12px;
+}
+.rule-pair > div {
+  padding: 12px 18px;
+  background: var(--paper-deep);
+  border-left: 4px solid var(--news-red);
+}
+.rule-pair > div.do { border-left-color: var(--eco-green); }
+.rule-pair-lead {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--news-red);
+  margin: 0 0 4px;
+}
+.rule-pair > div.do .rule-pair-lead { color: var(--eco-green); }
+.rule-pair p:last-child {
+  font-family: var(--body);
+  font-size: 19px;
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* Rule 01 now carries a never/instead couplet as well as its body, so
+   this ledger runs taller than the three-short-rows the base pattern
+   assumes. Tighten the rhythm rather than cut the explanation. */
+.slide--rules-dense .rule-row { padding: 18px 0; }
+.slide--rules-dense .rule-row h3 { font-size: 29px; margin-bottom: 6px; }
+.slide--rules-dense .rule-row p { font-size: 19px; line-height: 1.4; }
+.slide--rules-dense .rule-pair { margin-top: 10px; gap: 16px; }
+.slide--rules-dense .rule-pair > div { padding: 10px 16px; }
+.slide--rules-dense .rule-pair p:last-child { font-size: 18px; line-height: 1.34; }

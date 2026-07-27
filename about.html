@@ -204,14 +204,14 @@
   <h2>What this is</h2>
 
   <div class="lede-panel">
-    <p>Thirty-two slides for a hands-on workshop, for staff across all departments, with no coding experience assumed. People arrive with a laptop and leave having built something that pulls live data off the internet and hands it to a model to reason over.</p>
+    <p>Thirty-one slides for a hands-on workshop, for staff across all departments, with no coding experience assumed. People arrive with a laptop and leave having built something that pulls live data off the internet and hands it to a model to reason over.</p>
   </div>
 
   <p>The deck is at <a href="./">peter-guillam123.github.io/vibecoding-workshop</a>. It's driven entirely by hand: arrow keys or space to advance, nothing on a timer, nothing that advances itself. Two slides are built to sit still rather than perform, which turns out to matter more than any of the animation.</p>
 
   <ul class="plain">
-    <li><strong>Slide 23</strong> is the activity brief, on screen while people get started.</li>
-    <li><strong>Slide 24</strong> is the holding slide, up for the whole 30-minute build block. It carries no animation at all, deliberately, because nothing should twitch in the corner of someone's eye for half an hour.</li>
+    <li><strong>Slide 22</strong> is the activity brief, on screen while people get started.</li>
+    <li><strong>Slide 23</strong> is the holding slide, up for the whole 30-minute build block. It carries no animation at all, deliberately, because nothing should twitch in the corner of someone's eye for half an hour.</li>
     <li><strong>Every prompt card copies on click.</strong> Fifteen of them. The lesson plan says to keep the prompts open in a notes file so you're not retyping them live; this removes that step, because the deck is the clipboard.</li>
   </ul>
 
@@ -224,6 +224,21 @@
   <p>One thing worth saying plainly, because it's the point of the workshop as much as the deck: this was built by describing it in English to Claude Code and letting it do the typing.</p>
 
   <h2>Diary</h2>
+
+  <article class="entry">
+    <p class="entry-meta"><span class="tag">Change</span><span>27 July 2026</span></p>
+    <h3>Explaining the API bit to people who have never met one</h3>
+
+    <p>Two slides in Part 2 were written as if the audience already knew what they were looking at. They don't, and that's the entire point of the session.</p>
+
+    <p><strong>The raw JSON slide</strong> showed a web address and a blob of text and asserted that this was the good bit. It now says what the question actually is, in English, before showing the answer: is there a place called Tokyo, and if so, where exactly is it? Beside the response there's a plain reading of it, four lines explaining that quote marks mean text you can print, that a number without quote marks is something you can do maths with, that two letters are all you need to fetch a flag, and that the coordinates can be handed to a weather API. That last one quietly plants the chaining idea three slides before we use it.</p>
+
+    <p><strong>The safety briefing</strong> was titled "Three things that are actually true", which tells you nothing. It now opens by naming what we've been using all along: everything in today's list is free and keyless, meaning no sign-up and no password, safe to use straight away. Out in the wild, some APIs ask for more.</p>
+
+    <p>Rule 01 got most of the new room, because it's the one that matters. What a key actually is, why they exist at all (stopping abuse and overload, and tying usage to whoever registered), and why that makes it yours alone. Then a never-and-instead couplet: never give the key to Gemini or let it write the key into the code, because anyone who opens the app can pull it back out; instead ask Gemini to have the app request the key from whoever is using it. Rule 02 gained the most practical line on the slide, which is that you can simply ask Gemini to explain an API's limits and what you can build with it before you start.</p>
+
+    <p>The separate slide answering "doesn't Gemini need a key?" came out. It was answering a question nobody had been given the vocabulary to ask yet, and the useful half of it now lives inside rule 01.</p>
+  </article>
 
   <article class="entry">
     <p class="entry-meta"><span class="tag">Change</span><span>27 July 2026</span></p>

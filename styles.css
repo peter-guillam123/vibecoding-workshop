@@ -1938,9 +1938,11 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .slide--prompt-solo .prompt-text { font-size: 30px; line-height: 1.5; }
 .slide--prompt-solo .prompt-body { padding: 30px 38px 34px; }
 
-/* Click-to-copy affordance on any prompt card (prompt-copy.js) */
-.prompt-box[data-copy] { cursor: pointer; position: relative; }
+/* Click-to-copy affordance on any card opted in with data-copy */
+[data-copy] { cursor: pointer; position: relative; }
 .prompt-box[data-copy]:hover { border-color: var(--guardian-blue-soft); }
+.tweak[data-copy]:hover { background: var(--paper); }
+[data-copy]:focus-visible { outline: 3px solid var(--guardian-blue); outline-offset: 3px; }
 .copy-badge {
   position: absolute;
   top: 12px; right: 16px;
@@ -2385,3 +2387,79 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 /* The run sheet is the only thing on its slide, so let it sit centred
    rather than hard against the top with a third of the slide empty. */
 .slide.case:has(.runsheet) .slide-body { justify-content: center; }
+
+/* ----------------------------------------------------------------
+   18 · Copy demo — a live prompt card with a pointer that drifts in,
+   clicks, and brings up the Copied badge, on a loop. The card is a
+   real one: clicking it really does copy. The loop is there so the
+   slide can sit on screen while people try it themselves.
+   ---------------------------------------------------------------- */
+.copydemo { position: relative; }
+.copydemo .prompt-text { font-size: 30px; line-height: 1.4; }
+
+.copydemo-cursor {
+  position: absolute;
+  right: 74px;
+  bottom: 22px;
+  width: 34px;
+  height: 34px;
+  pointer-events: none;
+  opacity: 0;
+  filter: drop-shadow(0 3px 6px rgba(18,18,18,0.35));
+}
+.copydemo-ring {
+  position: absolute;
+  right: 66px;
+  bottom: 32px;
+  width: 46px;
+  height: 46px;
+  border: 3px solid var(--news-red);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+[data-deck-active] .copydemo-cursor {
+  animation: demoCursor 3200ms var(--ease-out) 900ms infinite;
+}
+[data-deck-active] .copydemo-ring {
+  animation: demoRing 3200ms ease 900ms infinite;
+}
+[data-deck-active] .copydemo .prompt-box:not([data-copied]) .copy-badge {
+  animation: demoBadge 3200ms ease 900ms infinite;
+}
+
+@keyframes demoCursor {
+  0%   { transform: translate(90px, 70px); opacity: 0; }
+  12%  { opacity: 1; }
+  30%  { transform: translate(0, 0); opacity: 1; }
+  36%  { transform: translate(0, 0) scale(0.82); }
+  42%  { transform: translate(0, 0) scale(1); }
+  82%  { transform: translate(0, 0); opacity: 1; }
+  100% { transform: translate(0, 0); opacity: 0; }
+}
+@keyframes demoRing {
+  0%, 34%  { transform: scale(0.3); opacity: 0; }
+  40%      { transform: scale(0.55); opacity: 0.9; }
+  56%      { transform: scale(1.25); opacity: 0; }
+  100%     { transform: scale(1.25); opacity: 0; }
+}
+@keyframes demoBadge {
+  0%, 40%   { opacity: 0; }
+  46%, 82%  { opacity: 1; }
+  92%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-deck-active] .copydemo-cursor,
+  [data-deck-active] .copydemo-ring,
+  [data-deck-active] .copydemo .prompt-box:not([data-copied]) .copy-badge {
+    animation: none !important;
+  }
+  .copydemo-cursor { opacity: 1; transform: none; }
+  .copydemo .copy-badge { opacity: 1; }
+}
+@media print {
+  .copydemo-cursor, .copydemo-ring { display: none !important; }
+  .copydemo .copy-badge { opacity: 1 !important; animation: none !important; }
+}

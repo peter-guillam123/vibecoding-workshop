@@ -14,19 +14,31 @@
 (() => {
   'use strict';
 
-  const boxes = document.querySelectorAll('.prompt-box[data-copy]');
+  const boxes = document.querySelectorAll('[data-copy]');
   if (!boxes.length) return;
 
-  /* Capture now, before motion.js clears anything. */
+  /* Capture now, before motion.js clears anything. Works for prompt
+     cards and for any other element opted in with data-copy. */
   const text = new WeakMap();
 
   boxes.forEach((box) => {
-    const source = box.querySelector('.prompt-text');
+    /* Which part of the card is the prompt? Cards that carry a label as
+       well as the text mark the text itself with data-copy-text. */
+    const source = box.querySelector('[data-copy-text]') ||
+                   box.querySelector('.prompt-text') ||
+                   box;
     if (!source) return;
 
     /* Normalise whitespace: the markup is indented for readability,
-       but what lands in the clipboard should be a clean prompt. */
-    text.set(box, source.textContent.replace(/\s+/g, ' ').trim());
+       but what lands in the clipboard should be a clean prompt. Strip
+       the display quote marks too - they're typography, not part of
+       what you want to paste into Canvas. */
+    const clean = source.textContent
+      .replace(/\s+/g, ' ')
+      .trim()
+      .replace(/^["“”']+/, '')
+      .replace(/["“”']+$/, '');
+    text.set(box, clean);
 
     const badge = document.createElement('span');
     badge.className = 'copy-badge';

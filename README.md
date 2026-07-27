@@ -1,6 +1,6 @@
 # Vibecoding workshop
 
-A 31-slide deck for a 90-minute hands-on workshop on vibe coding and
+A 32-slide deck for a 90-minute hands-on workshop on vibe coding and
 advanced prototyping in Gemini Canvas. Staff across all departments, no
 coding experience assumed.
 
@@ -20,17 +20,26 @@ Arrow keys or space to advance, R to reset, G to show the grid, Cmd-P →
 Save as PDF for a one-slide-per-page export. It is driven entirely by
 hand: nothing advances itself and nothing is on a timer.
 
-Two slides are meant to sit still. Slide 22 is the activity brief, and
-slide 23 is the holding slide that stays on screen for the whole
-30-minute build block. Slide 23 carries no animation at all, on purpose,
+Two slides are meant to sit still. Slide 23 is the activity brief, and
+slide 24 is the holding slide that stays on screen for the whole
+30-minute build block. Slide 24 carries no animation at all, on purpose,
 because nothing should twitch in the corner of anyone's eye for half an
 hour.
 
-**Every prompt card copies on click.** Fifteen of them. That replaces the
+**Every prompt card copies on click**, and so do the six suggestion cards on slide 7. That replaces the
 "have the prompts open in a notes file" step in the lesson plan's
 pre-flight: the deck itself is the clipboard.
 
 ## Changelog
+
+### 27 July 2026 — The prompts are clickable, and now the deck says so
+
+Click-to-copy has been in since the first build with nothing to announce
+it. New slide 4 demonstrates it: a real prompt card, a pointer that
+drifts in and clicks, and the Copied badge coming up on a loop. The six
+suggestion cards on slide 7 are now copyable too, since they looked
+exactly like something you'd want to paste. The script strips display
+quote marks so the clipboard gets the sentence, not the typography.
 
 ### 27 July 2026 — Choosing an API moves to Part 4
 

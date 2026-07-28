@@ -1,6 +1,6 @@
 # Vibecoding workshop
 
-A 32-slide deck for a 90-minute hands-on workshop on vibe coding and
+A 33-slide deck for a 90-minute hands-on workshop on vibe coding and
 advanced prototyping in Gemini Canvas. Staff across all departments, no
 coding experience assumed.
 
@@ -39,6 +39,16 @@ stays on screen while people work.
 pre-flight: the deck itself is the clipboard.
 
 ## Changelog
+
+### 28 July 2026 — An epigraph, on the deck's one yellow slide
+
+Karpathy's line from January 2023, "the hottest new programming language
+is English", now sits at slide 2 on the only full-yellow slide in the
+deck. It could have gone on the orientation slide that follows, but that
+slide's hero is the same idea in our own words, and side by side they'd
+compete; in sequence the quote states the thesis and the next slide turns
+it into a promise. Yellow because the deck already uses it to mark the
+bit that matters — this is that gesture at full scale, used once.
 
 ### 28 July 2026 — An orientation slide, for people reading it alone
 

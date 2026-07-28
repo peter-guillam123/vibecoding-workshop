@@ -2636,3 +2636,43 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 @media print {
   .brief-lede mark { background-size: 100% 44% !important; animation: none !important; }
 }
+
+/* ----------------------------------------------------------------
+   22 · Epigraph — a full-yellow slide carrying one borrowed line.
+   The deck already uses yellow as its "this is the bit that matters"
+   marker; this is that gesture at full scale, used exactly once.
+   Ink on Guardian yellow, and the chrome inverts to match.
+   ---------------------------------------------------------------- */
+.slide.yellow {
+  background: var(--guardian-yellow);
+  color: var(--ink);
+}
+.slide.yellow .rule-band::before { background: var(--ink); }
+.slide.yellow .rule-band::after  { background: var(--news-red); }
+.slide.yellow .slide-foot {
+  color: rgba(18,18,18,0.5);
+  border-top-color: rgba(18,18,18,0.18);
+}
+.slide.yellow .deck-progress i { background: var(--ink); }
+
+.slide--epigraph .slide-body { justify-content: center; }
+.epigraph {
+  font-family: var(--display);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 104px;
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+  color: var(--ink);
+  margin: 0;
+  max-width: 21ch;
+}
+.epigraph-attr {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 21px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(18,18,18,0.72);
+  margin: 46px 0 0;
+}

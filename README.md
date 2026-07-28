@@ -40,6 +40,18 @@ pre-flight: the deck itself is the clipboard.
 
 ## Changelog
 
+### 28 July 2026 — The bug hunt generalised
+
+The Newcastle trick depended on Canvas not thinking of it, and in the
+session it increasingly did — apps now often arrive with a disambiguation
+list already built in. Slide 17 no longer rests on one reliable failure:
+it's four probes, each a thing to type and a thing that might go wrong.
+Somewhere you know intimately (you'll catch a wrong population at home
+and never abroad), Newcastle reframed, Deal (where Wikipedia supplied
+the New Deal), and something that isn't a place at all. The instruction
+above them is what generalises: think about what would trip you up, and
+ask exactly that.
+
 ### 28 July 2026 — Where the facts come from
 
 Ran the workshop, then added the slide it turned out to need. New slide

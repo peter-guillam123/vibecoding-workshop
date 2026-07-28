@@ -1,6 +1,6 @@
 # Vibecoding workshop
 
-A 30-slide deck for a 90-minute hands-on workshop on vibe coding and
+A 31-slide deck for a 90-minute hands-on workshop on vibe coding and
 advanced prototyping in Gemini Canvas. Staff across all departments, no
 coding experience assumed.
 
@@ -39,6 +39,15 @@ stays on screen while people work.
 pre-flight: the deck itself is the clipboard.
 
 ## Changelog
+
+### 28 July 2026 — Keys, done properly
+
+New slide 30 for the question the session raises and never answers: what
+do you do when the API you actually want needs a key? Rule 01 said don't
+paste it; this says what to do instead. Ask for a box in the app where
+you type your own key each time, so the API is reachable and the key was
+never in the code for anyone to extract. And the part worth saying twice:
+if you share the app, everyone needs their own key. You never send yours.
 
 ### 28 July 2026 — The bug hunt generalised
 

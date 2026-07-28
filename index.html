@@ -1073,6 +1073,49 @@
   </section>
 
   <!-- ============================================================
+       30 — Keys, done properly. The counterpart to rule 01: the
+       session ruled keyed APIs out, this says how to use one once
+       you're back at your desk.
+       ============================================================ -->
+  <section class="slide slide--spread" data-label="Keys done properly">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 6 · When an API needs a key</p>
+    <h2 class="slide-title" data-split>The key stays <em>yours</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:200ms">Plenty of genuinely useful APIs want one, which is why we left them out today. Here's how to use one properly when you're back at your desk. The rule from Part 2 hasn't moved: the key never goes to Gemini, and it never goes in the code.</p>
+
+    <div class="slide-body">
+      <div class="rule-pair" data-fx="rise" style="--d:320ms">
+        <div>
+          <p class="rule-pair-lead">Never</p>
+          <p>Paste the key into the chat, or let it be written into the app. Anyone who opens that app can pull it straight back out, and Gemini has seen it either way.</p>
+        </div>
+        <div class="do">
+          <p class="rule-pair-lead">Instead</p>
+          <p>Ask for a box in the app where you type your own key each time you use it. The app can reach the API; the key was never in the code for anyone to find.</p>
+        </div>
+      </div>
+
+      <div class="prompt-box" data-copy data-fx="rise" style="--d:460ms">
+        <div class="prompt-head">
+          <p class="prompt-label">Ask for it like this</p>
+          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="prompt-body">
+          <p class="prompt-text">This API needs a key. Add a box where I type my own key when I open the app, and use that. Don't write the key into the code.</p>
+        </div>
+      </div>
+
+      <p class="act-note warn" data-fx="rise" style="--d:600ms"><strong>If you share the app, everyone needs their own key.</strong> That's the whole point of the box: each person supplies theirs, and yours stays with you. Never send someone your key to get them started. The usage bills to you, it can be used without your knowing, and you can't take it back once it's out.</p>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 6</span>
+      <span class="num">30 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
        30 — Close
        ============================================================ -->
   <section class="slide ink slide--research slide--thanks" data-label="Close">

@@ -2560,3 +2560,12 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   margin: 0;
 }
 .probe-a strong { color: var(--ink); font-weight: 700; }
+
+/* A note that carries a warning rather than an aside. */
+.act-note.warn { border-left-color: var(--news-red); }
+
+/* The never/instead pair standing alone on a slide, rather than nested
+   inside a rules ledger row. */
+.slide-body > .rule-pair { margin-top: 0; gap: var(--grid-gutter); }
+.slide-body > .rule-pair > div { padding: 22px 28px; }
+.slide-body > .rule-pair p:last-child { font-size: 21px; line-height: 1.4; }

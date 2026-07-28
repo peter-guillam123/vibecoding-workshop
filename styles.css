@@ -2569,3 +2569,70 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .slide-body > .rule-pair { margin-top: 0; gap: var(--grid-gutter); }
 .slide-body > .rule-pair > div { padding: 22px 28px; }
 .slide-body > .rule-pair p:last-child { font-size: 21px; line-height: 1.4; }
+
+/* ----------------------------------------------------------------
+   21 · Brief — the orientation slide. A hero statement carrying the
+   deck's yellow marker, then three open columns rather than cards,
+   because this early in the deck the page should feel airy. The
+   rules do the dividing; no boxes needed.
+   ---------------------------------------------------------------- */
+.brief-lede {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 62px;
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+  color: var(--ink);
+  margin: 0;
+  max-width: 26ch;
+}
+.brief-lede mark {
+  background-color: transparent;
+  background-image: linear-gradient(var(--guardian-yellow), var(--guardian-yellow));
+  background-repeat: no-repeat;
+  background-position: 0 86%;
+  background-size: 0% 44%;
+  color: var(--ink);
+  padding: 0 5px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+[data-deck-active] .brief-lede mark {
+  animation: coverNoteMark 820ms var(--ease-out) 1000ms both;
+}
+
+.brief-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gutter);
+}
+.brief-col { border-top: 3px solid var(--guardian-blue); padding-top: 18px; }
+.brief-col:nth-child(2) { border-top-color: var(--news-red); }
+.brief-col:nth-child(3) { border-top-color: var(--eco-green); }
+.brief-eyebrow {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--guardian-blue);
+  margin: 0 0 10px;
+}
+.brief-col:nth-child(2) .brief-eyebrow { color: var(--news-red); }
+.brief-col:nth-child(3) .brief-eyebrow { color: var(--eco-green); }
+.brief-body {
+  font-family: var(--body);
+  font-size: 21px;
+  line-height: 1.42;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.brief-body strong { color: var(--ink); font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+  .brief-lede mark,
+  [data-deck-active] .brief-lede mark { background-size: 100% 44%; animation: none !important; }
+}
+@media print {
+  .brief-lede mark { background-size: 100% 44% !important; animation: none !important; }
+}

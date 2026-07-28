@@ -1,6 +1,6 @@
 # Vibecoding workshop
 
-A 31-slide deck for a 90-minute hands-on workshop on vibe coding and
+A 32-slide deck for a 90-minute hands-on workshop on vibe coding and
 advanced prototyping in Gemini Canvas. Staff across all departments, no
 coding experience assumed.
 
@@ -39,6 +39,18 @@ stays on screen while people work.
 pre-flight: the deck itself is the clipboard.
 
 ## Changelog
+
+### 28 July 2026 — An orientation slide, for people reading it alone
+
+New slide 2. The deck turned out to work as a self-guided tutorial, which
+was never the plan, and a reader arriving on their own had no idea what
+Canvas was or why it was the tool being taught. It now opens with the
+promise (you'll have built something that works, without writing a line
+of code), then three columns: what we're using, what it gives you, and
+what it isn't — including the honest bit, that Claude Code and its like
+go much further, and Canvas is narrower on purpose and already set up,
+which is exactly why it's the one to start with. Ends by telling solo
+readers to work through in order and click any prompt to copy it.
 
 ### 28 July 2026 — Keys, done properly
 

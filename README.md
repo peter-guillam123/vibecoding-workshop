@@ -45,10 +45,10 @@ pre-flight: the deck itself is the clipboard.
 The Newcastle trick depended on Canvas not thinking of it, and in the
 session it increasingly did — apps now often arrive with a disambiguation
 list already built in. Slide 17 no longer rests on one reliable failure:
-it's four probes, each a thing to type and a thing that might go wrong.
-Somewhere you know intimately (you'll catch a wrong population at home
-and never abroad), Newcastle reframed, Deal (where Wikipedia supplied
-the New Deal), and something that isn't a place at all. The instruction
+it's four questions to ask of your own app, with the specific searches as
+examples inside them rather than as headings. Does it match what you
+know; which one did you mean; do the data sources relate; how does it
+handle the unexpected. The instruction
 above them is what generalises: think about what would trip you up, and
 ask exactly that.
 

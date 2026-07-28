@@ -1,6 +1,6 @@
 # Vibecoding workshop
 
-A 29-slide deck for a 90-minute hands-on workshop on vibe coding and
+A 30-slide deck for a 90-minute hands-on workshop on vibe coding and
 advanced prototyping in Gemini Canvas. Staff across all departments, no
 coding experience assumed.
 
@@ -31,7 +31,7 @@ Arrow keys or space to advance, R to reset, G to show the grid, Cmd-P →
 Save as PDF for a one-slide-per-page export. It is driven entirely by
 hand: nothing advances itself and nothing is on a timer.
 
-One slide is meant to sit still: slide 23, the activity brief, which
+One slide is meant to sit still: slide 24, the activity brief, which
 stays on screen while people work.
 
 **Every prompt card copies on click**, and so do the suggestion cards on slides 7 and 8. That replaces the
@@ -39,6 +39,24 @@ stays on screen while people work.
 pre-flight: the deck itself is the clipboard.
 
 ## Changelog
+
+### 28 July 2026 — Where the facts come from
+
+Ran the workshop, then added the slide it turned out to need. New slide
+10 opens Part 2 by ruling out the shortcut nobody had thought to rule
+out: letting the model supply the data itself. An app built on what it
+already knows might be fine, but neither you nor it can tell which parts
+are current. Two responses, each with a worked example — send it looking
+for a source first (the gov.uk entry-requirements page rather than its
+own recollection of visa rules), or hand it something you already have
+and can vouch for. It ends on the part that matters: both still need
+checking, because choosing your source makes it verifiable, not true.
+
+It also does a job the deck was missing structurally. Part 2 previously
+jumped straight from "your app lives in a bubble" to "here is an API",
+skipping the obvious question in between.
+
+
 
 ### 27 July 2026 — Internal data ruled out
 

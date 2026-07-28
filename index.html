@@ -347,6 +347,48 @@
   </section>
 
   <!-- ============================================================
+       10 — Where the facts come from. Opens Part 2 by ruling out the
+       obvious shortcut: letting the model supply the data itself.
+       Sets up both the API section and the "facts vs judgement" line
+       at the end of Part 3.
+       ============================================================ -->
+  <section class="slide slide--ways slide--spread" data-label="Not a source">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Where the facts come from</p>
+    <h2 class="slide-title" data-split>The model isn't a <em>source</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:220ms">An app built on what the model already knows might be perfectly fine. You can't be sure, and neither can it: those facts came out of training data of uncertain vintage. Two things worth doing before you build.</p>
+
+    <div class="slide-body">
+      <ol class="ways-list">
+        <li class="way" data-fx="rise" style="--d:340ms">
+          <span class="way-num">01</span>
+          <div class="way-main">
+            <h3>Send it looking for a source first</h3>
+            <p class="way-why">Open a separate chat and ask where the reliable version of this actually lives. Then either collate what you find and hand it over, or point your app at the page itself. Ask for an app on entry requirements for visitors to the UK and you'll get one, built from whatever the model absorbed in training. Ask it first for the official gov.uk page and you have something checkable.</p>
+          </div>
+          <p class="way-ask">"Which official UK government page sets out entry requirements for visitors, and what's the URL? Don't summarise it, just tell me where it lives."</p>
+        </li>
+        <li class="way" data-fx="rise" style="--d:500ms">
+          <span class="way-num">02</span>
+          <div class="way-main">
+            <h3>Or give it what you already have</h3>
+            <p class="way-why">Often the reliable version is already yours: a spreadsheet, a PDF, a report somebody sent you. Upload it and have the app work from that rather than from the model's memory. You know exactly where that data came from, which is the whole point.</p>
+          </div>
+          <p class="way-ask">"Here's our team's on-call rota as a spreadsheet. Build me something that shows who's on this week and who's next."</p>
+        </li>
+      </ol>
+
+      <p class="act-note" data-fx="rise" style="--d:680ms"><strong>Both still need checking.</strong> A source you chose is far easier to verify than one you didn't, but neither approach makes the output true. Whatever you build, spot-check it against the original before you trust a number that comes out of it.</p>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 2</span>
+      <span class="num">10 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
        09 — The metaphor
        ============================================================ -->
   <section class="slide ink slide--research" data-label="The tap">

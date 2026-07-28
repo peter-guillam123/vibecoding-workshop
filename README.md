@@ -40,6 +40,16 @@ pre-flight: the deck itself is the clipboard.
 
 ## Changelog
 
+### 28 July 2026 — Two questions before you share
+
+The sharing slide's single warning became a checklist of two. "Is it
+ready to be shared?" is the new one and the more important: building
+something that works in twenty minutes is a thrill and is not the same as
+having something tested, so check it properly and show one expert before
+going wider. "Who should it be shared with?" sharpens the old warning —
+named people, and everyone you send it to must already have access to
+whatever data is inside it.
+
 ### 28 July 2026 — An epigraph, on the deck's one yellow slide
 
 Karpathy's line from January 2023, "the hottest new programming language

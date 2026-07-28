@@ -2676,3 +2676,48 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   color: rgba(18,18,18,0.72);
   margin: 46px 0 0;
 }
+
+/* ----------------------------------------------------------------
+   23 · Pre-share checklist — two questions to answer before an app
+   built in twenty minutes goes anywhere near a colleague.
+   ---------------------------------------------------------------- */
+.preshare-lead {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--news-red);
+  margin: 0 0 14px;
+}
+.preshare-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--grid-gutter);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.preshare-list li {
+  background: var(--paper-deep);
+  border-left: 6px solid var(--news-red);
+  padding: 18px 28px 20px;
+}
+.preshare-list li:nth-child(2) { border-left-color: var(--guardian-blue); }
+.preshare-list h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+.preshare-list p {
+  font-family: var(--body);
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.preshare-list strong { color: var(--ink); font-weight: 700; }

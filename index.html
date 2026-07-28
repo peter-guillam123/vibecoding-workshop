@@ -530,7 +530,7 @@
   <!-- ============================================================
        15 — Beat 2, the base build
        ============================================================ -->
-  <section class="slide slide--prompt-solo" data-label="Beat 1 base build">
+  <section class="slide slide--prompt-solo slide--spread" data-label="Beat 1 base build">
     <div class="rule-band"></div>
 
     <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Beat 1 · The base build</p>
@@ -544,9 +544,20 @@
           <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
         </div>
         <div class="prompt-body">
-          <p class="prompt-text">I want to use the Open-Meteo geocoding API to build an app where I type a place name and it shows the country, population, timezone and coordinates along with the country's flag. Tell the user when the app is loading and if there's an error.</p>
+          <p class="prompt-text">I want to use <span class="pin">the Open-Meteo geocoding API</span> to build an app where I type a place name and it shows the country, population, timezone and coordinates along with the country's flag. <span class="pin-2">Tell the user when the app is loading and if there's an error.</span></p>
         </div>
       </div>
+
+      <ol class="annot" data-fx="rise" style="--d:560ms">
+        <li>
+          <p class="annot-bit">"the Open-Meteo geocoding API"</p>
+          <p class="annot-why"><strong>Naming a real source is what forces it to go and fetch.</strong> Leave this out and it will happily build the same app from numbers it half-remembers, and you'd struggle to tell the difference by looking.</p>
+        </li>
+        <li>
+          <p class="annot-bit">"Tell the user when the app is loading and if there's an error."</p>
+          <p class="annot-why"><strong>Fetching isn't instant, and sometimes it fails.</strong> One sentence buys you the difference between a blank screen you can't read and an app that says whether it's working, waiting, or broken.</p>
+        </li>
+      </ol>
     </div>
 
     <div class="slide-foot">

@@ -2721,3 +2721,39 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   margin: 0;
 }
 .preshare-list strong { color: var(--ink); font-weight: 700; }
+
+/* ----------------------------------------------------------------
+   24 · The sharing slide weights its two questions above everything
+   else on the page. The four steps are mechanics and recede; the
+   checks are the reason the slide exists. Scoped, because .act-setup
+   is shared with the activity brief.
+   ---------------------------------------------------------------- */
+.slide--share .act-setup { padding: 14px 30px; }
+.slide--share .act-setup-lead { font-size: 17px; }
+.slide--share .act-steps li { font-size: 21px; }
+.slide--share .act-step-n { width: 29px; height: 29px; font-size: 15px; }
+
+.slide--share .preshare-lead {
+  font-size: 23px;
+  letter-spacing: 0.18em;
+  margin-bottom: 20px;
+}
+.slide--share .preshare-list li {
+  border-left-width: 8px;
+  padding: 32px 40px 36px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 28px;
+  align-items: start;
+}
+.preshare-num {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 0.86;
+  letter-spacing: -0.02em;
+  color: var(--news-red);
+}
+.preshare-list li:nth-child(2) .preshare-num { color: var(--guardian-blue); }
+.slide--share .preshare-list h3 { font-size: 38px; line-height: 1.04; margin-bottom: 14px; }
+.slide--share .preshare-list p { font-size: 25px; line-height: 1.42; color: var(--ink); }

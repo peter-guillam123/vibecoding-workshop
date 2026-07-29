@@ -34,7 +34,7 @@ hand: nothing advances itself and nothing is on a timer.
 One slide is meant to sit still: slide 24, the activity brief, which
 stays on screen while people work.
 
-**Every prompt card copies on click**, and so do the suggestion cards on slides 7 and 8. That replaces the
+**Every prompt card copies on click**, and so do the suggestion cards. Slide 6 sets out the five working rules for the session. That replaces the
 "have the prompts open in a notes file" step in the lesson plan's
 pre-flight: the deck itself is the clipboard.
 
@@ -49,6 +49,20 @@ having something tested, so check it properly and show one expert before
 going wider. "Who should it be shared with?" sharpens the old warning —
 named people, and everyone you send it to must already have access to
 whatever data is inside it.
+
+### 29 July 2026 — Five rules instead of one feature
+
+Slide 6 was a single feature demo: every prompt copies on click, shown
+with an animated pointer. That's now rule 01 of five, because the other
+four matter more to whether anyone gets stuck. One chat per project,
+since the model re-reads the whole conversation every time. A separate
+chat for questions, with Canvas off. Canvas is flaky and it isn't you.
+And starting again is a legitimate move — you can't argue a drifted
+project back, so don't try.
+
+The animated copy demo came out with it, along with its CSS. The Copied
+badge still appears inline in rule 01, which is the part that needed
+showing rather than telling.
 
 ### 28 July 2026 — An epigraph, on the deck's one yellow slide
 

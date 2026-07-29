@@ -2323,161 +2323,6 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .slide.case:has(.runsheet) .slide-body { justify-content: center; }
 
 /* ----------------------------------------------------------------
-   18 · Copy demo — a live prompt card with a pointer that drifts in,
-   clicks, and brings up the Copied badge, on a loop. The card is a
-   real one: clicking it really does copy. The loop is there so the
-   slide can sit on screen while people try it themselves.
-   ---------------------------------------------------------------- */
-.copydemo { position: relative; }
-.copydemo .prompt-text { font-size: 30px; line-height: 1.4; }
-
-.copydemo-cursor {
-  position: absolute;
-  right: 74px;
-  bottom: 22px;
-  width: 34px;
-  height: 34px;
-  pointer-events: none;
-  opacity: 0;
-  filter: drop-shadow(0 3px 6px rgba(18,18,18,0.35));
-}
-.copydemo-ring {
-  position: absolute;
-  right: 66px;
-  bottom: 32px;
-  width: 46px;
-  height: 46px;
-  border: 3px solid var(--news-red);
-  border-radius: 50%;
-  opacity: 0;
-  pointer-events: none;
-}
-
-[data-deck-active] .copydemo-cursor {
-  animation: demoCursor 3200ms var(--ease-out) 900ms infinite;
-}
-[data-deck-active] .copydemo-ring {
-  animation: demoRing 3200ms ease 900ms infinite;
-}
-[data-deck-active] .copydemo .prompt-box:not([data-copied]) .copy-badge {
-  animation: demoBadge 3200ms ease 900ms infinite;
-}
-
-@keyframes demoCursor {
-  0%   { transform: translate(90px, 70px); opacity: 0; }
-  12%  { opacity: 1; }
-  30%  { transform: translate(0, 0); opacity: 1; }
-  36%  { transform: translate(0, 0) scale(0.82); }
-  42%  { transform: translate(0, 0) scale(1); }
-  82%  { transform: translate(0, 0); opacity: 1; }
-  100% { transform: translate(0, 0); opacity: 0; }
-}
-@keyframes demoRing {
-  0%, 34%  { transform: scale(0.3); opacity: 0; }
-  40%      { transform: scale(0.55); opacity: 0.9; }
-  56%      { transform: scale(1.25); opacity: 0; }
-  100%     { transform: scale(1.25); opacity: 0; }
-}
-@keyframes demoBadge {
-  0%, 40%   { opacity: 0; }
-  46%, 82%  { opacity: 1; }
-  92%, 100% { opacity: 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [data-deck-active] .copydemo-cursor,
-  [data-deck-active] .copydemo-ring,
-  [data-deck-active] .copydemo .prompt-box:not([data-copied]) .copy-badge {
-    animation: none !important;
-  }
-  .copydemo-cursor { opacity: 1; transform: none; }
-  .copydemo .copy-badge { opacity: 1; }
-}
-@media print {
-  .copydemo-cursor, .copydemo-ring { display: none !important; }
-  .copydemo .copy-badge { opacity: 1 !important; animation: none !important; }
-}
-
-/* Links inside a slide. Rare, but they need to look clickable and take
-   a visible focus ring, since the deck is read as well as presented. */
-.slide-body a {
-  color: var(--guardian-blue);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-}
-.slide-body a:hover { color: var(--news-red); }
-.slide-body a:focus-visible { outline: 3px solid var(--guardian-blue); outline-offset: 3px; }
-
-/* A build step carrying a warning rather than a stage. */
-.build-step.warn { border-left-color: var(--news-red); }
-.build-step.warn .build-lead { color: var(--news-red); }
-
-/* ----------------------------------------------------------------
-   17 · Thanks — the closing slide. The research-quote component is
-   sized for a sentence; a single word needs to be much larger or it
-   looks stranded on an empty slide.
-   ---------------------------------------------------------------- */
-.slide--thanks .research-quote {
-  font-size: 190px;
-  line-height: 0.98;
-  letter-spacing: -0.02em;
-  margin-bottom: 40px;
-}
-.slide--thanks .research-eyebrow { margin-bottom: 28px; }
-
-/* ----------------------------------------------------------------
-   18 · Password gate — page chrome, not a slide component. Covers
-   everything until gate.js removes it. Colours are hard-coded rather
-   than tokenised because this has to render correctly even if the
-   Guardian webfonts never arrive.
-   ---------------------------------------------------------------- */
-#deck-gate {
-  position: fixed; inset: 0; z-index: 2147483647;
-  background: #F4EFE6;
-  background-image: radial-gradient(rgba(18,18,18,0.03) 1px, transparent 1px);
-  background-size: 4px 4px;
-  display: flex; align-items: center; justify-content: center;
-  padding: 24px;
-}
-#deck-gate .dg-card { width: min(520px, 88vw); }
-#deck-gate .dg-rule { height: 8px; display: grid; grid-template-columns: 2fr 1fr; margin-bottom: 44px; }
-#deck-gate .dg-rule::before { content: ''; background: #052962; }
-#deck-gate .dg-rule::after { content: ''; background: #FFE500; }
-#deck-gate .dg-kicker {
-  font-family: 'GuardianTextSans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 700; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: #C70000; margin: 0 0 14px;
-}
-#deck-gate h1 {
-  font-family: 'GH Guardian Headline', Georgia, 'Times New Roman', serif;
-  font-weight: 500; font-size: 50px; line-height: 1; letter-spacing: -0.02em;
-  color: #121212; margin: 0 0 30px;
-}
-#deck-gate h1 em { color: #C70000; font-style: italic; }
-#deck-gate input {
-  width: 100%; box-sizing: border-box;
-  font-family: 'GuardianTextEgyptian', Georgia, 'Times New Roman', serif; font-size: 22px;
-  padding: 14px 18px; color: #121212;
-  background: #FBF8F1; border: 1px solid #D0C4AE; border-radius: 8px;
-  margin-bottom: 16px; outline: none;
-}
-#deck-gate input:focus { border-color: #052962; box-shadow: 0 0 0 3px rgba(5,41,98,0.12); }
-#deck-gate button {
-  font-family: 'GuardianTextSans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 700; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase;
-  color: #F4EFE6; background: #052962; border: none; border-radius: 8px;
-  padding: 14px 30px; cursor: pointer; transition: background 140ms ease;
-}
-#deck-gate button:hover { background: #0a3a86; }
-#deck-gate button:focus-visible { outline: 3px solid #C70000; outline-offset: 3px; }
-#deck-gate .dg-error {
-  font-family: 'GuardianTextSans', 'Helvetica Neue', Arial, sans-serif; font-size: 15px;
-  color: #C70000; margin: 14px 0 0;
-}
-@media print { #deck-gate { display: none !important; } }
-
-/* ----------------------------------------------------------------
    19 · Annotated prompt — underline the phrases that are doing the
    work, then explain each one underneath. The underline colour ties
    a phrase to its note, so the eye can pair them without arrows or
@@ -2757,3 +2602,21 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .preshare-list li:nth-child(2) .preshare-num { color: var(--guardian-blue); }
 .slide--share .preshare-list h3 { font-size: 38px; line-height: 1.04; margin-bottom: 14px; }
 .slide--share .preshare-list p { font-size: 25px; line-height: 1.42; color: var(--ink); }
+
+/* A miniature of the click-to-copy badge, for referring to it in prose. */
+.chip-copied {
+  display: inline-block;
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--eco-green);
+  padding: 3px 9px;
+  vertical-align: 2px;
+}
+
+/* The dense rules ledger uses bare numerals rather than "Rule 01", so
+   the tag column no longer needs to be 200px wide. */
+.slide--rules-dense .rule-row { grid-template-columns: 96px 1fr; column-gap: 36px; }

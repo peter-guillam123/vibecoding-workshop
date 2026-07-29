@@ -1,6 +1,6 @@
 # Vibecoding workshop
 
-A 33-slide deck for a 90-minute hands-on workshop on vibe coding and
+A 34-slide deck for a 90-minute hands-on workshop on vibe coding and
 advanced prototyping in Gemini Canvas. Staff across all departments, no
 coding experience assumed.
 
@@ -49,6 +49,16 @@ having something tested, so check it properly and show one expert before
 going wider. "Who should it be shared with?" sharpens the old warning —
 named people, and everyone you send it to must already have access to
 whatever data is inside it.
+
+### 29 July 2026 — The part you can't trust
+
+New slide 21, straight after the handoff. Everything up to that point
+came out of an API, and if the source is sound and the question right, so
+is the data. A transformation by a model isn't like that: it can invent,
+it smooths the specific into the general, and it's only as good as the
+instruction. Four responses — check every transformation, tell it to use
+only the data you gave it, feed consistent errors back, and show the
+source rather than relying on a warning label.
 
 ### 29 July 2026 — Five rules instead of one feature
 

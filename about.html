@@ -204,7 +204,7 @@
   <h2>What this is</h2>
 
   <div class="lede-panel">
-    <p>Thirty-three slides for a hands-on workshop, for staff across all departments, with no coding experience assumed. People arrive with a laptop and leave having built something that pulls live data off the internet and hands it to a model to reason over.</p>
+    <p>Thirty-four slides for a hands-on workshop, for staff across all departments, with no coding experience assumed. People arrive with a laptop and leave having built something that pulls live data off the internet and hands it to a model to reason over.</p>
   </div>
 
   <p>The deck is at <a href="./">peter-guillam123.github.io/vibecoding-workshop</a>. It's driven entirely by hand: arrow keys or space to advance, nothing on a timer, nothing that advances itself. One slide is built to sit still rather than perform, which turns out to matter more than any of the animation.</p>
@@ -233,6 +233,17 @@
     <p><strong>Is it ready to be shared?</strong> Building something that works in twenty minutes is a thrill, and it is not the same as having something tested. The whole session is designed to make people feel how fast this is, so it owes them the counterweight: if the thing does anything that matters, spend real time checking it, look hard at what it actually outputs, and show it to one person who knows the subject before going wider.</p>
 
     <p><strong>Who should it be shared with?</strong> The old warning, sharpened. Named people rather than anyone with the link, and the test that matters: everyone you send it to must already have access to whatever data is inside it. Sharing the app must never become a way of sharing the data.</p>
+  </article>
+
+  <article class="entry">
+    <p class="entry-meta"><span class="tag">Change</span><span>29 July 2026</span></p>
+    <h3>The part you can't trust</h3>
+
+    <p>The handoff slide is the moment the session has been building to, and until now nothing followed it except a line celebrating what it unlocks. That left the most consequential caveat in the whole workshop unsaid.</p>
+
+    <p>Everything before the handoff comes straight out of an API. Your app can still ask the wrong question, but if the source is sound and the question is right, so is the data. A transformation by a model is a different kind of thing: it can invent, it smooths the specific into the general, and it is only ever as good as the instruction behind it.</p>
+
+    <p>Four responses rather than the three first sketched. Check every transformation against the data it was handed. Tell the model in the prompt to use only what you gave it and to say when the answer isn't there, which is the single most effective mitigation available at this level. Feed consistent errors back into the chat, because twice is a pattern. And show the source rather than leaning on a warning: a label saying the text is AI-generated moves the risk onto the reader without helping them, where the raw figure sitting beside the sentence lets them check it in a glance.</p>
   </article>
 
   <article class="entry">

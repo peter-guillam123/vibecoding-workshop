@@ -765,6 +765,50 @@
   </section>
 
   <!-- ============================================================
+       21 — The counterweight to the handoff. Everything before this
+       came straight from an API and could be trusted if the source
+       could. A transformation can't.
+       ============================================================ -->
+  <section class="slide slide--spread" data-label="The part you can't trust">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · The other side of the handoff</p>
+    <h2 class="slide-title" data-split>The part you can't <em>trust</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:200ms">Everything so far has come straight from an API. Your app can still ask the wrong question, but if the source is sound and the question is right, so is the data. A transformation by an LLM works differently.</p>
+
+    <div class="slide-body">
+      <div class="build-step warn" data-fx="rise" style="--d:300ms">
+        <p class="build-lead">What comes with it</p>
+        <p class="build-body">Ask a model to summarise, rewrite, judge or explain and you take on everything that comes with one: <strong>it can invent things</strong>, it smooths the specific into the general, and it is only ever as good as your instruction.</p>
+      </div>
+
+      <div class="probes">
+        <div class="probe" data-fx="rise" style="--d:420ms">
+          <p class="probe-q">Check every transformation</p>
+          <p class="probe-a">Anything the model rewrote, summarised or judged needs reading against the data it was handed. Not once on the day you built it. Every time it matters.</p>
+        </div>
+        <div class="probe" data-fx="rise" style="--d:500ms">
+          <p class="probe-q">Tell it to use only what you gave it</p>
+          <p class="probe-a">Put it in the prompt: <em>only use the data in the card, and say so if the answer isn't there.</em> It won't stop invention altogether, but it removes a lot of the room for it.</p>
+        </div>
+        <div class="probe" data-fx="rise" style="--d:580ms">
+          <p class="probe-q">Feed the errors back</p>
+          <p class="probe-a">If it gets the same thing wrong twice, that's a pattern, not bad luck. Say so in the chat and ask it to handle that case specifically. The feature gets better as you go.</p>
+        </div>
+        <div class="probe" data-fx="rise" style="--d:660ms">
+          <p class="probe-q">Show the source, not just a warning</p>
+          <p class="probe-a">A note saying the text is AI-generated moves the risk onto the reader without helping them. Keep the raw figure beside the sentence written about it, so anyone can check at a glance. Warn them as well, if it's going wide.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding workshop · Part 3</span>
+      <span class="num">21 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
        19 — Say this out loud
        ============================================================ -->
   <section class="slide ink slide--research" data-label="Facts and judgement">

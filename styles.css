@@ -1808,23 +1808,28 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 }
 .api-ledger tbody td:first-child { width: 30%; }
 .api-ledger tbody td:last-child  { width: 32%; padding-right: 0; }
+/* The name is the link now: the endpoint itself was noise, and the
+   deck's own prompts name APIs rather than quoting URLs at them. Each
+   one opens a real example query in a new tab. */
 .api-name {
-  display: block;
+  display: inline-block;
   font-family: var(--display);
   font-weight: 500;
   font-size: 25px;
   line-height: 1.1;
   color: var(--ink);
+  text-decoration: none;
 }
-.api-url {
-  display: block;
-  font-family: var(--mono);
+.api-name:hover { color: var(--guardian-blue); text-decoration: underline; text-underline-offset: 4px; }
+.api-name:focus-visible { outline: 3px solid var(--guardian-blue); outline-offset: 3px; }
+.api-go {
+  font-family: var(--ui);
   font-size: 16px;
-  line-height: 1.35;
-  color: var(--guardian-blue);
-  margin-top: 5px;
-  word-break: break-all;
+  color: var(--ink-mute);
+  margin-left: 8px;
+  vertical-align: 3px;
 }
+.api-name:hover .api-go { color: var(--guardian-blue); }
 .api-ask { color: var(--ink); font-style: italic; }
 .api-ledger tbody tr:last-child td { border-bottom: none; }
 
@@ -1918,7 +1923,7 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .slide--appendix-prompts .prompt-body { padding: 16px 30px 18px; }
 .slide--appendix-prompts .prompt-text { font-size: 21px; line-height: 1.42; }
 
-.api-ledger tbody td { padding-top: 9px; padding-bottom: 9px; }
+.api-ledger tbody td { padding-top: 20px; padding-bottom: 20px; }
 
 /* ----------------------------------------------------------------
    8 · Cover note — the one-line audience promise, marked with a

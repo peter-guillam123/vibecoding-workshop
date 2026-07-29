@@ -1918,7 +1918,7 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .slide--appendix-prompts .prompt-body { padding: 16px 30px 18px; }
 .slide--appendix-prompts .prompt-text { font-size: 21px; line-height: 1.42; }
 
-.api-ledger tbody td { padding-top: 12px; padding-bottom: 12px; }
+.api-ledger tbody td { padding-top: 9px; padding-bottom: 9px; }
 
 /* ----------------------------------------------------------------
    8 · Cover note — the one-line audience promise, marked with a

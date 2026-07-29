@@ -14,6 +14,18 @@ Built from the [Guardian deck
 template](https://github.com/peter-guillam123/guardian-deck-template),
 second edition. The house rules live in `CLAUDE.md`.
 
+## On a phone
+
+The deck is built for a 1920×1080 projector and doesn't pretend otherwise
+on a phone, but below 1024px it strips the decoration so it survives:
+the paper grain, the vignette and the shadows come off, and inactive
+slides get `content-visibility: hidden` so they do no rendering work.
+
+That grain is an SVG feTurbulence filter under `mix-blend-mode: multiply`,
+on every slide. Thirty-four of those, all live in the render tree at once,
+is enough to have iOS kill the tab — every browser on iOS is WebKit, and
+WebKit is strict about memory.
+
 ## The password
 
 The deck sits behind the same light gate as board-and-trust-training.

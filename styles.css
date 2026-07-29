@@ -2671,3 +2671,34 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 @media print {
   .tweak[data-copy]::after, .opt-row[data-copy]::after { display: none !important; }
 }
+
+/* ----------------------------------------------------------------
+   26 · Mobile survival.
+   The deck is built for a 1920×1080 projector and doesn't pretend
+   otherwise on a phone, but it has to at least open and advance.
+
+   Every browser on iOS is WebKit, and WebKit is strict about memory.
+   Thirty-four slides each carrying an feTurbulence noise layer under
+   mix-blend-mode, plus a vignette and a pile of shadows, is enough to
+   get the tab killed outright ("Can't open this page"). All of that
+   is decoration, so on small screens it goes, and the inactive slides
+   are told to do no rendering work at all.
+
+   content-visibility is safe here: motion.js splits [data-split]
+   titles by wrapping DOM nodes, never by measuring them, so a slide
+   that has never been rendered still splits correctly.
+   ---------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .slide::before,
+  .slide::after { display: none !important; }
+
+  .slide:not([data-deck-active]) { content-visibility: hidden; }
+
+  .prompt-box, .tweak, .probe, .act-panel, .json-spec, .isw-frame,
+  .preshare-list li, .hold-panel, .brief-col { box-shadow: none !important; }
+
+  /* Hover affordances mean nothing on a touchscreen and the hint chip
+     would sit there permanently after a tap. */
+  .tweak[data-copy]::after,
+  .opt-row[data-copy]::after { display: none; }
+}

@@ -1892,7 +1892,7 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   transition: opacity 200ms var(--ease-out);
   pointer-events: none;
 }
-.prompt-box[data-copied] .copy-badge { opacity: 1; }
+[data-copied] .copy-badge { opacity: 1; }
 
 @media print {
   .slide--activity .act-panel,
@@ -2620,3 +2620,54 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 /* The dense rules ledger uses bare numerals rather than "Rule 01", so
    the tag column no longer needs to be 200px wide. */
 .slide--rules-dense .rule-row { grid-template-columns: 96px 1fr; column-gap: 36px; }
+
+/* ----------------------------------------------------------------
+   25 · Copy affordance for the small cards — the tweak grid and the
+   options ledger. The full-size badge is out of scale on a 70px row,
+   and neither showed you they were clickable until you clicked. A
+   muted COPY hint appears on hover, and is replaced by the green
+   COPIED once you have.
+   ---------------------------------------------------------------- */
+.tweak .copy-badge,
+.opt-row .copy-badge {
+  top: 9px;
+  right: 12px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  padding: 3px 8px;
+}
+.tweak[data-copy]::after,
+.opt-row[data-copy]::after {
+  content: 'Copy';
+  position: absolute;
+  top: 9px;
+  right: 12px;
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  background: var(--paper);
+  border: 1px solid var(--paper-rule);
+  padding: 2px 7px;
+  opacity: 0;
+  transition: opacity 150ms var(--ease-out);
+  pointer-events: none;
+}
+.tweak[data-copy]:hover::after,
+.opt-row[data-copy]:hover::after,
+.tweak[data-copy]:focus-visible::after,
+.opt-row[data-copy]:focus-visible::after { opacity: 1; }
+/* Once copied, the green badge takes over the same spot. */
+.tweak[data-copy][data-copied]::after,
+.opt-row[data-copy][data-copied]::after { opacity: 0; }
+
+.opt-row[data-copy]:hover .opt-main strong { color: var(--guardian-blue); }
+
+@media (prefers-reduced-motion: reduce) {
+  .tweak[data-copy]::after, .opt-row[data-copy]::after { transition: none; }
+}
+@media print {
+  .tweak[data-copy]::after, .opt-row[data-copy]::after { display: none !important; }
+}

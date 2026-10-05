@@ -2823,3 +2823,18 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .slide--flow .slide-subtitle { max-width: 72ch; }
 .slide--flow .prompt-body { padding: 22px 30px 24px; }
 .slide--flow .prompt-text { font-size: 27px; line-height: 1.42; }
+
+/* ----------------------------------------------------------------
+   29 · A research slide whose line under the quote is advice rather
+   than a credit: sentence case and reading size, not small caps.
+   ---------------------------------------------------------------- */
+.research-sub.research-sub--prose {
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-transform: none;
+  color: rgba(244,239,230,0.82);
+  max-width: 58ch;
+}

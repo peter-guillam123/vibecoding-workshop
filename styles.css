@@ -2733,10 +2733,14 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .act-panel.a4 { border-top-color: var(--guardian-blue-soft); }
 .act-panel.a4 .act-eyebrow { color: var(--guardian-blue-soft); }
 
-/* Three iteration cards rather than six: one row, so give each a
-   little more type. */
-.slide--tweaks-three .tweak { padding: 30px 32px 34px; }
-.slide--tweaks-three .tweak-say { font-size: 27px; line-height: 1.38; }
+/* Four iteration cards rather than six, in one row, so each gets a
+   little more type than the six-card grid. The fourth card's top rule
+   would repeat blue under the 3n cycle; soft blue keeps the row varied. */
+.slide--tweaks-row .tweaks { grid-template-columns: repeat(4, 1fr); }
+.slide--tweaks-row .tweak { padding: 28px 28px 32px; }
+.slide--tweaks-row .tweak-say { font-size: 25px; line-height: 1.38; }
+.slide--tweaks-row .tweak:nth-child(4) { border-top-color: var(--guardian-blue-soft); }
+.slide--tweaks-row .tweak:nth-child(4) .tweak-kind { color: var(--guardian-blue-soft); }
 
 /* A build step that says stop rather than go. */
 .build-step.stop { border-left-color: var(--news-red); }

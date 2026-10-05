@@ -8,7 +8,7 @@ Live at
 [peter-guillam123.github.io/vibecoding-workshop](https://peter-guillam123.github.io/vibecoding-workshop).
 
 There's also a shorter cut for the Senior Leadership Group, `slg.html`:
-21 slides across a 40-minute session and a 20-minute one. It shares the
+23 slides across a 40-minute session and a 20-minute one. It shares the
 stylesheet and scripts with the full deck.
 
 There's an [About page](https://peter-guillam123.github.io/vibecoding-workshop/about.html)
@@ -55,6 +55,17 @@ stays on screen while people work.
 pre-flight: the deck itself is the clipboard.
 
 ## Changelog
+
+### 5 October 2026 - Twelve builds, not four
+
+The SLG activity is now three slides of four: daily life, news and the
+world, money, words and culture. Each prompt names its API in bold,
+which made the small API label above each card redundant, so it went.
+New sources: TfL, gov.uk bank holidays, Wikimedia pageviews,
+Postcodes.io with the UK Parliament Members API, USGS earthquakes,
+Datamuse, the iTunes Search API and the V&A. All keyless and
+CORS-clean on 5 October. Twelve sources spread 160 people on one office
+connection more thinly. Free Dictionary was left out: it timed out.
 
 ### 5 October 2026 - A taster for the SLG
 

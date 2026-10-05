@@ -26,7 +26,7 @@
      minutes later (same day or the next).
 
      Session 1: build the meeting-cost app together on the big
-     screen, then pick one of four live-data builds. Lunch: carry on
+     screen, then pick one of twelve live-data builds. Lunch: carry on
      if you're enjoying it. Session 2: put a model inside the app,
      check what it wrote, show and tell, sharing, takeaways.
 
@@ -100,7 +100,7 @@
         <li data-fx="rise" style="--d:370ms">
           <span class="rs-part">Part two</span>
           <span class="rs-time"><mark>25 minutes</mark></span>
-          <span class="rs-what">Plug it into live data. Pick one of four</span>
+          <span class="rs-what">Plug it into live data. Pick one of twelve</span>
         </li>
         <li data-fx="rise" style="--d:440ms">
           <span class="rs-part">Lunch</span>
@@ -353,36 +353,23 @@
   </section>
 
   <!-- ============================================================
-       THE ACTIVITY. Four fixed builds, one prompt each, ready to
-       copy. All four APIs keyless and CORS-clean, checked 5 October
-       2026. Splitting the room across four sources also keeps any
-       one of them from being hammered by 160 people at once.
+       THE ACTIVITY. Twelve fixed builds over three slides, four a
+       slide, one complete prompt each with the API named in bold.
+       All keyless and CORS-clean, checked 5 October 2026. Twelve
+       sources rather than four spreads 160 people on one office
+       connection thinly enough that no API's free limit should bite.
+       Pick-one slides 2 and 3 repeat the instructions in brief.
        ============================================================ -->
-  <section class="slide slide--pick" data-label="Pick one of four">
+  <section class="slide slide--pick" data-label="Pick one: daily life">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Your turn</p>
-    <h2 class="slide-title" data-split>Pick one of <em>four</em>.</h2>
-    <p class="slide-subtitle" data-fx="rise" style="--d:200ms">Each one uses a different source of live data. Start a <strong>new chat</strong> with Canvas on, click a prompt to copy it, and paste it in. Can't decide? Pick the one nobody near you has picked.</p>
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Your turn · 1 of 3</p>
+    <h2 class="slide-title" data-split>Pick one: daily <em>life</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:200ms">Each uses a different source of live data. Start a <strong>new chat</strong> with Canvas on, click a prompt to copy it, and paste it in. Can't decide? Pick one nobody near you has picked.</p>
 
     <div class="slide-body">
       <div class="act-panels act-panels--four">
         <div class="act-panel" data-fx="rise" style="--d:300ms">
-          <p class="act-eyebrow">Wikipedia</p>
-          <h3>On this day</h3>
-          <div class="prompt-box" data-copy>
-            <div class="prompt-head">
-              <p class="prompt-label">Click to copy</p>
-              <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
-            </div>
-            <div class="prompt-body">
-              <p class="prompt-text">I want to use the Wikipedia "On this day" API to build an app that shows what happened on today's date in history, with a picture for each event where there is one. Let me pick another date. Tell me when it's loading and if there's an error.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="act-panel a2" data-fx="rise" style="--d:400ms">
-          <p class="act-eyebrow">Open-Meteo</p>
           <h3>Should I cycle in tomorrow?</h3>
           <div class="prompt-box" data-copy>
             <div class="prompt-head">
@@ -390,27 +377,35 @@
               <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
             </div>
             <div class="prompt-body">
-              <p class="prompt-text">I want to use the Open-Meteo API to build an app where I type a town and it tells me whether tomorrow is a good day to cycle to work, showing the temperature, the chance of rain and the wind. Tell me when it's loading and if there's an error.</p>
+              <p class="prompt-text">I want to use the <strong>Open-Meteo API</strong> to build an app where I type a town and it tells me whether tomorrow is a good day to cycle to work, showing the temperature, the chance of rain and the wind. Tell me when it's loading and if there's an error.</p>
             </div>
           </div>
         </div>
-
-        <div class="act-panel a3" data-fx="rise" style="--d:500ms">
-          <p class="act-eyebrow">Frankfurter</p>
-          <h3>What's a pound worth?</h3>
+        <div class="act-panel a2" data-fx="rise" style="--d:400ms">
+          <h3>Is the Tube running?</h3>
           <div class="prompt-box" data-copy>
             <div class="prompt-head">
               <p class="prompt-label">Click to copy</p>
               <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
             </div>
             <div class="prompt-body">
-              <p class="prompt-text">I want to use the Frankfurter API to build an app that shows what £1 buys in euros and US dollars today, with a chart of the last 30 days. Tell me when it's loading and if there's an error.</p>
+              <p class="prompt-text">I want to use the <strong>TfL Unified API</strong> to build an app that shows the live status of every Tube line, with any delays at the top and the reason for each. Tell me when it's loading and if there's an error.</p>
             </div>
           </div>
         </div>
-
+        <div class="act-panel a3" data-fx="rise" style="--d:500ms">
+          <h3>When's the next long weekend?</h3>
+          <div class="prompt-box" data-copy>
+            <div class="prompt-head">
+              <p class="prompt-label">Click to copy</p>
+              <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="prompt-body">
+              <p class="prompt-text">I want to use the <strong>gov.uk bank holidays API</strong> to build an app that counts down to the next bank holiday in England and Wales, and tells me which days I'd need to book off to make it a long weekend. Tell me when it's loading and if there's an error.</p>
+            </div>
+          </div>
+        </div>
         <div class="act-panel a4" data-fx="rise" style="--d:600ms">
-          <p class="act-eyebrow">UK Carbon Intensity</p>
           <h3>When's the power greenest?</h3>
           <div class="prompt-box" data-copy>
             <div class="prompt-head">
@@ -418,7 +413,7 @@
               <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
             </div>
             <div class="prompt-body">
-              <p class="prompt-text">I want to use the UK Carbon Intensity API to build an app that shows how clean Britain's electricity is right now, and the greenest time to plug things in over the next 24 hours. Tell me when it's loading and if there's an error.</p>
+              <p class="prompt-text">I want to use the <strong>UK Carbon Intensity API</strong> to build an app that shows how clean Britain's electricity is right now, and the greenest time to plug things in over the next 24 hours. Tell me when it's loading and if there's an error.</p>
             </div>
           </div>
         </div>
@@ -431,6 +426,138 @@
     </div>
   </section>
 
+  <section class="slide slide--pick" data-label="Pick one: news and the world">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Your turn · 2 of 3</p>
+    <h2 class="slide-title" data-split>Or: news and the <em>world</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:200ms">Same again: new chat, click a prompt to copy it, paste it in.</p>
+
+    <div class="slide-body">
+      <div class="act-panels act-panels--four">
+        <div class="act-panel" data-fx="rise" style="--d:300ms">
+          <h3>On this day</h3>
+          <div class="prompt-box" data-copy>
+            <div class="prompt-head">
+              <p class="prompt-label">Click to copy</p>
+              <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="prompt-body">
+              <p class="prompt-text">I want to use the <strong>Wikipedia "On this day" API</strong> to build an app that shows what happened on today's date in history, with a picture for each event where there is one. Let me pick another date. Tell me when it's loading and if there's an error.</p>
+            </div>
+          </div>
+        </div>
+        <div class="act-panel a2" data-fx="rise" style="--d:400ms">
+          <h3>What's the world reading?</h3>
+          <div class="prompt-box" data-copy>
+            <div class="prompt-head">
+              <p class="prompt-label">Click to copy</p>
+              <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="prompt-body">
+              <p class="prompt-text">I want to use the <strong>Wikimedia pageviews API</strong> to build an app that shows the 20 most-read English Wikipedia articles from yesterday, with how many views each got. Leave out the main page and search pages. Tell me when it's loading and if there's an error.</p>
+            </div>
+          </div>
+        </div>
+        <div class="act-panel a3" data-fx="rise" style="--d:500ms">
+          <h3>Who's my MP?</h3>
+          <div class="prompt-box" data-copy>
+            <div class="prompt-head">
+              <p class="prompt-label">Click to copy</p>
+              <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="prompt-body">
+              <p class="prompt-text">I want to use <strong>Postcodes.io</strong> and the <strong>UK Parliament Members API</strong> to build an app where I type a postcode and it shows me the local MP, with their photo, party and constituency. Tell me when it's loading and if there's an error.</p>
+            </div>
+          </div>
+        </div>
+        <div class="act-panel a4" data-fx="rise" style="--d:600ms">
+          <h3>Where's the earth moving?</h3>
+          <div class="prompt-box" data-copy>
+            <div class="prompt-head">
+              <p class="prompt-label">Click to copy</p>
+              <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="prompt-body">
+              <p class="prompt-text">I want to use the <strong>USGS earthquake feed</strong> to build an app that maps every earthquake in the world in the last 24 hours, with the biggest listed first. Tell me when it's loading and if there's an error.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding taster · Part 2</span>
+      <span class="num">12 / NN</span>
+    </div>
+  </section>
+
+  <section class="slide slide--pick" data-label="Pick one: money, words and culture">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Your turn · 3 of 3</p>
+    <h2 class="slide-title" data-split>Or: money, words and <em>culture</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:200ms">Same again: new chat, click a prompt to copy it, paste it in.</p>
+
+    <div class="slide-body">
+      <div class="act-panels act-panels--four">
+        <div class="act-panel" data-fx="rise" style="--d:300ms">
+          <h3>What's a pound worth?</h3>
+          <div class="prompt-box" data-copy>
+            <div class="prompt-head">
+              <p class="prompt-label">Click to copy</p>
+              <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="prompt-body">
+              <p class="prompt-text">I want to use the <strong>Frankfurter API</strong> to build an app that shows what £1 buys in euros and US dollars today, with a chart of the last 30 days. Tell me when it's loading and if there's an error.</p>
+            </div>
+          </div>
+        </div>
+        <div class="act-panel a2" data-fx="rise" style="--d:400ms">
+          <h3>Find a shorter word</h3>
+          <div class="prompt-box" data-copy>
+            <div class="prompt-head">
+              <p class="prompt-label">Click to copy</p>
+              <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="prompt-body">
+              <p class="prompt-text">I want to use the <strong>Datamuse API</strong> to build an app where I type a word and it suggests shorter words that mean the same thing, for writing headlines. Tell me when it's loading and if there's an error.</p>
+            </div>
+          </div>
+        </div>
+        <div class="act-panel a3" data-fx="rise" style="--d:500ms">
+          <h3>Find a podcast</h3>
+          <div class="prompt-box" data-copy>
+            <div class="prompt-head">
+              <p class="prompt-label">Click to copy</p>
+              <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="prompt-body">
+              <p class="prompt-text">I want to use the <strong>iTunes Search API</strong> to build an app where I type a topic and it shows the top podcasts about it, with their artwork and who makes them. Tell me when it's loading and if there's an error.</p>
+            </div>
+          </div>
+        </div>
+        <div class="act-panel a4" data-fx="rise" style="--d:600ms">
+          <h3>Browse the V&amp;A</h3>
+          <div class="prompt-box" data-copy>
+            <div class="prompt-head">
+              <p class="prompt-label">Click to copy</p>
+              <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="prompt-body">
+              <p class="prompt-text">I want to use the <strong>V&amp;A collections API</strong> to build an app where I type a subject and it shows objects from the V&amp;A museum about it, with a picture of each. Tell me when it's loading and if there's an error.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding taster · Part 2</span>
+      <span class="num">13 / NN</span>
+    </div>
+  </section>
+
   <!-- ============================================================
        Then make it yours. Six follow-ups that work on any of the
        four builds, plus what to do when it breaks.
@@ -440,7 +567,7 @@
 
     <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Once it works</p>
     <h2 class="slide-title" data-split>Then make it <em>yours</em>.</h2>
-    <p class="slide-subtitle" data-fx="rise" style="--d:220ms">Say what you'd change, one thing at a time. These work on any of the four. Click one to copy it.</p>
+    <p class="slide-subtitle" data-fx="rise" style="--d:220ms">Say what you'd change, one thing at a time. These work on any of the twelve. Click one to copy it.</p>
 
     <div class="slide-body">
       <div class="tweaks">
@@ -493,7 +620,7 @@
     <div class="slide-body">
       <div class="build-step richer" data-fx="rise" style="--d:320ms">
         <p class="build-lead">If it works</p>
-        <p class="build-body">Make it yours with the "Then make it yours" prompts in the deck, or <strong>try a second of the four</strong> in a new chat.</p>
+        <p class="build-body">Make it yours with the "Then make it yours" prompts in the deck, or <strong>try a second one</strong> in a new chat.</p>
       </div>
 
       <div class="build-step" data-fx="rise" style="--d:440ms">
@@ -662,7 +789,7 @@
       <div class="brief-cols">
         <div class="brief-col" data-fx="rise" style="--d:420ms">
           <p class="brief-eyebrow">What did you build?</p>
-          <p class="brief-body">Which of the four, and what did you change once it worked?</p>
+          <p class="brief-body">Which one, and what did you change once it worked?</p>
         </div>
         <div class="brief-col" data-fx="rise" style="--d:520ms">
           <p class="brief-eyebrow">What surprised you?</p>

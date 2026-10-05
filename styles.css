@@ -2716,7 +2716,7 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
    order so each build keeps its colour across both sessions.
    ---------------------------------------------------------------- */
 .slide--pick .slide-title { margin-bottom: 14px; }
-.slide--pick .slide-subtitle { max-width: none; margin-bottom: 0; }
+.slide--pick .slide-subtitle { max-width: none; margin-bottom: 24px; }
 .slide--pick .slide-body { justify-content: center; }
 
 .act-panels--four { row-gap: 22px; }

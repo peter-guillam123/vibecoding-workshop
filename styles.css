@@ -2896,3 +2896,32 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 @media (max-width: 1024px) {
   .howto-shot { box-shadow: none !important; }
 }
+
+/* ----------------------------------------------------------------
+   31 · API link footnote under a prompt. Gemini builds more reliably
+   when it's given the API's address, so the link is part of what
+   gets copied (the wrapper carries data-copy-text), but it's set
+   small and grey so the sentence still reads as the prompt.
+   ---------------------------------------------------------------- */
+.prompt-copy { width: 100%; }
+.prompt-api {
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink-mute);
+  margin: 9px 0 0;
+  padding-top: 7px;
+  border-top: 1px dashed var(--paper-rule);
+  overflow-wrap: anywhere;
+}
+/* The footnote costs each card two short lines; win them back from
+   padding and the copy bar on the four-up slides, not from the prompt. */
+.slide--pick .act-panels--four { row-gap: 16px; }
+.slide--pick .act-panels--four .act-panel { padding: 14px 22px 16px; gap: 8px; }
+.slide--pick .act-panels--four .act-panel h3 { font-size: 28px; }
+.slide--pick .act-panels--four .prompt-head { padding: 5px 18px 4px; }
+.slide--pick .act-panels--four .prompt-label { font-size: 12px; }
+.slide--pick .act-panels--four .act-panel .prompt-body { padding: 12px 20px 12px; }
+.slide--pick .act-panels--four .act-panel .prompt-text { font-size: 20px; line-height: 1.38; }
+.slide--pick .prompt-api { font-size: 13px; margin-top: 7px; padding-top: 5px; }
+.slide--pick .slide-subtitle { margin-bottom: 16px; }

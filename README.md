@@ -56,6 +56,16 @@ pre-flight: the deck itself is the clipboard.
 
 ## Changelog
 
+### 5 October 2026 - Every prompt carries its API's address
+
+On a test run the bank holidays prompt failed as written and worked
+once Gemini was given the API's address, presumably because it no
+longer had to go and look for it. So every build prompt in the SLG
+deck now ends with a small grey footnote, "API link: ...", which is
+copied along with the prompt. Each link is a working example query,
+checked on 5 October. The four-up cards were tightened to make room;
+the prompts themselves lost only a point of type size.
+
 ### 5 October 2026 - Three builds swapped after test runs in Gemini
 
 Bank holidays and Carbon Intensity made Gemini give up mid-build ("I

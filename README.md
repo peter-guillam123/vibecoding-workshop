@@ -7,6 +7,10 @@ coding experience assumed.
 Live at
 [peter-guillam123.github.io/vibecoding-workshop](https://peter-guillam123.github.io/vibecoding-workshop).
 
+There's also a shorter cut for the Senior Leadership Group, `slg.html`:
+21 slides across a 40-minute session and a 20-minute one. It shares the
+stylesheet and scripts with the full deck.
+
 There's an [About page](https://peter-guillam123.github.io/vibecoding-workshop/about.html)
 carrying the same story in longer form, plus a diary of what changed and why.
 
@@ -51,6 +55,29 @@ stays on screen while people work.
 pre-flight: the deck itself is the clipboard.
 
 ## Changelog
+
+### 5 October 2026 - A taster for the SLG
+
+New file, `slg.html`, for about 160 people from the editorial and
+commercial leadership groups: 40 minutes in one session, around 20 in
+another. The full deck is untouched.
+
+Everything is a fixed menu with the whole prompt ready to copy, so
+nobody fills in a blank. The meeting-cost app is built together on the
+big screen. The activity is one of four complete builds (Wikipedia on
+this day, Open-Meteo cycling, Frankfurter currency, UK Carbon
+Intensity), which also spreads 160 people across four APIs. The API
+explanation is one slide, not three. Session one ends with an
+invitation to carry on over lunch and a warning not to share yet.
+Session two puts a model inside the app, with one prompt per build in
+the same colours, then checks what it wrote, show and tell, sharing
+and four takeaways.
+
+New styles at the bottom of `styles.css` (section 27): a 2 × 2 version
+of the activity panels, a one-row version of the tweak cards, and a red
+"stop" build step. All four APIs were checked keyless and CORS-clean on
+5 October. Frankfurter returned errors for a few minutes and recovered;
+check it again on the morning.
 
 ### 28 July 2026 — Two questions before you share
 

@@ -214,6 +214,8 @@
     <li><strong>Every prompt card copies on click</strong>, and so do the suggestion cards. The lesson plan says to keep the prompts open in a notes file so you're not retyping them live; this removes that step, because the deck is the clipboard. Slide 4 explains it, with a card that demonstrates itself.</li>
   </ul>
 
+  <p>There's also a shorter cut, <a href="slg.html">the SLG taster</a>: 21 slides for the Senior Leadership Group, split across a 40-minute session and a 20-minute one. Same kit, same stylesheet, fewer choices.</p>
+
   <h2>How it's made</h2>
 
   <p>Plain HTML and CSS, no build step and no framework. It's built from the <a href="https://github.com/peter-guillam123/guardian-deck-template">Guardian deck template</a>, which supplies a <code>&lt;deck-stage&gt;</code> web component for navigation and scaling, a design system carrying the real Guardian font cuts, and a choreography engine that handles the reveals. Slides are markup; new components get appended to the stylesheet rather than forked into the page.</p>
@@ -223,6 +225,19 @@
   <p>One thing worth saying plainly, because it's the point of the workshop as much as the deck: this was built by describing it in English to Claude Code and letting it do the typing.</p>
 
   <h2>Diary</h2>
+
+  <article class="entry">
+    <p class="entry-meta"><span class="tag milestone">Milestone</span><span>5 October 2026</span></p>
+    <h3>A taster for the Senior Leadership Group</h3>
+
+    <p>The SLG's first two-day event wants a taste of vibecoding: about 160 people from the editorial and commercial leadership groups, 40 minutes in one session and roughly 20 in another. The full workshop is 90 minutes for 30 people, so this is a new file beside it, <code>slg.html</code>, rather than an edit to the original.</p>
+
+    <p>The rule for the cut was that nobody should have to fill in a blank to get started. The full workshop hands people twelve APIs and a starter prompt with brackets in it; with 160 people and 25 minutes, that's where the time would go. So the activity is four fixed builds, each a complete prompt you click and paste: what happened on this day (Wikipedia), whether to cycle in tomorrow (Open-Meteo), what a pound is worth (Frankfurter) and when the power is greenest (UK Carbon Intensity). Spreading the room across four sources also stops any one of them getting hammered from a single office connection. Session two repeats the four in the same colours, each with its own prompt for putting a model inside the app.</p>
+
+    <p>The meeting-cost app stays as the opener, built on the big screen with everyone following along. Three iteration options instead of six. The API explanation drops from three slides to one: the tap line, three columns on asking, answering and who does the plumbing, and the one rule about keys. Five working rules became three. A new slide closes session one by inviting people to carry on over lunch, and tells them not to share anything until session two has covered what to check.</p>
+
+    <p>All four APIs were checked from a browser's point of view on the day of the build. Frankfurter returned errors for a few minutes and then recovered, which is worth checking again on the morning.</p>
+  </article>
 
   <article class="entry">
     <p class="entry-meta"><span class="tag">Change</span><span>28 July 2026</span></p>

@@ -2707,3 +2707,41 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   .tweak[data-copy]::after,
   .opt-row[data-copy]::after { display: none; }
 }
+
+/* ----------------------------------------------------------------
+   27 · SLG taster (slg.html). Four fixed choices on one slide: the
+   two-panel activity brief stretched to a 2 × 2 grid, tightened so
+   four full prompts fit at 1920×1080. The colours cycle blue,
+   green, red, soft blue, and the handoff slide repeats the same
+   order so each build keeps its colour across both sessions.
+   ---------------------------------------------------------------- */
+.slide--pick .slide-title { margin-bottom: 14px; }
+.slide--pick .slide-subtitle { max-width: none; margin-bottom: 0; }
+.slide--pick .slide-body { justify-content: center; }
+
+.act-panels--four { row-gap: 22px; }
+.act-panels--four .act-panel { padding: 18px 26px 22px; gap: 10px; }
+.act-panels--four .act-eyebrow { font-size: 16px; }
+.act-panels--four .act-panel h3 { font-size: 30px; }
+.act-panels--four .prompt-head { padding: 8px 22px 7px; }
+.act-panels--four .prompt-label { font-size: 14px; }
+.act-panels--four .act-panel .prompt-body { padding: 14px 22px 16px; }
+.act-panels--four .act-panel .prompt-text { font-size: 21px; line-height: 1.42; }
+
+.act-panel.a3 { border-top-color: var(--news-red); }
+.act-panel.a3 .act-eyebrow { color: var(--news-red); }
+.act-panel.a4 { border-top-color: var(--guardian-blue-soft); }
+.act-panel.a4 .act-eyebrow { color: var(--guardian-blue-soft); }
+
+/* Three iteration cards rather than six: one row, so give each a
+   little more type. */
+.slide--tweaks-three .tweak { padding: 30px 32px 34px; }
+.slide--tweaks-three .tweak-say { font-size: 27px; line-height: 1.38; }
+
+/* A build step that says stop rather than go. */
+.build-step.stop { border-left-color: var(--news-red); }
+.build-step.stop .build-lead { color: var(--news-red); }
+
+@media print {
+  .slide--pick .act-panel { opacity: 1 !important; transform: none !important; }
+}

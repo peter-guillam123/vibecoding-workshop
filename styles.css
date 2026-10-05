@@ -2838,3 +2838,61 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   color: rgba(244,239,230,0.82);
   max-width: 58ch;
 }
+
+/* ----------------------------------------------------------------
+   30 · How-to: numbered steps side by side, each with a cropped
+   screenshot underneath, the button to press ringed in red in the
+   image itself. Two up on the gutter, so 6 + 6 columns.
+   ---------------------------------------------------------------- */
+.howto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--grid-gutter);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.howto-step { display: flex; flex-direction: column; gap: 12px; }
+.howto-head { display: flex; align-items: center; gap: 16px; }
+.howto-n {
+  flex: none;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--guardian-blue);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.howto-step h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0;
+}
+.howto-step p {
+  font-family: var(--body);
+  font-size: 23px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.howto-step p strong { color: var(--ink); font-weight: 700; }
+.howto-shot {
+  margin-top: auto;   /* captions differ in length; keep the shots level */
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  background: #fff;
+}
+.howto-shot img { width: 100%; height: auto; }
+
+@media (max-width: 1024px) {
+  .howto-shot { box-shadow: none !important; }
+}

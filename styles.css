@@ -2749,3 +2749,77 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 @media print {
   .slide--pick .act-panel { opacity: 1 !important; transform: none !important; }
 }
+
+/* ----------------------------------------------------------------
+   28 · Flow: three steps left to right, with an arrow in each gutter,
+   for showing how one thing feeds the next. An ordered list, so a
+   screen reader hears the steps in order; the arrows are decoration.
+   The middle line of each step is set in mono when it's data.
+   ---------------------------------------------------------------- */
+.flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 72px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.flow-step {
+  position: relative;
+  background: var(--paper-bright);
+  border: 1px solid var(--hairline);
+  border-top: 5px solid var(--guardian-blue);
+  box-shadow: var(--shadow-card);
+  padding: 20px 26px 22px;
+}
+.flow-step:nth-child(2) { border-top-color: var(--eco-green); }
+.flow-step:nth-child(3) { border-top-color: var(--news-red); }
+.flow-step:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  top: 50%;
+  right: -56px;
+  transform: translateY(-50%);
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1;
+  color: var(--ink-mute);
+}
+.flow-who {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--guardian-blue);
+  margin: 0 0 8px;
+}
+.flow-step:nth-child(2) .flow-who { color: var(--eco-green); }
+.flow-step:nth-child(3) .flow-who { color: var(--news-red); }
+.flow-what {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+.flow-what.mono { font-family: var(--mono); font-size: 32px; letter-spacing: 0; }
+.flow-note {
+  font-family: var(--body);
+  font-size: 20px;
+  line-height: 1.36;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.slide--spread .prompt-box .prompt-text strong { font-weight: 700; }
+
+@media (max-width: 1024px) {
+  .flow-step { box-shadow: none !important; }
+}
+.slide--flow .slide-title { max-width: none; }
+.slide--flow .slide-subtitle { max-width: 72ch; }
+.slide--flow .prompt-body { padding: 22px 30px 24px; }
+.slide--flow .prompt-text { font-size: 27px; line-height: 1.42; }

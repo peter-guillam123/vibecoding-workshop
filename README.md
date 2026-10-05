@@ -56,6 +56,18 @@ pre-flight: the deck itself is the clipboard.
 
 ## Changelog
 
+### 5 October 2026 - Part 3 becomes the next step
+
+Session two will be about sharing, so Part 3 is now optional: "Taking
+the next step", for now, over lunch or another day. Two slides, each
+one idea and one example on the same three-box flow diagram. Step one:
+one API's answer becomes the next one's question (postcode to
+Postcodes.io to Open-Meteo). Step two: hand the facts to Gemini and
+show its judgement beside them, built on the same weather app. The
+lunch slide and the four-prompt handoff slide went. The running order
+and cover now describe session two as sharing. New flow component in
+`styles.css`, section 28.
+
 ### 5 October 2026 - Twelve builds, not four
 
 The SLG activity is now three slides of four: daily life, news and the

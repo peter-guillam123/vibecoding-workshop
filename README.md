@@ -56,6 +56,18 @@ pre-flight: the deck itself is the clipboard.
 
 ## Changelog
 
+### 5 October 2026 - Three builds swapped after test runs in Gemini
+
+Bank holidays and Carbon Intensity made Gemini give up mid-build ("I
+don't seem to have access to that content"). Wikimedia pageviews built
+but showed "Failed to fetch": that API rejects the permission check a
+browser makes when the code adds a header, and Wikimedia's own docs
+tell developers to add one. Replaced with Nager.Date public holidays
+(pick a country), Open-Meteo air quality, and Wikipedia's featured
+content feed, which carries the same most-read list on the host that
+already worked for On this day. All the APIs are now checked for that
+stricter permission check too, not just a plain request.
+
 ### 5 October 2026 - Part 3 becomes the next step
 
 Session two will be about sharing, so Part 3 is now optional: "Taking

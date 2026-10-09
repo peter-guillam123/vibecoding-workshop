@@ -3239,3 +3239,82 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   color: var(--ink);
   margin: 0;
 }
+
+/* ----------------------------------------------------------------
+   35 · Stairs: three steps of rising height and colour, for "the
+   further along, the harder you check". The bar carries the verdict;
+   the heading and line underneath carry the reason. Bottom-aligned,
+   so the rise reads left to right as a single shape.
+   ---------------------------------------------------------------- */
+.slide--stairs .slide-subtitle { max-width: 70ch; }
+.stairs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gutter);
+  align-items: end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.stair { display: flex; flex-direction: column; gap: 10px; }
+.stair-bar {
+  display: flex;
+  align-items: flex-end;
+  height: 110px;
+  padding: 0 22px 16px;
+  background: var(--guardian-blue-soft);
+  margin-bottom: 8px;
+}
+.stair:nth-child(2) .stair-bar { height: 170px; background: var(--guardian-blue); }
+.stair:nth-child(3) .stair-bar { height: 230px; background: var(--news-red); }
+.stair-bar span {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--paper);
+}
+.stair h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0;
+}
+.stair p {
+  font-family: var(--body);
+  font-size: 23px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  margin: 0;
+  min-height: 3em;
+}
+.stairs-close {
+  font-family: var(--display);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 1.2;
+  color: var(--ink);
+  border-top: 2px solid var(--ink);
+  padding-top: 18px;
+}
+/* The bars grow up from their baseline, one after another, once the
+   slide plays. Clip rather than scale, so the labels never squash.
+   Reduced motion and print simply see the finished bars. */
+@media (prefers-reduced-motion: no-preference) {
+  .fx-play .stair-bar { animation: stairGrow 900ms var(--ease-out) both; }
+  .fx-play .stair:nth-child(1) .stair-bar { animation-delay: 420ms; }
+  .fx-play .stair:nth-child(2) .stair-bar { animation-delay: 620ms; }
+  .fx-play .stair:nth-child(3) .stair-bar { animation-delay: 820ms; }
+}
+@keyframes stairGrow {
+  from { clip-path: inset(100% 0 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+@media print {
+  .stair-bar { animation: none !important; clip-path: none !important; }
+}

@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vibecoding taster - SLG</title>
 <link rel="preconnect" href="https://assets.guim.co.uk" crossorigin>
-<link rel="stylesheet" href="styles.css?v=2026-10-09h">
+<link rel="stylesheet" href="styles.css?v=2026-10-09j">
 </head>
 <body>
 
@@ -784,42 +784,42 @@
   </section>
 
   <!-- ============================================================
-       The counterweight to the handoff, cut to two responses and a
-       question they can answer about their own app straight away.
+       Responsibility. One idea: you're answerable for all of it, and
+       the more a step changes the data, the harder you check it. The
+       staircase says that before anyone reads a word.
        ============================================================ -->
-  <section class="slide slide--spread" data-label="The part you can't trust">
+  <section class="slide slide--spread slide--stairs" data-label="If it's wrong, it's yours">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · The other side of the handoff</p>
-    <h2 class="slide-title" data-split>The part you can't <em>trust</em>.</h2>
-    <p class="slide-subtitle" data-fx="rise" style="--d:200ms">Everything before the button came straight from an API. If the source is sound and the question is right, so is the data. What the model wrote works differently.</p>
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Before anyone else uses it</p>
+    <h2 class="slide-title" data-split>If it's wrong, it's <em>yours</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:220ms">Anyone who opens your app will assume it's right. So check the whole thing, not just the clever part. The more a step changes the data, the harder you check it.</p>
 
     <div class="slide-body">
-      <div class="build-step warn" data-fx="rise" style="--d:300ms">
-        <p class="build-lead">What comes with it</p>
-        <p class="build-body">Ask a model to summarise, rewrite, judge or explain and you take on everything that comes with one: <strong>it can invent things</strong>, it smooths the specific into the general, and it is only ever as good as your instruction.</p>
-      </div>
+      <ol class="stairs">
+        <li class="stair" data-fx="rise" style="--d:320ms">
+          <span class="stair-bar"><span>Check it</span></span>
+          <h3>The data</h3>
+          <p>A trusted API can still be out of date, or answer a slightly different question from the one you meant.</p>
+        </li>
+        <li class="stair" data-fx="rise" style="--d:460ms">
+          <span class="stair-bar"><span>Check it harder</span></span>
+          <h3>Your app</h3>
+          <p>The code can pick the wrong Newcastle, mix up units or quietly drop a result, and still look finished.</p>
+        </li>
+        <li class="stair" data-fx="rise" style="--d:600ms">
+          <span class="stair-bar"><span>Check it every time</span></span>
+          <h3>What the model wrote</h3>
+          <p>It can invent things, smooth over detail and sound just as sure either way. Read it against the facts it was given.</p>
+        </li>
+      </ol>
 
-      <div class="probes">
-        <div class="probe" data-fx="rise" style="--d:420ms">
-          <p class="probe-q">Check every transformation</p>
-          <p class="probe-a">Anything the model rewrote, summarised or judged needs reading against the data it was handed. Not once on the day you built it. Every time it matters.</p>
-        </div>
-        <div class="probe" data-fx="rise" style="--d:500ms">
-          <p class="probe-q">Show the source, not just a warning</p>
-          <p class="probe-a">A note saying the text is AI-generated moves the risk onto the reader without helping them. Keep the raw figure beside the sentence written about it, so anyone can check at a glance.</p>
-        </div>
-      </div>
-
-      <div class="challenge" data-fx="rise" style="--d:620ms">
-        <p class="challenge-lead">Over to you</p>
-        <p class="challenge-body">Read what your button wrote against the data on screen. Did it get anything <em>wrong</em>?</p>
-      </div>
+      <p class="stairs-close" data-fx="rise" style="--d:760ms">Try it with things you know well. Then show it to someone who knows more than you.</p>
     </div>
 
     <div class="slide-foot">
       <span class="wm">Vibecoding taster · Part 3</span>
-      <span class="num">16 / NN</span>
+      <span class="num">18 / NN</span>
     </div>
   </section>
 

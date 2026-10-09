@@ -3318,3 +3318,11 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 @media print {
   .stair-bar { animation: none !important; clip-path: none !important; }
 }
+.alsotry-list.alsotry-list--three { grid-template-columns: repeat(3, 1fr); }
+.slide--find .slide-subtitle { max-width: none; }
+.slide--find .alsotry-list li { font-size: 23px; }
+.slide--find .prompt-body { padding: 22px 32px 24px; }
+.slide--find .prompt-text { font-size: 27px; line-height: 1.45; }
+.slide--find .alsotry-list li { padding-left: 32px; }
+.slide--find .build-step { padding: 16px 32px; }
+.slide--find .alsotry { padding: 16px 30px 18px; }

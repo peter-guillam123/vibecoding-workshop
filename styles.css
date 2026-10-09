@@ -3326,3 +3326,66 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .slide--find .alsotry-list li { padding-left: 32px; }
 .slide--find .build-step { padding: 16px 32px; }
 .slide--find .alsotry { padding: 16px 30px 18px; }
+
+/* ----------------------------------------------------------------
+   36 · Track: numbered stops on a straight line that draws across,
+   for a short how-to where the last stop is the point. Four columns
+   on the gutter; the line runs node centre to node centre.
+   ---------------------------------------------------------------- */
+.track { position: relative; }
+.track-line {
+  position: absolute;
+  left: 12.5%; right: 12.5%;
+  top: 44px;
+  height: 4px;
+  background: var(--guardian-blue);
+  transform-origin: left center;
+}
+.track-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--grid-gutter);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.track-step { text-align: center; padding: 0 12px; }
+.track-node {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  border: 5px solid var(--guardian-blue);
+  background: var(--paper);
+  box-shadow: 0 10px 24px -12px rgba(18,18,18,0.4);
+  font-family: var(--mono);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--guardian-blue);
+  margin-bottom: 22px;
+}
+.track-step h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+.track-step p {
+  font-family: var(--body);
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.track-step.is-goal .track-node {
+  background: var(--news-red);
+  border-color: var(--news-red);
+  color: var(--paper);
+}
+.track-step.is-goal h3 { color: var(--news-red); }
+.slide--send .slide-title { max-width: none; }

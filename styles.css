@@ -3389,3 +3389,10 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 }
 .track-step.is-goal h3 { color: var(--news-red); }
 .slide--send .slide-title { max-width: none; }
+
+/* Four takeaways with room to spare: set them to read from the back. */
+.slide--takeaways .slide-body { justify-content: center; }
+.slide--takeaways .opts.wide .opt-row { padding: 22px 0; gap: 22px; }
+.slide--takeaways .opts.wide .opt-n { font-size: 22px; }
+.slide--takeaways .opts.wide .opt-main strong { font-size: 36px; }
+.slide--takeaways .opts.wide .opt-main span { font-size: 25px; margin-top: 6px; }

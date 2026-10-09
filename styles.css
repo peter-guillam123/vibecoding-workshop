@@ -3396,3 +3396,41 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .slide--takeaways .opts.wide .opt-n { font-size: 22px; }
 .slide--takeaways .opts.wide .opt-main strong { font-size: 36px; }
 .slide--takeaways .opts.wide .opt-main span { font-size: 25px; margin-top: 6px; }
+
+/* ----------------------------------------------------------------
+   37 · Send-off: the closing ink slide with three short columns
+   under the line, each a nudge to keep going. Same rules as the
+   orientation columns, reset for ink: yellow leads, paper text.
+   ---------------------------------------------------------------- */
+.slide--sendoff .research-eyebrow { margin-bottom: 40px; }
+.sendoff-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gutter);
+  margin-top: 72px;
+}
+.sendoff-col { border-top: 3px solid var(--guardian-yellow); padding-top: 20px; }
+.sendoff-lead {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--guardian-yellow);
+  margin: 0 0 12px;
+}
+.sendoff-body {
+  font-family: var(--body);
+  font-size: 26px;
+  line-height: 1.42;
+  color: rgba(244,239,230,0.86);
+  margin: 0;
+}
+.sendoff-sig {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 0.02em;
+  color: var(--paper);
+  margin: 16px 0 0;
+}

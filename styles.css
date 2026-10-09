@@ -3093,7 +3093,7 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   opacity: 0;
 }
 .gx-ph { margin-left: 22px; font-size: 28px; color: #5f6368; }
-.gx-model { margin-left: auto; font-size: 24px; color: #1f1f1f; }
+.gx-model { margin-left: auto; font-size: 24px; color: #1f1f1f; display: inline-flex; align-items: center; gap: 8px; }
 
 .gx-menu,
 .gx-sub {

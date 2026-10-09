@@ -3209,3 +3209,33 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .slide--rules-roomy .rule-row h3 { font-size: 36px; margin-bottom: 8px; }
 .slide--rules-roomy .rule-row p { font-size: 24px; line-height: 1.42; }
 .slide--rules-roomy .rule-tag { font-size: 22px; }
+
+/* ----------------------------------------------------------------
+   34 · Use it: the instruction after the hook prompt, given more
+   weight than an act-note but still well below the prompt itself.
+   A labelled slab, like the build steps: label left, prose right.
+   ---------------------------------------------------------------- */
+.use-it {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  column-gap: 40px;
+  align-items: center;
+  background: var(--paper-deep);
+  border-left: 8px solid var(--guardian-yellow);
+  padding: 24px 34px 26px;
+}
+.use-it-lead {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 0;
+}
+.use-it-body {
+  font-family: var(--body);
+  font-size: 25px;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0;
+}

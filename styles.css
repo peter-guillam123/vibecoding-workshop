@@ -2996,10 +2996,10 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   border: 1px solid var(--hairline);
   border-top: 6px solid var(--guardian-blue);
   box-shadow: var(--shadow-card);
-  padding: 26px 32px 30px;
+  padding: 22px 30px 24px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 .pf-step:nth-child(2) { border-top-color: var(--news-red); }
 .pf-num {
@@ -3045,7 +3045,7 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
    1920 × 1080 canvas. */
 .gx {
   position: relative;
-  height: 540px;
+  height: 520px;
   border-radius: 28px;
   overflow: hidden;
   background:
@@ -3106,7 +3106,7 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   flex-direction: column;
 }
 .gx-menu { left: 52px; top: 140px; width: 360px; }
-.gx-sub  { left: 402px; top: 358px; width: 300px; }
+.gx-sub  { left: 402px; top: 344px; width: 300px; }
 .gx-item {
   display: flex;
   align-items: center;
@@ -3125,7 +3125,7 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .gx-cursor {
   position: absolute;
   left: 0; top: 0;
-  transform: translate(530px, 398px);
+  transform: translate(530px, 384px);
   transform-origin: 3px 2px;
   filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
 }
@@ -3151,10 +3151,10 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   18%  { transform: translate(92px, 98px); }
   30%  { transform: translate(220px, 480px); }
   34%  { transform: translate(220px, 480px); }
-  46%  { transform: translate(530px, 398px); }
-  49%  { transform: translate(530px, 398px) scale(1); }
-  50%  { transform: translate(530px, 398px) scale(0.8); }
-  52%  { transform: translate(530px, 398px) scale(1); opacity: 1; }
+  46%  { transform: translate(530px, 384px); }
+  49%  { transform: translate(530px, 384px) scale(1); }
+  50%  { transform: translate(530px, 384px) scale(0.8); }
+  52%  { transform: translate(530px, 384px) scale(1); opacity: 1; }
   62%  { transform: translate(620px, 330px); opacity: 0; }
   100% { transform: translate(620px, 330px); opacity: 0; }
 }
@@ -3201,3 +3201,4 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 @media (max-width: 1024px) {
   .pf-step, .gx { box-shadow: none !important; }
 }
+.slide--preflight .slide-subtitle { max-width: none; }

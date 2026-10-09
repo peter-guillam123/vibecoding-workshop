@@ -2970,3 +2970,234 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .flow.flow--fan { grid-template-columns: 0.72fr 0.72fr 2.6fr; gap: 64px; }
 .flow--fan .flow-step:not(:last-child)::after { right: -50px; }
 .flow--fan .flow-what { font-size: 32px; }
+
+/* ----------------------------------------------------------------
+   33 · Pre-flight with a demo. Two stacked steps on the left (5
+   columns), and on the right (7 columns) a looping, simplified
+   Gemini prompt bar: the pointer clicks +, it turns to x, the menu
+   opens, More tools, Canvas, the menu closes and a Canvas chip
+   appears. Not a replica of Gemini, just enough to recognise.
+
+   The default (unanimated) state is the useful still: menu open,
+   More tools and Canvas highlighted, pointer on Canvas. That's what
+   reduced motion and print get. The loop runs only on the active
+   slide, so it starts from the top on every visit.
+   ---------------------------------------------------------------- */
+.slide--preflight .slide-body { justify-content: center; }
+.pf {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 56px;
+  align-items: center;
+}
+.pf-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--grid-gutter); }
+.pf-step {
+  background: var(--paper-deep);
+  border: 1px solid var(--hairline);
+  border-top: 6px solid var(--guardian-blue);
+  box-shadow: var(--shadow-card);
+  padding: 26px 32px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pf-step:nth-child(2) { border-top-color: var(--news-red); }
+.pf-num {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 0.9;
+  color: var(--guardian-blue);
+}
+.pf-step:nth-child(2) .pf-num { color: var(--news-red); }
+.pf-step h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 0;
+}
+.pf-step p {
+  font-family: var(--body);
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.pf-step p strong { color: var(--ink); font-weight: 700; }
+.pf-link {
+  align-self: flex-start;
+  margin-top: 6px;
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--paper);
+  background: var(--guardian-blue);
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+.pf-link:hover { background: var(--ink); }
+.pf-link:focus-visible { outline: 3px solid var(--guardian-blue); outline-offset: 4px; }
+
+/* The demo stage: fixed pixel geometry, since the deck is a fixed
+   1920 × 1080 canvas. */
+.gx {
+  position: relative;
+  height: 540px;
+  border-radius: 28px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 55% 70%, #cfe2fa 0%, rgba(207,226,250,0) 65%),
+    linear-gradient(180deg, #eef4fc 0%, #e3edf9 100%);
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-card);
+  font-family: var(--ui);
+  color: #1f1f1f;
+}
+.gx-bar {
+  position: absolute;
+  left: 36px; right: 36px; top: 40px;
+  height: 88px;
+  border-radius: 44px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(30,60,120,0.10);
+  display: flex;
+  align-items: center;
+  padding: 0 28px 0 16px;
+}
+.gx-btn {
+  flex: none;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: #ececec;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.gx-plus { transform: rotate(45deg); transform-origin: 50% 50%; }
+.gx-chip {
+  position: absolute;
+  left: 86px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 18px 0 14px;
+  border-radius: 23px;
+  background: #e8eefa;
+  color: #0b57d0;
+  font-size: 22px;
+  font-weight: 700;
+  opacity: 0;
+}
+.gx-ph { margin-left: 22px; font-size: 28px; color: #5f6368; }
+.gx-model { margin-left: auto; font-size: 24px; color: #1f1f1f; }
+
+.gx-menu,
+.gx-sub {
+  position: absolute;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 10px 34px rgba(30,60,120,0.16);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.gx-menu { left: 52px; top: 140px; width: 360px; }
+.gx-sub  { left: 402px; top: 358px; width: 300px; }
+.gx-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 48px;
+  padding: 0 18px;
+  border-radius: 12px;
+  font-size: 24px;
+  color: #3c4043;
+}
+.gx-item i { margin-left: auto; font-style: normal; font-size: 24px; color: #5f6368; }
+.gx-rule { height: 1px; background: #e0e0e0; margin: 6px 12px; }
+.gx-more   { background: #ececec; color: #1f1f1f; font-weight: 700; }
+.gx-canvas { background: #e8eefa; color: #0b57d0; font-weight: 700; }
+
+.gx-cursor {
+  position: absolute;
+  left: 0; top: 0;
+  transform: translate(530px, 398px);
+  transform-origin: 3px 2px;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+}
+
+/* The loop: 10 seconds, active slide only, motion allowed only. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-deck-active] .gx-cursor { animation: gxCursor 10s ease-in-out infinite both; }
+  [data-deck-active] .gx-plus   { animation: gxPlus   10s ease infinite both; }
+  [data-deck-active] .gx-btn    { animation: gxBtn    10s ease infinite both; }
+  [data-deck-active] .gx-menu   { animation: gxMenu   10s ease infinite both; }
+  [data-deck-active] .gx-sub    { animation: gxSub    10s ease infinite both; }
+  [data-deck-active] .gx-more   { animation: gxMore   10s ease infinite both; }
+  [data-deck-active] .gx-canvas { animation: gxCanvas 10s ease infinite both; }
+  [data-deck-active] .gx-chip   { animation: gxChip   10s ease infinite both; }
+  [data-deck-active] .gx-ph     { animation: gxPh     10s ease infinite both; }
+}
+@keyframes gxCursor {
+  0%   { transform: translate(700px, 440px); opacity: 0; }
+  4%   { transform: translate(700px, 440px); opacity: 1; }
+  12%  { transform: translate(92px, 98px); }
+  13%  { transform: translate(92px, 98px) scale(0.8); }
+  15%  { transform: translate(92px, 98px) scale(1); }
+  18%  { transform: translate(92px, 98px); }
+  30%  { transform: translate(220px, 480px); }
+  34%  { transform: translate(220px, 480px); }
+  46%  { transform: translate(530px, 398px); }
+  49%  { transform: translate(530px, 398px) scale(1); }
+  50%  { transform: translate(530px, 398px) scale(0.8); }
+  52%  { transform: translate(530px, 398px) scale(1); opacity: 1; }
+  62%  { transform: translate(620px, 330px); opacity: 0; }
+  100% { transform: translate(620px, 330px); opacity: 0; }
+}
+@keyframes gxPlus {
+  0%, 13%   { transform: rotate(0deg); }
+  16%, 54%  { transform: rotate(45deg); }
+  58%, 100% { transform: rotate(0deg); }
+}
+@keyframes gxBtn {
+  0%, 12%, 16%, 100% { background: #ececec; }
+  13.5%              { background: #d5d5d5; }
+}
+@keyframes gxMenu {
+  0%, 13%   { opacity: 0; transform: translateY(-8px); }
+  16%, 54%  { opacity: 1; transform: translateY(0); }
+  57%, 100% { opacity: 0; transform: translateY(-4px); }
+}
+@keyframes gxSub {
+  0%, 32%   { opacity: 0; transform: translateX(-8px); }
+  35%, 54%  { opacity: 1; transform: translateX(0); }
+  57%, 100% { opacity: 0; transform: translateX(0); }
+}
+@keyframes gxMore {
+  0%, 29%   { background: transparent; color: #3c4043; font-weight: 400; }
+  31%, 100% { background: #ececec; color: #1f1f1f; font-weight: 700; }
+}
+@keyframes gxCanvas {
+  0%, 45%   { background: transparent; color: #3c4043; font-weight: 400; }
+  47%, 100% { background: #e8eefa; color: #0b57d0; font-weight: 700; }
+}
+@keyframes gxChip {
+  0%, 57%   { opacity: 0; transform: scale(0.9); }
+  61%, 92%  { opacity: 1; transform: scale(1); }
+  96%, 100% { opacity: 0; transform: scale(1); }
+}
+@keyframes gxPh {
+  0%, 57%   { transform: translateX(0); }
+  61%, 92%  { transform: translateX(150px); }
+  96%, 100% { transform: translateX(0); }
+}
+@media print {
+  .gx * { animation: none !important; }
+}
+@media (max-width: 1024px) {
+  .pf-step, .gx { box-shadow: none !important; }
+}

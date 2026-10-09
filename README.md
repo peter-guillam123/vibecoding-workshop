@@ -8,7 +8,7 @@ Live at
 [peter-guillam123.github.io/vibecoding-workshop](https://peter-guillam123.github.io/vibecoding-workshop).
 
 There's also a shorter cut for the Senior Leadership Group, `slg.html`:
-25 slides across a 40-minute session and a 20-minute one. It shares the
+24 slides across a 40-minute session and a 20-minute one. It shares the
 stylesheet and scripts with the full deck.
 
 There's an [About page](https://peter-guillam123.github.io/vibecoding-workshop/about.html)

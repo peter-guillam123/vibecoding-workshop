@@ -2925,3 +2925,48 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 .slide--pick .act-panels--four .act-panel .prompt-text { font-size: 20px; line-height: 1.38; }
 .slide--pick .prompt-api { font-size: 13px; margin-top: 7px; padding-top: 5px; }
 .slide--pick .slide-subtitle { margin-bottom: 16px; }
+
+/* ----------------------------------------------------------------
+   32 · Fan: the flow's third box opened out into a range of outputs,
+   to show that one set of facts can become many different things.
+   The first two boxes sit centred against the taller panel so the
+   arrows still point at its middle. The item the slide's prompt
+   builds is marked in yellow.
+   ---------------------------------------------------------------- */
+.flow.flow--fan { grid-template-columns: 1fr 1fr 2.3fr; align-items: center; }
+.flow-fan { padding: 18px 26px 20px; }
+.flow-fan .flow-who { margin-bottom: 12px; }
+.fan-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.fan-list li {
+  padding: 2px 0 2px 14px;
+  border-left: 3px solid var(--hairline);
+  font-family: var(--body);
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--ink);
+}
+.fan-list b {
+  display: block;
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--news-red);
+  margin-bottom: 2px;
+}
+.fan-list li.is-example { border-left-color: var(--guardian-yellow); background: var(--paper-deep); }
+.flow-fan .flow-who { font-size: 17px; }
+.fan-list { gap: 14px 32px; }
+.fan-list li { font-size: 23px; line-height: 1.3; padding: 3px 0 3px 16px; }
+.fan-list b { font-size: 14px; }
+.flow.flow--fan { grid-template-columns: 0.72fr 0.72fr 2.6fr; gap: 64px; }
+.flow--fan .flow-step:not(:last-child)::after { right: -50px; }
+.flow--fan .flow-what { font-size: 32px; }

@@ -3202,3 +3202,10 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
   .pf-step, .gx { box-shadow: none !important; }
 }
 .slide--preflight .slide-subtitle { max-width: none; }
+
+/* Four short rules with room to spare: bigger type than the dense
+   ledger, which was sized for rules carrying never/instead pairs. */
+.slide--rules-roomy .rule-row { padding: 24px 0; }
+.slide--rules-roomy .rule-row h3 { font-size: 36px; margin-bottom: 8px; }
+.slide--rules-roomy .rule-row p { font-size: 24px; line-height: 1.42; }
+.slide--rules-roomy .rule-tag { font-size: 22px; }

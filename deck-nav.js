@@ -28,6 +28,7 @@
 
   /* The map shows each slide's own title, not its working label. */
   const titleOf = (s) => {
+    if (s.dataset.title) return s.dataset.title;
     const el = s.querySelector('.slide-title, .section-opener h1, .wordmark, .epigraph, .research-quote, .brief-lede');
     const raw = el ? el.innerHTML.replace(/<br\s*\/?>/gi, ' ').replace(/<[^>]+>/g, '') : (s.dataset.label || '');
     const t = raw.replace(/\s+/g, ' ').trim();
@@ -38,7 +39,7 @@
   const parts = [];
   slides.forEach((s, i) => {
     if (s.hasAttribute('data-part')) {
-      parts.push({ label: s.dataset.part, short: s.dataset.partShort || s.dataset.part, start: i, slides: [] });
+      parts.push({ label: s.dataset.part, short: s.dataset.partShort || s.dataset.part, time: s.dataset.partTime || '', start: i, slides: [] });
     }
     if (!parts.length) parts.push({ label: 'Start', short: 'Start', start: 0, slides: [] });
     parts[parts.length - 1].slides.push(i);
@@ -106,9 +107,20 @@
   parts.forEach((p) => {
     const col = document.createElement('section');
     col.className = 'map-part';
+    const n = document.createElement('span');
+    n.className = 'map-part-n';
+    n.setAttribute('aria-hidden', 'true');
+    n.textContent = pad2(parts.indexOf(p));
+    col.appendChild(n);
     const h = document.createElement('h3');
     h.textContent = p.label;
     col.appendChild(h);
+    if (p.time) {
+      const t = document.createElement('p');
+      t.className = 'map-part-time';
+      t.textContent = p.time;
+      col.appendChild(t);
+    }
     const ol = document.createElement('ol');
     p.slides.forEach((i) => {
       const li = document.createElement('li');
@@ -135,6 +147,8 @@
   let opener = null;
   const syncCurrent = () => {
     const i = stage.index;
+    const here = partOf(i);
+    map.querySelectorAll('.map-part').forEach((col, k) => col.classList.toggle('is-here', k === here));
     map.querySelectorAll('.map-slide').forEach((b) => {
       if (parseInt(b.dataset.goto, 10) - 1 === i) b.setAttribute('aria-current', 'true');
       else b.removeAttribute('aria-current');

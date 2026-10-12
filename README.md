@@ -62,6 +62,17 @@ pre-flight: the deck itself is the clipboard.
 
 ## Changelog
 
+### 12 October 2026 - Second edition, second pass
+
+The cover's preview of the twelve builds gets its own card, with "No
+coding experience necessary" as its foot. The contents page is written
+for someone who has never seen the deck. The map is redrawn with more
+air, a numeral per part, timings, and a four-to-six-word summary for
+each slide (`data-title` on the section) instead of its own text. In
+the API animation the app's readout shows question marks until the
+answer arrives. The "Now tell it what's wrong" dek, in both editions,
+now says you can ask for a change of your own.
+
 ### 12 October 2026 - The taster, second edition
 
 `slg-v2.html`: the SLG deck's words, presented with a map. `deck-nav.js`

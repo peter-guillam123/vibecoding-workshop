@@ -3668,7 +3668,7 @@ body.map-open deck-stage { filter: blur(2px); }
   display: grid;
   grid-template-columns: 200px 0.85fr 150px 1.7fr;
   column-gap: 36px;
-  align-items: baseline;
+  align-items: center;
   width: 100%;
   box-sizing: border-box;
   cursor: pointer;

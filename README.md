@@ -11,6 +11,12 @@ There's also a shorter cut for the Senior Leadership Group, `slg.html`:
 22 slides for a single hands-on session, with more to try afterwards. It shares the
 stylesheet and scripts with the full deck.
 
+A second edition of the taster, `slg-v2.html`, carries the same words
+with a map: a rail of parts in every footer, a full map on M, a contents
+page, tabs across the twelve builds, and `#N` links to any slide. The
+navigation is one script, `deck-nav.js`, which reads the structure from
+`data-part` attributes on the slides.
+
 There's an [About page](https://peter-guillam123.github.io/vibecoding-workshop/about.html)
 carrying the same story in longer form, plus a diary of what changed and why.
 
@@ -55,6 +61,19 @@ stays on screen while people work.
 pre-flight: the deck itself is the clipboard.
 
 ## Changelog
+
+### 12 October 2026 - The taster, second edition
+
+`slg-v2.html`: the SLG deck's words, presented with a map. `deck-nav.js`
+builds a rail of parts into every footer, a map of every slide on M (or
+the Map button), handles `data-goto` jumps and `#N` deep links. New
+slides: a contents ledger after the epigraph. Rebuilt: the cover (the
+twelve builds, one line at a time), the hook (a mock app assembles once
+the prompt has typed), and What an API is (a question goes out along a
+pipe, data comes back). Tabs in the kicker of the four pick-one slides.
+Arrows on the flow diagrams and the fan's six outputs now stagger in.
+Styles in sections 38 to 46 of `styles.css`, all scoped to the second
+edition. Word parity with the first edition checked by token diff.
 
 ### 5 October 2026 - Every prompt carries its API's address
 

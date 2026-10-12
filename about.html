@@ -214,7 +214,7 @@
     <li><strong>Every prompt card copies on click</strong>, and so do the suggestion cards. The lesson plan says to keep the prompts open in a notes file so you're not retyping them live; this removes that step, because the deck is the clipboard. Slide 4 explains it, with a card that demonstrates itself.</li>
   </ul>
 
-  <p>There's also a shorter cut, <a href="slg.html">the SLG taster</a>: 22 slides for the Senior Leadership Group: one hands-on session, with more to try afterwards. Same kit, same stylesheet, fewer choices.</p>
+  <p>There's also a shorter cut, <a href="slg.html">the SLG taster</a>: 22 slides for the Senior Leadership Group: one hands-on session, with more to try afterwards. Same kit, same stylesheet, fewer choices. And a <a href="slg-v2.html">second edition of the taster</a>, the same words with a map: a rail of parts in every footer, a full map of the deck on M, a contents page, and a little more motion where it earns its place.</p>
 
   <h2>How it's made</h2>
 
@@ -225,6 +225,17 @@
   <p>One thing worth saying plainly, because it's the point of the workshop as much as the deck: this was built by describing it in English to Claude Code and letting it do the typing.</p>
 
   <h2>Diary</h2>
+
+  <article class="entry">
+    <p class="entry-meta"><span class="tag milestone">Milestone</span><span>12 October 2026</span></p>
+    <h3>The taster, second edition: the same deck with a map</h3>
+
+    <p>A thought experiment that became a build. Take the SLG taster, keep every word, and present it with everything the kit has learned since: more considered motion, and above all a way of finding your way around. The result is <code>slg-v2.html</code>, beside the first edition rather than replacing it.</p>
+
+    <p>The navigation is the point. A rail of the deck's parts sits in every footer where the watermark used to be, and the current part carries a red rule. Press M, or click Map, and a dark panel lists every slide by part; you can click any of them, or arrow through them. A contents page after the epigraph is a ledger of the parts with timings, and every row is a button. The four "pick one" slides now carry tabs in their kicker line, so the twelve builds read as a set you can move across. And the address bar carries the slide number, so the email before the session can link straight to the builds, or to Part 3 for anyone working alone later. All of it is one small script, <code>deck-nav.js</code>, which reads the structure from the slides themselves: any section marked as the start of a part starts a part.</p>
+
+    <p>Three slides gained motion. The cover shows the twelve builds one line at a time, to the right of the wordmark: what the room will have made by the end. On the hook slide, once the prompt has typed itself, a sketch of the app assembles beside it, title, two fields, a number counting up, three buttons, with the three "what you'll see" lines beneath. And "What an API is" is now drawn as well as said: your app on the left, the API on the right, a question travelling out along a pipe, the API lighting up, data travelling back and landing as a readout. Reduced motion and print see each of these at rest. Everything else carries the first edition's words unchanged, and a token diff of the two decks proves it.</p>
+  </article>
 
   <article class="entry">
     <p class="entry-meta"><span class="tag">Change</span><span>9 October 2026</span></p>

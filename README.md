@@ -8,14 +8,12 @@ Live at
 [peter-guillam123.github.io/vibecoding-workshop](https://peter-guillam123.github.io/vibecoding-workshop).
 
 There's also a shorter cut for the Senior Leadership Group, `slg.html`:
-22 slides for a single hands-on session, with more to try afterwards. It shares the
-stylesheet and scripts with the full deck.
-
-A second edition of the taster, `slg-v2.html`, carries the same words
-with a map: a rail of parts in every footer, a full map on M, a contents
-page, tabs across the twelve builds, and `#N` links to any slide. The
-navigation is one script, `deck-nav.js`, which reads the structure from
-`data-part` attributes on the slides.
+23 slides for a single hands-on session, with more to try afterwards. It
+carries a map: a rail of parts in every footer, a full map on M, a
+contents page, tabs across the twelve builds, and `#N` links to any
+slide. The navigation is one script, `deck-nav.js`, which reads the
+structure from `data-part` attributes on the slides. The first edition
+is kept as `slg-first-edition.html`.
 
 There's an [About page](https://peter-guillam123.github.io/vibecoding-workshop/about.html)
 carrying the same story in longer form, plus a diary of what changed and why.
@@ -61,6 +59,14 @@ stays on screen while people work.
 pre-flight: the deck itself is the clipboard.
 
 ## Changelog
+
+### 12 October 2026 - The second edition becomes the taster
+
+`slg.html` is now the second edition, so the address on the QR code
+and in the email opens the new deck. The first edition is kept as
+`slg-first-edition.html`. Nothing about the address changes for anyone
+arriving: the slide number is only added once the deck is open, and a
+plain `slg.html` still starts at the cover.
 
 ### 12 October 2026 - Second edition, second pass
 

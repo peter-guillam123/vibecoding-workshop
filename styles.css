@@ -3436,7 +3436,8 @@ a.chat-bubble:hover { background: var(--guardian-blue); color: var(--paper); }
 }
 
 /* ================================================================
-   SLG TASTER, SECOND EDITION (slg-v2.html).
+   SLG TASTER, SECOND EDITION (slg.html; the first edition is kept
+   as slg-first-edition.html).
    Everything below is scoped to body.v2 or to classes only the
    second edition uses, so the first edition renders as before.
    ================================================================ */

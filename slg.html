@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://assets.guim.co.uk" crossorigin>
 <link rel="stylesheet" href="styles.css?v=2026-10-12">
 </head>
-<body>
+<body class="v2">
 
 <div id="deck-gate" role="dialog" aria-modal="true" aria-label="Password required">
   <form class="dg-card" id="deck-gate-form">
@@ -20,27 +20,28 @@
 <script src="gate.js"></script>
 
 <!-- ================================================================
-     VIBECODING TASTER - the Senior Leadership Group cut.
-     A shorter sibling of index.html, not a replacement. About 160
-     people, two sessions: 40 minutes of building, then about 20
-     minutes later (same day or the next).
+     VIBECODING TASTER, SECOND EDITION. Same session as the first
+     edition (slg-first-edition.html),
+     presented with a map: a rail of parts in every footer, a full map
+     of the deck on M, a contents page, tabs across the twelve builds,
+     and #N links so an email can open the deck at any slide. The
+     cover, the hook and the API explainer gained motion; everything
+     else carries the first edition's words unchanged.
 
-     Session 1: build the meeting-cost app together on the big
-     screen, then pick one of twelve live-data builds. Lunch: carry on
-     if you're enjoying it. Session 2: put a model inside the app,
-     check what it wrote, show and tell, sharing, takeaways.
-
-     The rule for this version: every choice is a short, fixed menu
-     with the full prompt ready to copy. Nobody has to fill in a
-     blank to get started.
+     One session of about forty minutes: build the meeting-cost app
+     together, then pick one of twelve live-data builds. Part 3 is for
+     anyone ahead, or for lunch, or another day.
      ================================================================ -->
 
 <deck-stage width="1920" height="1080">
 
   <!-- ============================================================
-       Cover
+       Cover. The wordmark, then one wide panel: the framing on the
+       left with the audience promise beneath it, and on the right the
+       twelve builds taking turns, one line at a time. Reduced motion
+       and print see the first line only.
        ============================================================ -->
-  <section class="slide cover" data-label="Cover">
+  <section class="slide cover cover--v2" data-part="Start" data-part-short="Start" data-part-time="2 minutes" data-title="Cover" data-label="Cover">
     <div class="rule-band"></div>
 
     <div>
@@ -48,10 +49,27 @@
       <h1 class="wordmark" data-split data-split-base="300" data-split-step="60">Vibecoding<br><em>taster<span class="q-mark">.</span></em></h1>
     </div>
 
-    <div class="cover-meta-row">
-      <p class="cover-framing" data-fx="rise" style="--d:900ms">You'll build a working app from one sentence, then plug it into live data from the internet. If you're enjoying it, there's more to try over lunch or another day.</p>
-      <div class="cover-stat-block" data-fx="rise" style="--d:1020ms">
+    <div class="cover-panel" data-fx="rise" style="--d:1000ms">
+      <div class="cover-panel-left">
+        <p class="cover-framing">You'll build a working app from one sentence, then plug it into live data from the internet. If you're enjoying it, there's more to try over lunch or another day.</p>
         <p class="cover-note-wrap"><span class="cover-note">No coding experience necessary</span></p>
+      </div>
+      <div class="cover-panel-right">
+        <p class="ticker-lead">Today you'll build one of these</p>
+        <ul class="ticker" aria-hidden="true">
+          <li style="--i:0">Should I cycle in tomorrow?</li>
+          <li style="--i:1">Is the Tube running?</li>
+          <li style="--i:2">When's their next holiday?</li>
+          <li style="--i:3">Is the air clean today?</li>
+          <li style="--i:4">On this day</li>
+          <li style="--i:5">What's the world reading?</li>
+          <li style="--i:6">Who's my MP?</li>
+          <li style="--i:7">Where's the earth moving?</li>
+          <li style="--i:8">What's a pound worth?</li>
+          <li style="--i:9">Find a shorter word</li>
+          <li style="--i:10">Find a podcast</li>
+          <li style="--i:11">Browse the V&amp;A</li>
+        </ul>
       </div>
     </div>
 
@@ -64,7 +82,7 @@
   <!-- ============================================================
        Epigraph. Same yellow slide as the full workshop.
        ============================================================ -->
-  <section class="slide yellow slide--epigraph" data-label="Epigraph">
+  <section class="slide yellow slide--epigraph" data-title="A line from Andrej Karpathy" data-label="Epigraph">
     <div class="rule-band"></div>
 
     <div class="slide-body">
@@ -79,12 +97,42 @@
   </section>
 
   <!-- ============================================================
+       Contents. The parts as a ledger you can click: what, how long,
+       and what happens. Titles echo the section openers on purpose.
+       The note at the foot is for anyone reading alone.
+       ============================================================ -->
+  <section class="slide slide--toc" data-title="Where we're going" data-label="Contents">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">The session</p>
+    <h2 class="slide-title" data-split>How we'll spend the next 40 <em>minutes</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:220ms">Four parts. Click any row to jump to it.</p>
+
+    <div class="slide-body">
+      <ol class="toc">
+        <li data-fx="rise" style="--d:320ms"><button type="button" class="toc-btn" data-goto="pre-flight"><span class="toc-n">Start</span><span class="toc-title">Getting ready<span class="toc-go" aria-hidden="true">→</span></span><span class="toc-time">2 minutes</span><span class="toc-what">How to open Gemini and switch Canvas on, and what to bear in mind.</span></button></li>
+        <li data-fx="rise" style="--d:420ms"><button type="button" class="toc-btn" data-goto="part-1-opener"><span class="toc-n">Part 1</span><span class="toc-title">Build one together<span class="toc-go" aria-hidden="true">→</span></span><span class="toc-time">10 minutes</span><span class="toc-what">Your first app, from one sentence, alongside me on the big screen.</span></button></li>
+        <li data-fx="rise" style="--d:520ms"><button type="button" class="toc-btn" data-goto="part-2-opener"><span class="toc-n">Part 2</span><span class="toc-title">Your own app<span class="toc-go" aria-hidden="true">→</span></span><span class="toc-time"><mark>25 minutes</mark></span><span class="toc-what">Build a more ambitious app with accurate live data.</span></button></li>
+        <li data-fx="rise" style="--d:620ms"><button type="button" class="toc-btn" data-goto="part-3-opener"><span class="toc-n">Part 3</span><span class="toc-title">Taking the next step<span class="toc-go" aria-hidden="true">→</span></span><span class="toc-time">Optional</span><span class="toc-what">Ways to extend and improve your own app, either now or in your own time.</span></button></li>
+        <li data-fx="rise" style="--d:720ms"><button type="button" class="toc-btn" data-goto="send-it-to-me"><span class="toc-n">Part 4</span><span class="toc-title">Wrapping up<span class="toc-go" aria-hidden="true">→</span></span><span class="toc-time">5 minutes</span><span class="toc-what">How to share what you made with me, and four things to take away.</span></button></li>
+      </ol>
+
+      <p class="toc-note" data-fx="rise" style="--d:880ms"><strong>Reading this on your own?</strong> Press <kbd>M</kbd> at any time for a map of every slide, and use the labels along the foot of each one to jump between parts.</p>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding taster</span>
+      <span class="num">03 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
        For the people who've done the full workshop. A request, not
        a job: sit beside someone, nudge rather than drive, then get
        on with your own. Placed before the pre-flight because the
        first five minutes are where most people get stuck.
        ============================================================ -->
-  <section class="slide ink slide--research" data-label="Done this before?">
+  <section class="slide ink slide--research" data-title="A favour for old hands" data-label="Done this before?">
     <div class="rule-band"></div>
 
     <p class="research-eyebrow" data-fx="rise" style="--d:80ms">A favour to ask</p>
@@ -105,7 +153,7 @@
        still of the open menu with Canvas highlighted. The demo is
        hidden from screen readers; step 02 says the same in words.
        ============================================================ -->
-  <section class="slide slide--preflight" data-label="Pre-flight">
+  <section class="slide slide--preflight" data-title="Open Gemini, turn Canvas on" data-label="Pre-flight">
     <div class="rule-band"></div>
 
     <p class="kicker" data-fx="rise" style="--d:60ms">Before we start · Two minutes</p>
@@ -167,7 +215,7 @@
   <!-- ============================================================
        Four rules: three cut down from the full workshop's five, plus asking Gemini.
        ============================================================ -->
-  <section class="slide slide--rules slide--rules-dense slide--rules-roomy slide--spread" data-label="Four rules">
+  <section class="slide slide--rules slide--rules-dense slide--rules-roomy slide--spread" data-title="Four rules for today" data-label="Four rules">
     <div class="rule-band"></div>
 
     <p class="kicker" data-fx="rise" style="--d:60ms">How to work today</p>
@@ -216,7 +264,7 @@
   <!-- ============================================================
        Part 1 opener
        ============================================================ -->
-  <section class="slide ink section-opener" data-label="Part 1 opener">
+  <section class="slide ink section-opener" data-part="Part 1 · Build one together" data-part-short="1 · First app" data-part-time="10 minutes" data-title="Part 1 begins" data-label="Part 1 opener">
     <div class="rule-band"></div>
     <span class="chapter-ghost" aria-hidden="true" data-fx="ghost" style="--d:150ms">01</span>
 
@@ -231,9 +279,14 @@
   </section>
 
   <!-- ============================================================
-       The hook prompt. Types itself; click to copy.
+       The hook prompt. It types itself, and once it has, a sketch of
+       the app assembles beside it: title, two fields, a number that
+       counts up, three buttons. Then the three "what you'll see"
+       lines, then the instruction to use it. Click the prompt to
+       copy it. The sketch is decoration; the list beside it says
+       the same in words.
        ============================================================ -->
-  <section class="slide slide--prompt-solo slide--prompt-hero slide--spread" data-label="Hook prompt">
+  <section class="slide slide--hook" data-title="Your first app, from one sentence" data-label="Hook prompt">
     <div class="rule-band"></div>
 
     <p class="kicker" data-fx="rise" style="--d:60ms">Part 1 · Building live</p>
@@ -241,41 +294,50 @@
     <p class="slide-subtitle" data-fx="rise" style="--d:240ms">One sentence, deliberately vague. Watch what it decides for itself.</p>
 
     <div class="slide-body">
-      <div class="prompt-box" data-copy data-fx="rise" style="--d:380ms">
-        <div class="prompt-head">
-          <p class="prompt-label">Paste this into Canvas</p>
-          <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="hook-left">
+        <div class="prompt-box" data-copy data-fx="rise" style="--d:380ms">
+          <div class="prompt-head">
+            <p class="prompt-label">Paste this into Canvas</p>
+            <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+          <div class="prompt-body">
+            <p class="prompt-text"><span class="typed" data-type-delay="700">Create an app that calculates the cost of a meeting.</span><span class="caret"></span></p>
+          </div>
         </div>
-        <div class="prompt-body">
-          <p class="prompt-text"><span class="typed" data-type-delay="700">Create an app that calculates the cost of a meeting.</span><span class="caret"></span></p>
+
+        <div class="use-it" data-fx="rise" style="--d:4700ms">
+          <p class="use-it-lead">Now actually use it</p>
+          <p class="use-it-body">Put real numbers in. Try to think of it from a new user's point of view. Is it helpful? Does it behave in the way you'd expect? What did it assume without asking you? What's missing, and what's simply wrong?</p>
         </div>
       </div>
 
-      <div class="act-setup" data-fx="rise" style="--d:620ms">
-        <span class="act-setup-lead">What you'll see</span>
-        <ol class="act-steps">
-          <li><span class="act-step-n">1</span>It writes the code in front of you</li>
-          <li><span class="act-step-n">2</span>A preview window opens beside it</li>
-          <li><span class="act-step-n">3</span>Your version won't match anyone else's</li>
+      <div class="hook-right">
+        <div class="mock" aria-hidden="true" data-fx="fade" style="--d:2100ms">
+          <div class="mock-bar"><i></i><i></i><i></i></div>
+          <p class="mock-title">Meeting cost calculator</p>
+          <div class="mock-field"><span>People in the meeting</span><b>8</b></div>
+          <div class="mock-field"><span>Length</span><b>45 minutes</b></div>
+          <p class="mock-total"><small>This meeting costs</small><b>£<span data-count="200" data-count-delay="3500" data-count-dur="1400">200</span></b></p>
+          <div class="mock-btns"><span>Start</span><span>Pause</span><span>Reset</span></div>
+        </div>
+        <ol class="hook-see">
+          <li data-fx="rise" style="--d:4150ms"><span class="act-step-n">1</span>It writes the code in front of you</li>
+          <li data-fx="rise" style="--d:4300ms"><span class="act-step-n">2</span>A preview window opens beside it</li>
+          <li data-fx="rise" style="--d:4450ms"><span class="act-step-n">3</span>Your version won't match anyone else's</li>
         </ol>
-      </div>
-
-      <div class="use-it" data-fx="rise" style="--d:780ms">
-        <p class="use-it-lead">Now actually use it</p>
-        <p class="use-it-body">Put real numbers in. Try to think of it from a new user's point of view. Is it helpful? Does it behave in the way you'd expect? What did it assume without asking you? What's missing, and what's simply wrong?</p>
       </div>
     </div>
 
     <div class="slide-foot">
       <span class="wm">Vibecoding taster · Part 1</span>
-      <span class="num">07 / NN</span>
+      <span class="num">08 / NN</span>
     </div>
   </section>
 
   <!-- ============================================================
        Iteration by conversation. Three options, not six.
        ============================================================ -->
-  <section class="slide slide--spread slide--tweaks-row" data-label="Tell it what's wrong">
+  <section class="slide slide--spread slide--tweaks-row" data-title="Change it by asking" data-label="Tell it what's wrong">
     <div class="rule-band"></div>
 
     <p class="kicker" data-fx="rise" style="--d:60ms">Part 1 · Iteration</p>
@@ -314,7 +376,7 @@
   <!-- ============================================================
        Part 2 opener
        ============================================================ -->
-  <section class="slide ink section-opener" data-label="Part 2 opener">
+  <section class="slide ink section-opener" data-part="Part 2 · Plug in live data" data-part-short="2 · Live data" data-part-time="25 minutes" data-title="Part 2 begins" data-label="Part 2 opener">
     <div class="rule-band"></div>
     <span class="chapter-ghost" aria-hidden="true" data-fx="ghost" style="--d:150ms">02</span>
 
@@ -329,16 +391,36 @@
   </section>
 
   <!-- ============================================================
-       What an API is, in one slide. The full workshop spends three
-       slides on this; leaders need the idea and the one rule.
+       What an API is, drawn as well as said. Your app on the left,
+       the API on the right, a pipe between them: a question goes
+       out, the API lights up, structured data comes back and lands
+       as a readout. The three columns say the same in words.
        ============================================================ -->
-  <section class="slide slide--spread" data-label="What an API is">
+  <section class="slide slide--api" data-title="What an API is" data-label="What an API is">
     <div class="rule-band"></div>
 
     <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · What an API is</p>
 
     <div class="slide-body">
-      <p class="brief-lede" data-fx="rise" style="--d:220ms">An API is <mark>a tap you can plumb directly into your app</mark>. You send a request, and structured data comes back.</p>
+      <p class="brief-lede api-lede" data-fx="rise" style="--d:200ms">An API is <mark>a tap you can plumb directly into your app</mark>. You send a request, and structured data comes back.</p>
+
+      <div class="wire" aria-hidden="true">
+        <div class="wire-node wire-app">
+          <span class="wire-who">Your app</span>
+          <ul class="wire-readout">
+            <li>Temperature<b class="wire-val"><span class="q">?</span><span class="v">14°</span></b></li>
+            <li>Chance of rain<b class="wire-val"><span class="q">?</span><span class="v">20%</span></b></li>
+            <li>Wind<b class="wire-val"><span class="q">?</span><span class="v">18 km/h</span></b></li>
+          </ul>
+        </div>
+        <div class="wire-pipe">
+          <span class="wire-q">“What's the weather in Leeds tomorrow?”</span>
+          <span class="wire-a">{ "temp": 14, "rain": 20, "wind": 18 }</span>
+        </div>
+        <div class="wire-node wire-api">
+          <span class="wire-who">Weather API</span>
+        </div>
+      </div>
 
       <div class="brief-cols">
         <div class="brief-col" data-fx="rise" style="--d:420ms">
@@ -360,7 +442,7 @@
 
     <div class="slide-foot">
       <span class="wm">Vibecoding taster · Part 2</span>
-      <span class="num">10 / NN</span>
+      <span class="num">11 / NN</span>
     </div>
   </section>
 
@@ -375,10 +457,10 @@
        connection thinly enough that no API's free limit should bite.
        Pick-one slides 2 and 3 repeat the instructions in brief.
        ============================================================ -->
-  <section class="slide slide--pick" data-label="Pick one: daily life">
+  <section class="slide slide--pick" data-title="Twelve builds: daily life" data-label="Pick one: daily life">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Your turn · 1 of 3</p>
+    <nav class="kicker kicker-tabs" aria-label="The builds" data-fx="rise" style="--d:60ms"><span>Part 2 · Your turn</span><button type="button" data-goto="pick-one-daily-life" aria-current="true">Daily life</button><button type="button" data-goto="pick-one-news-and-the-world">News and the world</button><button type="button" data-goto="pick-one-money-words-and-culture">Money, words and culture</button><button type="button" data-goto="finding-your-own">Find your own</button></nav>
     <h2 class="slide-title" data-split>Pick one: daily <em>life</em>.</h2>
     <p class="slide-subtitle" data-fx="rise" style="--d:200ms">Each uses a different source of live data. Start a <strong>new chat</strong> with Canvas on, click a prompt to copy it, and paste it in. Can't decide? Pick one nobody near you has picked.</p>
 
@@ -453,10 +535,10 @@
     </div>
   </section>
 
-  <section class="slide slide--pick" data-label="Pick one: news and the world">
+  <section class="slide slide--pick" data-title="Twelve builds: news and the world" data-label="Pick one: news and the world">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Your turn · 2 of 3</p>
+    <nav class="kicker kicker-tabs" aria-label="The builds" data-fx="rise" style="--d:60ms"><span>Part 2 · Your turn</span><button type="button" data-goto="pick-one-daily-life">Daily life</button><button type="button" data-goto="pick-one-news-and-the-world" aria-current="true">News and the world</button><button type="button" data-goto="pick-one-money-words-and-culture">Money, words and culture</button><button type="button" data-goto="finding-your-own">Find your own</button></nav>
     <h2 class="slide-title" data-split>Or: news and the <em>world</em>.</h2>
     <p class="slide-subtitle" data-fx="rise" style="--d:200ms">Same again: new chat, click a prompt to copy it, paste it in.</p>
 
@@ -531,10 +613,10 @@
     </div>
   </section>
 
-  <section class="slide slide--pick" data-label="Pick one: money, words and culture">
+  <section class="slide slide--pick" data-title="Twelve builds: money, words, culture" data-label="Pick one: money, words and culture">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Your turn · 3 of 3</p>
+    <nav class="kicker kicker-tabs" aria-label="The builds" data-fx="rise" style="--d:60ms"><span>Part 2 · Your turn</span><button type="button" data-goto="pick-one-daily-life">Daily life</button><button type="button" data-goto="pick-one-news-and-the-world">News and the world</button><button type="button" data-goto="pick-one-money-words-and-culture" aria-current="true">Money, words and culture</button><button type="button" data-goto="finding-your-own">Find your own</button></nav>
     <h2 class="slide-title" data-split>Or: money, words and <em>culture</em>.</h2>
     <p class="slide-subtitle" data-fx="rise" style="--d:200ms">Same again: new chat, click a prompt to copy it, paste it in.</p>
 
@@ -618,10 +700,10 @@
        on 9 October 2026: dog.ceo, PokéAPI, TheMealDB, TheCocktailDB,
        catfact.ninja, icanhazdadjoke.
        ============================================================ -->
-  <section class="slide slide--prompt-solo slide--spread slide--find" data-label="Finding your own">
+  <section class="slide slide--prompt-solo slide--spread slide--find" data-title="Find a data source of your own" data-label="Finding your own">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Your turn · Or find your own</p>
+    <nav class="kicker kicker-tabs" aria-label="The builds" data-fx="rise" style="--d:60ms"><span>Part 2 · Your turn</span><button type="button" data-goto="pick-one-daily-life">Daily life</button><button type="button" data-goto="pick-one-news-and-the-world">News and the world</button><button type="button" data-goto="pick-one-money-words-and-culture">Money, words and culture</button><button type="button" data-goto="finding-your-own" aria-current="true">Find your own</button></nav>
     <h2 class="slide-title" data-split>Or go and find your <em>own</em>.</h2>
     <p class="slide-subtitle" data-fx="rise" style="--d:220ms">The twelve will keep anyone busy. But if there's a subject you actually care about, this will go and find you something to build with. Then build it like the others, with its link at the end of your prompt.</p>
 
@@ -664,7 +746,7 @@
        Then make it yours. Six follow-ups that work on any of the
        four builds, plus what to do when it breaks.
        ============================================================ -->
-  <section class="slide slide--spread" data-label="Make it yours">
+  <section class="slide slide--spread" data-title="Make your app yours" data-label="Make it yours">
     <div class="rule-band"></div>
 
     <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Once it works</p>
@@ -712,7 +794,7 @@
        Part 3 opener. Optional: now if there's time, or over lunch,
        or another day.
        ============================================================ -->
-  <section class="slide ink section-opener" data-label="Part 3 opener">
+  <section class="slide ink section-opener" data-part="Part 3 · Taking the next step" data-part-short="3 · Next step" data-part-time="Optional" data-title="Part 3 begins" data-label="Part 3 opener">
     <div class="rule-band"></div>
     <span class="chapter-ghost" aria-hidden="true" data-fx="ghost" style="--d:150ms">03</span>
 
@@ -731,7 +813,7 @@
        the next one's question) and one example. The coordinates are
        Postcodes.io's real answer for N1 9GU, checked 5 October 2026.
        ============================================================ -->
-  <section class="slide slide--spread slide--flow" data-label="Combining APIs">
+  <section class="slide slide--spread slide--flow" data-title="Combine two data sources" data-label="Combining APIs">
     <div class="rule-band"></div>
 
     <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Step one · Combining APIs</p>
@@ -784,7 +866,7 @@
        example builds on step one's app. The deck's one other typed
        prompt: this is the moment people lean in.
        ============================================================ -->
-  <section class="slide slide--spread slide--flow" data-label="Add the brain">
+  <section class="slide slide--spread slide--flow" data-title="Put an AI model inside your app" data-label="Add the brain">
     <div class="rule-band"></div>
 
     <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Step two · Add the brain</p>
@@ -806,12 +888,12 @@
         <li class="flow-step flow-fan" data-fx="rise" style="--d:600ms">
           <p class="flow-who">From the same facts, any of these</p>
           <ul class="fan-list">
-            <li><b>Words</b>A limerick about tomorrow's weather</li>
-            <li><b>A picture</b>The place, drawn in that weather</li>
-            <li><b>Sound</b>The forecast read aloud, for anyone who can't see the screen</li>
-            <li class="is-example"><b>Advice · try it below</b>What to wear, in one line</li>
-            <li><b>Another language</b>The forecast in Spanish, for a colleague in Madrid</li>
-            <li><b>A warning</b>A heads-up for the office if it'll be wet</li>
+            <li data-fx="rise" style="--d:780ms"><b>Words</b>A limerick about tomorrow's weather</li>
+            <li data-fx="rise" style="--d:890ms"><b>A picture</b>The place, drawn in that weather</li>
+            <li data-fx="rise" style="--d:1000ms"><b>Sound</b>The forecast read aloud, for anyone who can't see the screen</li>
+            <li class="is-example" data-fx="rise" style="--d:1110ms"><b>Advice · try it below</b>What to wear, in one line</li>
+            <li data-fx="rise" style="--d:1220ms"><b>Another language</b>The forecast in Spanish, for a colleague in Madrid</li>
+            <li data-fx="rise" style="--d:1330ms"><b>A warning</b>A heads-up for the office if it'll be wet</li>
           </ul>
         </li>
       </ol>
@@ -839,7 +921,7 @@
        the more a step changes the data, the harder you check it. The
        staircase says that before anyone reads a word.
        ============================================================ -->
-  <section class="slide slide--spread slide--stairs" data-label="If it's wrong, it's yours">
+  <section class="slide slide--spread slide--stairs" data-title="Checking what you've built" data-label="If it's wrong, it's yours">
     <div class="rule-band"></div>
 
     <p class="kicker" data-fx="rise" style="--d:60ms">Part 3 · Before anyone else uses it</p>
@@ -881,10 +963,10 @@
        Step 1 is the one people miss: Canvas hides the share button
        until the app is expanded.
        ============================================================ -->
-  <section class="slide slide--spread slide--send" data-label="Send it to me">
+  <section class="slide slide--spread slide--send" data-part="Part 4 · Wrapping up" data-part-short="4 · Wrapping up" data-part-time="5 minutes" data-title="How to share it with me" data-label="Send it to me">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Before you go</p>
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 4 · Before you go</p>
     <h2 class="slide-title" data-split>Made something fun? Send it to <em>me</em>.</h2>
     <p class="slide-subtitle" data-fx="rise" style="--d:240ms">Share it with me through Drive, and we'll email the best ones round the whole group after the workshop.</p>
 
@@ -927,10 +1009,10 @@
   <!-- ============================================================
        Takeaways. Four of the full workshop's six.
        ============================================================ -->
-  <section class="slide slide--takeaways" data-label="Takeaways">
+  <section class="slide slide--takeaways" data-title="Four things worth remembering" data-label="Takeaways">
     <div class="rule-band"></div>
 
-    <p class="kicker" data-fx="rise" style="--d:60ms">Before you go · What to take away</p>
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 4 · What to take away</p>
     <h2 class="slide-title" data-split>Four things worth <em>keeping</em>.</h2>
 
     <div class="slide-body">
@@ -952,7 +1034,7 @@
        Close. Not a thank-you but a send-off: keep building, aim
        higher, and come and talk about it.
        ============================================================ -->
-  <section class="slide ink slide--research slide--sendoff" data-label="Close">
+  <section class="slide ink slide--research slide--sendoff" data-title="Keep building" data-label="Close">
     <div class="rule-band"></div>
 
     <p class="research-eyebrow" data-fx="rise" style="--d:80ms">That's the session</p>
@@ -985,6 +1067,7 @@
 <script src="deck-stage.js"></script>
 <script src="prompt-copy.js"></script>
 <script src="motion.js"></script>
+<script src="deck-nav.js"></script>
 <script src="grid-overlay.js"></script>
 
 </body></html>

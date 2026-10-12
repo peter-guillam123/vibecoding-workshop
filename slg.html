@@ -391,6 +391,72 @@
   </section>
 
   <!-- ============================================================
+       Data you already have. Three ways to hand over something you
+       trust: upload a spreadsheet, point at a web page, photograph a
+       piece of paper. Each column shows the thing, says the idea in
+       four words, and gives a prompt to copy. The photo is a real
+       timetable, cropped, with the name blurred. Ends by setting up
+       the live feeds on the slides that follow.
+       ============================================================ -->
+  <section class="slide slide--have" data-title="Give it data you already have" data-label="Data you already have">
+    <div class="rule-band"></div>
+
+    <p class="kicker" data-fx="rise" style="--d:60ms">Part 2 · Data you can trust</p>
+    <h2 class="slide-title" data-split>Give it data you already <em>have</em>.</h2>
+    <p class="slide-subtitle" data-fx="rise" style="--d:220ms">Hand over something you already trust, and the app works from that instead of the model's memory. Three that work.</p>
+
+    <div class="slide-body">
+      <div class="have">
+        <article class="have-col" data-fx="rise" style="--d:320ms">
+          <div class="have-pic have-sheet" aria-hidden="true">
+            <div class="sheet-row sheet-head"><span>Name</span><span>Week of</span><span>On call</span></div>
+            <div class="sheet-row"><span>Priya</span><span>13 Oct</span><span>Yes</span></div>
+            <div class="sheet-row"><span>Tom</span><span>20 Oct</span><span></span></div>
+            <div class="sheet-row"><span>Amara</span><span>27 Oct</span><span></span></div>
+            <div class="sheet-row"><span>Jack</span><span>3 Nov</span><span></span></div>
+          </div>
+          <p class="have-eyebrow">A spreadsheet</p>
+          <h3>Upload it</h3>
+          <p class="have-body">Attach the file to your prompt and the app is built around what's in it.</p>
+          <p class="have-ask" data-copy>"Here's our team's on-call rota as a spreadsheet. Build me something that shows who's on this week and who's next."</p>
+          <p class="have-warn">Whatever you upload, the model reads. Nothing sensitive.</p>
+        </article>
+
+        <article class="have-col" data-fx="rise" style="--d:440ms">
+          <div class="have-pic have-web" aria-hidden="true">
+            <div class="web-bar"><i></i><i></i><i></i><span>gov.uk/bank-holidays</span></div>
+            <div class="web-body">
+              <b>UK bank holidays</b>
+              <span>Christmas Day · 25 December</span>
+              <span>Boxing Day · 26 December</span>
+              <span>New Year's Day · 1 January</span>
+            </div>
+          </div>
+          <p class="have-eyebrow">A web page</p>
+          <h3>Point at it</h3>
+          <p class="have-body">Give it the address of a page you trust and tell it to use what's there.</p>
+          <p class="have-ask" data-copy>"Build an app that counts down to the next bank holiday, using the dates on gov.uk/bank-holidays."</p>
+        </article>
+
+        <article class="have-col" data-fx="rise" style="--d:560ms">
+          <div class="have-pic have-photo" data-fx="photo" style="--d:700ms"><img src="images/timetable.jpg" alt="A crumpled printed school timetable, photographed on a table." width="1210" height="810"></div>
+          <p class="have-eyebrow">A photo</p>
+          <h3>Even a crumpled bit of paper</h3>
+          <p class="have-body">My son's timetable, from the bottom of his bag. It became an app that tells him what tomorrow holds.</p>
+          <p class="have-ask" data-copy>"Here's a photo of my son's school timetable. It runs on a two-week cycle, Red and Blue. Build an app that shows tomorrow's lessons and what he needs to pack."</p>
+        </article>
+      </div>
+
+      <p class="act-note" data-fx="rise" style="--d:820ms"><strong>All three stand still from the moment you hand them over.</strong> For data that changes by the hour, you plug in a live feed instead. That's the next slide.</p>
+    </div>
+
+    <div class="slide-foot">
+      <span class="wm">Vibecoding taster · Part 2</span>
+      <span class="num">11 / NN</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
        What an API is, drawn as well as said. Your app on the left,
        the API on the right, a pipe between them: a question goes
        out, the API lights up, structured data comes back and lands

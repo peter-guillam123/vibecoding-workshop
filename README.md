@@ -8,7 +8,7 @@ Live at
 [peter-guillam123.github.io/vibecoding-workshop](https://peter-guillam123.github.io/vibecoding-workshop).
 
 There's also a shorter cut for the Senior Leadership Group, `slg.html`:
-23 slides for a single hands-on session, with more to try afterwards. It
+24 slides for a single hands-on session, with more to try afterwards. It
 carries a map: a rail of parts in every footer, a full map on M, a
 contents page, tabs across the twelve builds, and `#N` links to any
 slide. The navigation is one script, `deck-nav.js`, which reads the
@@ -59,6 +59,13 @@ stays on screen while people work.
 pre-flight: the deck itself is the clipboard.
 
 ## Changelog
+
+### 12 October 2026 - Give it data you already have
+
+New slide after the Part 2 opener: upload a spreadsheet, point at a
+web page, or photograph a piece of paper (a real timetable, name
+blurred). Each with a prompt to copy. Ends by setting up the live
+feeds. Styles in section 47.
 
 ### 12 October 2026 - The second edition becomes the taster
 

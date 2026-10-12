@@ -4022,30 +4022,48 @@ body.map-open deck-stage { filter: blur(2px); }
 .fx-play .wire-app  { animation: fxRise 600ms var(--ease-out) 300ms both; }
 .fx-play .wire-api  { animation: fxRise 600ms var(--ease-out) 450ms both; }
 .fx-play .wire-pipe { animation: fxBar 700ms var(--ease-in-out) 500ms both; }
-.fx-play .wire-q { animation: wireOut 1500ms var(--ease-in-out) 1200ms both; }
-.fx-play .wire-api::after { animation: wirePulse 900ms ease 2500ms both; }
-.fx-play .wire-a { animation: wireBack 1500ms var(--ease-in-out) 2900ms both; }
-.fx-play .wire-val .q { animation: wireGone 300ms ease both; }
-.fx-play .wire-val .v { animation: wireLand 500ms var(--ease-out) both; }
-.fx-play li:nth-child(1) .wire-val .q, .fx-play li:nth-child(1) .wire-val .v { animation-delay: 4250ms; }
-.fx-play li:nth-child(2) .wire-val .q, .fx-play li:nth-child(2) .wire-val .v { animation-delay: 4400ms; }
-.fx-play li:nth-child(3) .wire-val .q, .fx-play li:nth-child(3) .wire-val .v { animation-delay: 4550ms; }
-@keyframes wireGone { to { opacity: 0; } }
-@keyframes wireLand { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-@keyframes wireOut {
-  0%   { opacity: 0; transform: translate(0, -50%); }
-  10%  { opacity: 1; }
-  88%  { opacity: 1; transform: translate(calc(var(--run, 700px) - 100%), -50%); }
-  100% { opacity: 0; transform: translate(calc(var(--run, 700px) - 100%), -50%); }
+/* The exchange itself loops on a ten-second cycle while the slide is
+   up: question out, data back, the numbers hold for four seconds, then
+   fade to question marks and it runs again. Keyed on the active slide,
+   so it restarts on every visit, and only where motion is welcome. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-deck-active] .wire-q { animation: wireOut 10s var(--ease-in-out) infinite both; }
+  [data-deck-active] .wire-api::after { animation: wirePulse 10s ease infinite both; }
+  [data-deck-active] .wire-a { animation: wireBack 10s var(--ease-in-out) infinite both; }
+  [data-deck-active] .wire-val .q { animation: wireQ 10s ease infinite both; }
+  [data-deck-active] .wire-val .v { animation: wireV 10s var(--ease-out) infinite both; }
+  [data-deck-active] li:nth-child(2) .wire-val .q,
+  [data-deck-active] li:nth-child(2) .wire-val .v { animation-delay: 150ms; }
+  [data-deck-active] li:nth-child(3) .wire-val .q,
+  [data-deck-active] li:nth-child(3) .wire-val .v { animation-delay: 300ms; }
 }
-@keyframes wireBack {
-  0%   { opacity: 0; transform: translate(0, -50%); }
-  10%  { opacity: 1; }
-  88%  { opacity: 1; transform: translate(calc(100% - var(--run, 700px)), -50%); }
-  100% { opacity: 0; transform: translate(calc(100% - var(--run, 700px)), -50%); }
+@keyframes wireOut {
+  0%, 12%  { opacity: 0; transform: translate(0, -50%); }
+  13.5%    { opacity: 1; }
+  26%      { opacity: 1; transform: translate(calc(var(--run, 700px) - 100%), -50%); }
+  27.5%, 100% { opacity: 0; transform: translate(calc(var(--run, 700px) - 100%), -50%); }
 }
 @keyframes wirePulse {
-  0%   { box-shadow: 0 0 0 0 rgba(34,135,77,0.55); }
+  0%, 25%  { box-shadow: 0 0 0 0 rgba(34,135,77,0); }
+  26%      { box-shadow: 0 0 0 0 rgba(34,135,77,0.55); }
+  35%, 100% { box-shadow: 0 0 0 26px rgba(34,135,77,0); }
+}
+@keyframes wireBack {
+  0%, 29%  { opacity: 0; transform: translate(0, -50%); }
+  30.5%    { opacity: 1; }
+  43%      { opacity: 1; transform: translate(calc(100% - var(--run, 700px)), -50%); }
+  44.5%, 100% { opacity: 0; transform: translate(calc(100% - var(--run, 700px)), -50%); }
+}
+@keyframes wireQ {
+  0%, 42%  { opacity: 1; }
+  45%, 88% { opacity: 0; }
+  92%, 100% { opacity: 1; }
+}
+@keyframes wireV {
+  0%, 42%  { opacity: 0; transform: translateY(8px); }
+  46%, 88% { opacity: 1; transform: none; }
+  92%, 100% { opacity: 0; transform: translateY(8px); }
+}
   100% { box-shadow: 0 0 0 26px rgba(34,135,77,0); }
 }
 .slide--api .brief-cols { gap: var(--grid-gutter); }

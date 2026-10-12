@@ -35,20 +35,25 @@
 <deck-stage width="1920" height="1080">
 
   <!-- ============================================================
-       Cover. The wordmark as before; beside it, a card in which the
-       twelve builds take turns, one line at a time: what the room
-       will have made by the end. Reduced motion and print see the
-       first line only.
+       Cover. The wordmark, then one wide panel: the framing on the
+       left with the audience promise beneath it, and on the right the
+       twelve builds taking turns, one line at a time. Reduced motion
+       and print see the first line only.
        ============================================================ -->
   <section class="slide cover cover--v2" data-part="Start" data-part-short="Start" data-part-time="2 minutes" data-title="Cover" data-label="Cover">
     <div class="rule-band"></div>
 
-    <div class="cover-top">
-      <div>
-        <p class="kicker" data-fx="rise" style="--d:80ms"><span class="group-tag">SLG</span>Gemini Canvas</p>
-        <h1 class="wordmark" data-split data-split-base="300" data-split-step="60">Vibecoding<br><em>taster<span class="q-mark">.</span></em></h1>
+    <div>
+      <p class="kicker" data-fx="rise" style="--d:80ms"><span class="group-tag">SLG</span>Gemini Canvas</p>
+      <h1 class="wordmark" data-split data-split-base="300" data-split-step="60">Vibecoding<br><em>taster<span class="q-mark">.</span></em></h1>
+    </div>
+
+    <div class="cover-panel" data-fx="rise" style="--d:1000ms">
+      <div class="cover-panel-left">
+        <p class="cover-framing">You'll build a working app from one sentence, then plug it into live data from the internet. If you're enjoying it, there's more to try over lunch or another day.</p>
+        <p class="cover-note-wrap"><span class="cover-note">No coding experience necessary</span></p>
       </div>
-      <div class="ticker-card" data-fx="rise" style="--d:1300ms">
+      <div class="cover-panel-right">
         <p class="ticker-lead">Today you'll build one of these</p>
         <ul class="ticker" aria-hidden="true">
           <li style="--i:0">Should I cycle in tomorrow?</li>
@@ -64,11 +69,8 @@
           <li style="--i:10">Find a podcast</li>
           <li style="--i:11">Browse the V&amp;A</li>
         </ul>
-        <p class="ticker-foot"><span class="cover-note">No coding experience necessary</span></p>
       </div>
     </div>
-
-    <p class="cover-framing" data-fx="rise" style="--d:900ms">You'll build a working app from one sentence, then plug it into live data from the internet. If you're enjoying it, there's more to try over lunch or another day.</p>
 
     <div class="slide-foot">
       <span class="wm">Vibecoding taster</span>

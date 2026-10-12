@@ -3747,23 +3747,22 @@ body.map-open deck-stage { filter: blur(2px); }
    made by the end. One 30-second loop, active slide only. With
    reduced motion, or in print, the first line simply sits there.
    ---------------------------------------------------------------- */
-.cover--v2 .cover-top {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: 60px;
-}
-.cover--v2 .cover-framing { max-width: 980px; }
 .cover--v2 { padding-bottom: 116px; }
-.ticker-card {
-  width: 700px;
+.cover-panel {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
   background: var(--paper-bright);
   border: 1px solid var(--hairline);
   border-top: 6px solid var(--guardian-blue);
   box-shadow: var(--shadow-card);
-  padding: 26px 34px 28px;
-  margin-bottom: 10px;
+  padding: 34px 44px 36px;
 }
+.cover-panel-left { display: flex; flex-direction: column; justify-content: space-between; gap: 22px; }
+.cover-panel .cover-framing { max-width: none; font-size: 27px; }
+.cover-panel .cover-note-wrap { margin: 0; }
+.cover-panel .cover-note { font-size: 28px; }
+.cover-panel-right { border-left: 1px solid var(--hairline); padding-left: 56px; }
 .ticker-lead {
   font-family: var(--ui);
   font-weight: 700;
@@ -3775,14 +3774,14 @@ body.map-open deck-stage { filter: blur(2px); }
 }
 .ticker {
   position: relative;
-  height: 2.3em;
+  height: 2.2em;
   list-style: none;
-  margin: 0 0 22px;
+  margin: 0;
   padding: 0;
   font-family: var(--display);
   font-weight: 500;
   font-style: italic;
-  font-size: 50px;
+  font-size: 54px;
   line-height: 1.1;
   letter-spacing: -0.015em;
   color: var(--ink);
@@ -3793,12 +3792,6 @@ body.map-open deck-stage { filter: blur(2px); }
   opacity: 0;
 }
 .ticker li:first-child { opacity: 1; }
-.ticker-foot {
-  margin: 0;
-  padding-top: 18px;
-  border-top: 1px solid var(--hairline);
-}
-.ticker-foot .cover-note { font-size: 27px; }
 @media (prefers-reduced-motion: no-preference) {
   [data-deck-active] .ticker li {
     animation: tickerLine 30s ease-in-out infinite both;
@@ -4094,5 +4087,5 @@ body.map-open deck-stage { filter: blur(2px); }
 @media (max-width: 1024px) {
   .rail-part { display: none; }
   .rail-map { padding-left: 0; border-left: none; margin-left: 0; }
-  .mock, .wire-node, .toc-btn { box-shadow: none !important; }
+  .mock, .wire-node, .toc-btn, .cover-panel { box-shadow: none !important; }
 }

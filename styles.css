@@ -4228,3 +4228,165 @@ body.map-open deck-stage { filter: blur(2px); }
   margin: 4px 0 0;
 }
 @media (max-width: 1024px) { .have-pic { box-shadow: none !important; } }
+
+/* ----------------------------------------------------------------
+   48 · Pre-flight, three steps and a longer demo (the second
+   edition only; the first edition's two-step slide and ten-second
+   loop above are left alone, so everything here is scoped to
+   .pf-steps--three and .gx--v2).
+
+   The steps become compact rows, numeral left and words right, so
+   three fit beside the demo. The demo gains the model menu: after
+   the Canvas chip appears, the pointer clicks the model's name, a
+   panel of three choices opens, and it picks the first. Fifteen
+   seconds a loop. At rest (reduced motion, print) both menus sit
+   open with the right choices marked.
+   ---------------------------------------------------------------- */
+.pf-steps--three { gap: 16px; }
+.pf-steps--three .pf-step {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  column-gap: 20px;
+  align-items: start;
+  padding: 18px 26px 20px;
+}
+.pf-steps--three .pf-step:nth-child(3) { border-top-color: var(--eco-green); }
+.pf-steps--three .pf-step:nth-child(3) .pf-num { color: var(--eco-green); }
+.pf-steps--three .pf-num { font-size: 38px; line-height: 1; padding-top: 1px; }
+.pf-steps--three .pf-main { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.pf-steps--three .pf-step h3 { font-size: 34px; }
+.pf-steps--three .pf-step p { font-size: 21px; line-height: 1.38; }
+.pf-steps--three .pf-link { font-size: 21px; padding: 8px 18px; margin-top: 4px; }
+
+.gx--v2 .gx-model {
+  padding: 12px 16px 12px 22px;
+  border-radius: 999px;
+  background: #ececec;
+  margin-right: -12px;
+}
+.gx--v2 .gx-model svg { transform: rotate(180deg); }
+.gx-models {
+  position: absolute;
+  right: 44px; top: 140px;
+  width: 310px;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 10px 34px rgba(30,60,120,0.16);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.gx-opt {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center;
+  column-gap: 8px;
+  min-height: 60px;
+  padding: 0 12px;
+  border-radius: 14px;
+  border: 2.5px solid transparent;
+}
+.gx-opt b { display: block; font-size: 21px; font-weight: 400; line-height: 1.2; color: #1f1f1f; }
+.gx-opt small { display: block; font-size: 17px; line-height: 1.2; color: #80868b; }
+.gx-opt em { font-style: normal; font-size: 15px; background: #ececec; border-radius: 999px; padding: 4px 10px; }
+.gx-opt-on { border-color: #1f1f1f; }
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-deck-active] .gx--v2 .gx-cursor { animation: gx2Cursor 15s ease-in-out infinite both; }
+  [data-deck-active] .gx--v2 .gx-plus   { animation: gx2Plus   15s ease infinite both; }
+  [data-deck-active] .gx--v2 .gx-btn    { animation: gx2Btn    15s ease infinite both; }
+  [data-deck-active] .gx--v2 .gx-menu   { animation: gx2Menu   15s ease infinite both; }
+  [data-deck-active] .gx--v2 .gx-sub    { animation: gx2Sub    15s ease infinite both; }
+  [data-deck-active] .gx--v2 .gx-more   { animation: gx2More   15s ease infinite both; }
+  [data-deck-active] .gx--v2 .gx-canvas { animation: gx2Canvas 15s ease infinite both; }
+  [data-deck-active] .gx--v2 .gx-chip   { animation: gx2Chip   15s ease infinite both; }
+  [data-deck-active] .gx--v2 .gx-ph     { animation: gx2Ph     15s ease infinite both; }
+  [data-deck-active] .gx--v2 .gx-model  { animation: gx2Model  15s ease infinite both; }
+  [data-deck-active] .gx--v2 .gx-model svg { animation: gx2Chev 15s ease infinite both; }
+  [data-deck-active] .gx--v2 .gx-models { animation: gx2Models 15s ease infinite both; }
+  [data-deck-active] .gx--v2 .gx-opt-on { animation: gx2Opt    15s ease infinite both; }
+}
+@keyframes gx2Cursor {
+  0%    { transform: translate(700px, 440px); opacity: 0; }
+  2.7%  { transform: translate(700px, 440px); opacity: 1; }
+  8%    { transform: translate(92px, 98px); }
+  8.7%  { transform: translate(92px, 98px) scale(0.8); }
+  9.7%  { transform: translate(92px, 98px) scale(1); }
+  12%   { transform: translate(92px, 98px); }
+  20%   { transform: translate(220px, 480px); }
+  22.7% { transform: translate(220px, 480px); }
+  30.7% { transform: translate(530px, 384px); }
+  32.7% { transform: translate(530px, 384px) scale(1); }
+  33.3% { transform: translate(530px, 384px) scale(0.8); }
+  34.7% { transform: translate(530px, 384px) scale(1); }
+  40%   { transform: translate(530px, 384px); }
+  48.7% { transform: translate(800px, 94px); }
+  49.4% { transform: translate(800px, 94px) scale(1); }
+  50%   { transform: translate(800px, 94px) scale(0.8); }
+  51%   { transform: translate(800px, 94px) scale(1); }
+  53.3% { transform: translate(800px, 94px); }
+  59.3% { transform: translate(730px, 188px); }
+  61.4% { transform: translate(730px, 188px) scale(1); }
+  62%   { transform: translate(730px, 188px) scale(0.8); }
+  63.3% { transform: translate(730px, 188px) scale(1); opacity: 1; }
+  70.7% { transform: translate(800px, 320px); opacity: 0; }
+  100%  { transform: translate(800px, 320px); opacity: 0; }
+}
+@keyframes gx2Plus {
+  0%, 8.7%     { transform: rotate(0deg); }
+  10.7%, 35.3% { transform: rotate(45deg); }
+  38%, 100%    { transform: rotate(0deg); }
+}
+@keyframes gx2Btn {
+  0%, 8%, 10.7%, 100% { background: #ececec; }
+  9%                  { background: #d5d5d5; }
+}
+@keyframes gx2Menu {
+  0%, 8.7%     { opacity: 0; transform: translateY(-8px); }
+  10.7%, 35.3% { opacity: 1; transform: translateY(0); }
+  37.3%, 100%  { opacity: 0; transform: translateY(-4px); }
+}
+@keyframes gx2Sub {
+  0%, 21.3%    { opacity: 0; transform: translateX(-8px); }
+  23.3%, 35.3% { opacity: 1; transform: translateX(0); }
+  37.3%, 100%  { opacity: 0; transform: translateX(0); }
+}
+@keyframes gx2More {
+  0%, 19.5%   { background: transparent; color: #3c4043; font-weight: 400; }
+  20.7%, 100% { background: #ececec; color: #1f1f1f; font-weight: 700; }
+}
+@keyframes gx2Canvas {
+  0%, 30%     { background: transparent; color: #3c4043; font-weight: 400; }
+  31.3%, 100% { background: #e8eefa; color: #0b57d0; font-weight: 700; }
+}
+@keyframes gx2Chip {
+  0%, 37.3%  { opacity: 0; transform: scale(0.9); }
+  40%, 92%   { opacity: 1; transform: scale(1); }
+  96%, 100%  { opacity: 0; transform: scale(1); }
+}
+@keyframes gx2Ph {
+  0%, 37.3%  { transform: translateX(0); }
+  40%, 92%   { transform: translateX(150px); }
+  96%, 100%  { transform: translateX(0); }
+}
+@keyframes gx2Model {
+  0%, 49.6%    { background: transparent; }
+  50.6%, 64.7% { background: #ececec; }
+  66.7%, 100%  { background: transparent; }
+}
+@keyframes gx2Chev {
+  0%, 49.6%    { transform: rotate(0deg); }
+  51.5%, 64.7% { transform: rotate(180deg); }
+  66.7%, 100%  { transform: rotate(0deg); }
+}
+@keyframes gx2Models {
+  0%, 50%      { opacity: 0; transform: translateY(-8px); }
+  52.7%, 64.7% { opacity: 1; transform: translateY(0); }
+  66.7%, 100%  { opacity: 0; transform: translateY(-4px); }
+}
+@keyframes gx2Opt {
+  0%, 61.5%  { background: transparent; }
+  62.3%      { background: #e8eefa; }
+  64.7%, 100% { background: transparent; }
+}
+@media (max-width: 1024px) { .gx-models { box-shadow: none !important; } }

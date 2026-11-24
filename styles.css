@@ -4398,3 +4398,15 @@ body.map-open deck-stage { filter: blur(2px); }
   64.7%, 100% { background: transparent; }
 }
 @media (max-width: 1024px) { .gx-models { box-shadow: none !important; } }
+
+/* ----------------------------------------------------------------
+   49 · A longer epigraph. The second Karpathy line runs to twenty-six
+   words, so it is set smaller and wider than the seven-word first,
+   from the same left edge and in the same italic.
+   ---------------------------------------------------------------- */
+.epigraph.epigraph--long {
+  font-size: 76px;
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  max-width: 31ch;
+}

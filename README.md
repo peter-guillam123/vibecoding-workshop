@@ -7,7 +7,7 @@ coding experience assumed.
 Live at
 [peter-guillam123.github.io/vibecoding-workshop](https://peter-guillam123.github.io/vibecoding-workshop).
 
-The session run by default is now the taster, `slg.html`: 23 slides
+The session run by default is now the taster, `slg.html`: 24 slides
 for a single hands-on session of about forty minutes, with more to try
 afterwards. It began as a cut for the Senior Leadership Group, which is
 where the file name comes from, and the QR code still points at it. It
@@ -61,6 +61,13 @@ stays on screen while people work.
 pre-flight: the deck itself is the clipboard.
 
 ## Changelog
+
+### 24 November 2026 - A second Karpathy line
+
+A second yellow slide follows the epigraph: Karpathy's February 2025
+post naming vibe coding. Two slides, not one with a timer, so the
+presenter chooses the moment and print keeps both. `.epigraph--long`
+sets the longer line smaller (section 49).
 
 ### 24 November 2026 - The taster becomes the default session
 

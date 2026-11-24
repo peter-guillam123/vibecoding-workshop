@@ -62,6 +62,18 @@ pre-flight: the deck itself is the clipboard.
 
 ## Changelog
 
+### 24 November 2026 - Why the site stopped publishing, and the fix
+
+Pushes were succeeding while the live site stayed the same. The deploy
+step failed with "No artifacts named github-pages were found": it asks
+GitHub for the upload half a second after it finishes, and GitHub had
+not always listed it by then. Two wrong guesses came first (a blip;
+out-of-date action versions, see the commit that updates them). What
+fixed it was measured: 4 failures in 6 runs as it stood, 0 in 6 with a
+15-second pause before the deploy step. The pause is now in
+`.github/workflows/pages.yml`, and in the deck template. After any
+push, check the live page has changed.
+
 ### 24 November 2026 - A second Karpathy line
 
 A second yellow slide follows the epigraph: Karpathy's February 2025

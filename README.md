@@ -7,8 +7,10 @@ coding experience assumed.
 Live at
 [peter-guillam123.github.io/vibecoding-workshop](https://peter-guillam123.github.io/vibecoding-workshop).
 
-There's also a shorter cut for the Senior Leadership Group, `slg.html`:
-24 slides for a single hands-on session, with more to try afterwards. It
+The session run by default is now the taster, `slg.html`: 23 slides
+for a single hands-on session of about forty minutes, with more to try
+afterwards. It began as a cut for the Senior Leadership Group, which is
+where the file name comes from, and the QR code still points at it. It
 carries a map: a rail of parts in every footer, a full map on M, a
 contents page, tabs across the twelve builds, and `#N` links to any
 slide. The navigation is one script, `deck-nav.js`, which reads the
@@ -59,6 +61,19 @@ stays on screen while people work.
 pre-flight: the deck itself is the clipboard.
 
 ## Changelog
+
+### 24 November 2026 - The taster becomes the default session
+
+- Cover tag reads The Guardian, not SLG; page title is "Vibecoding
+  taster". The "help out" slide for returners is removed (23 slides).
+- Setup slide: a third step, "Check the model" (4 Hydrogen, under
+  Everyday help), and the demo loop extended to 15 seconds to show the
+  model menu. Scoped to `.pf-steps--three` and `.gx--v2`, so the first
+  edition is untouched. Model names as of this date; they will change.
+- API slide: the exchange loop runs 14 seconds, with the question and
+  answer taking three seconds each. A line spells out the acronym.
+- Combining APIs: Postcodes.io then Wikipedia (postcode, area name,
+  photo and paragraph). Both checked keyless and preflight-clean.
 
 ### 12 October 2026 - Give it data you already have
 

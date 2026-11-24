@@ -26,5 +26,10 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: .
+      # GitHub sometimes takes a few seconds to list an upload it has
+      # just accepted. Without this pause the deploy step often asks too
+      # soon, finds nothing and fails. Measured 24 November 2026.
+      - name: Wait for the upload to be listed
+        run: sleep 15
       - id: deployment
         uses: actions/deploy-pages@v5

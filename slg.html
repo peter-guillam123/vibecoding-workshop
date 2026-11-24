@@ -880,8 +880,10 @@
 
   <!-- ============================================================
        Step one: two sources at once. One idea (one API's answer is
-       the next one's question) and one example. The coordinates are
-       Postcodes.io's real answer for N1 9GU, checked 5 October 2026.
+       the next one's question) and one example: a postcode becomes a
+       place name, and Wikipedia has a photo and a paragraph for the
+       name. "Islington" is Postcodes.io's real answer for N1 9GU, and
+       Wikipedia's Islington page has both; checked 24 November 2026.
        ============================================================ -->
   <section class="slide slide--spread slide--flow" data-title="Combine two data sources" data-label="Combining APIs">
     <div class="rule-band"></div>
@@ -899,13 +901,13 @@
         </li>
         <li class="flow-step" data-fx="rise" style="--d:460ms">
           <p class="flow-who">Postcodes.io answers</p>
-          <p class="flow-what mono">51.53, −0.12</p>
-          <p class="flow-note">Where that postcode is on the map</p>
+          <p class="flow-what mono">Islington</p>
+          <p class="flow-note">The area that postcode is in</p>
         </li>
         <li class="flow-step" data-fx="rise" style="--d:600ms">
-          <p class="flow-who">Open-Meteo answers</p>
-          <p class="flow-what">Tomorrow's weather</p>
-          <p class="flow-note">Temperature, rain and wind for that spot</p>
+          <p class="flow-who">Wikipedia answers</p>
+          <p class="flow-what">A photo and a paragraph</p>
+          <p class="flow-note">About Islington, ready to show</p>
         </li>
       </ol>
 
@@ -916,13 +918,13 @@
         </div>
         <div class="prompt-body">
           <div class="prompt-copy" data-copy-text>
-            <p class="prompt-text">I want to use <strong>Postcodes.io</strong> and the <strong>Open-Meteo API</strong> to build an app where I type a postcode and it tells me tomorrow's weather there. Tell me when it's loading and if there's an error.</p>
-            <p class="prompt-api">API links: https://api.postcodes.io/postcodes/N19GU and https://api.open-meteo.com/v1/forecast?latitude=51.5&amp;longitude=-0.1</p>
+            <p class="prompt-text">I want to use <strong>Postcodes.io</strong> and the <strong>Wikipedia API</strong> to build an app where I type a postcode and it shows me a photo and a short introduction to the area it's in. Tell me when it's loading and if there's an error.</p>
+            <p class="prompt-api">API links: https://api.postcodes.io/postcodes/N19GU and https://en.wikipedia.org/api/rest_v1/page/summary/Islington</p>
           </div>
         </div>
       </div>
 
-      <p class="act-note" data-fx="rise" style="--d:900ms"><strong>Neither could do it alone.</strong> Open-Meteo doesn't understand postcodes, and Postcodes.io knows nothing about weather. The Who's my MP? build does the same trick.</p>
+      <p class="act-note" data-fx="rise" style="--d:900ms"><strong>Neither could do it alone.</strong> Wikipedia doesn't understand postcodes, and Postcodes.io knows a place's name but nothing about it. Wikipedia will do the same for almost anything with a name, so it pairs with most of the twelve.</p>
     </div>
 
     <div class="slide-foot">
@@ -932,8 +934,8 @@
   </section>
 
   <!-- ============================================================
-       Step two: add the brain. Same shape as step one, and the
-       example builds on step one's app. The deck's one other typed
+       Step two: add the brain. Same shape as step one. The example
+       builds on a weather app, such as the cycling build in Part 2. The deck's one other typed
        prompt: this is the moment people lean in.
        ============================================================ -->
   <section class="slide slide--spread slide--flow" data-title="Put an AI model inside your app" data-label="Add the brain">
@@ -970,7 +972,7 @@
 
       <div class="prompt-box" data-copy data-fx="rise" style="--d:760ms">
         <div class="prompt-head">
-          <p class="prompt-label">Add this to your weather app, or change it to suit yours</p>
+          <p class="prompt-label">Add this to the cycling app, or change it to suit yours</p>
           <div class="frame-chrome" aria-hidden="true"><i></i><i></i><i></i></div>
         </div>
         <div class="prompt-body">
